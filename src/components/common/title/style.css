@@ -1,0 +1,13 @@
+.title {
+  position: relative;
+  font-family: syne;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #5F5BFF 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

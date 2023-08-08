@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  font-family: Montserrat;
+  font-weight: 200;
+  color:white;
+}
