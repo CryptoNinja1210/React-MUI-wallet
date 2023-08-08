@@ -12,7 +12,17 @@ import Footer from '../components/layout/footer';
 export default function Home() {
 
   const [addrInfo, setAddrInfo] = useState('');
-  const [netInfoState, setNetInfoState] = useState({});
+  const [netInfoState, setNetInfoState] = useState({
+    icon: 'icons/ether.svg', 
+    name: 'Ethereum Mainnet', 
+    chainId: "0x1",
+    nativeCurrency: { 
+      name: 'ether', 
+      decimals: 18, 
+      symbol: 'eth' ,
+    },
+    rpcUrls: 'https://eth.drpc.org/'
+  });
 
   return (
     <Layout>
