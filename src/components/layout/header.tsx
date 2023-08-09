@@ -5,6 +5,7 @@ import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
 import ChainDropdown from '../wallet/chaindropdown.tsx';
 import ConnectWallet from '../wallet/connectwallet.tsx';
+import DisconnectWallet from '../wallet/disconnectwallet.tsx';
 import '../../App.css';
 
 interface NetworkInfo {
@@ -78,12 +79,14 @@ function Header({addrInfo, setAddrInfo, netInfoState, setNetInfoState}: SetInfoT
     }
   }
 
+  const providerOptions ={};
+  const web3Modal = new Web3Modal({
+    network: "mainnet",
+    cacheProvider: true,
+    providerOptions
+  });
   async function connetWallet() {
     // console.log('click')
-    const web3Modal = new Web3Modal({
-      network: "mainnet",
-      cacheProvider: true,
-    });
 
     const connection = await web3Modal.connect();
     // console.log(connection);
@@ -110,12 +113,17 @@ function Header({addrInfo, setAddrInfo, netInfoState, setNetInfoState}: SetInfoT
     setAddrInfo(addr);
   }
 
+  async function disconnectWallet() {
+
+  }
+
   React.useEffect(() => {
     connetWallet();
-  })
+    // disconnectWallet();
+  },[])
 
   return (
-    <AppBar position="static" sx={{ background: 'none' }}>
+    <AppBar position="static" sx={{ background: 'none', zIndex:'999' }}>
       <Container maxWidth="xl" sx={{ bgcolor: '' }}>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -139,7 +147,7 @@ function Header({addrInfo, setAddrInfo, netInfoState, setNetInfoState}: SetInfoT
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'right',
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -191,10 +199,13 @@ function Header({addrInfo, setAddrInfo, netInfoState, setNetInfoState}: SetInfoT
             <img onClick={handleMessage} style={{ marginLeft: '0.8rem', cursor: 'pointer' }} src='/icons/message-notif.svg' />
             <ChainDropdown onNetworkChange={onNetworkChange} />
             { addrInfo ? 
-              (
-                <Box sx={{pl:'10px', display:'flex', flexDirection:'column', alignItems:'center'}}>
-                  <Typography>{netInfoState.name.slice(0, 3)}</Typography>
-                  <Typography>{addrInfo.slice(0, 6) + '...'+ addrInfo.slice(-5)}</Typography>
+              ( 
+                <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
+                  <Box sx={{pl:'10px', display:'flex', flexDirection:'column', alignItems:'center'}}>
+                    <Typography>{netInfoState.name.slice(0, 3)}</Typography>
+                    <Typography>{addrInfo.slice(0, 6) + '...'+ addrInfo.slice(-5)}</Typography>
+                  </Box>
+                  <DisconnectWallet handleDisconnect = {disconnectWallet} />
                 </Box>
               )
               : 
