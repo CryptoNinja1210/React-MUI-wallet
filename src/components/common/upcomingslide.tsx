@@ -66,7 +66,7 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           overflow: 'hidden',
           color: 'var(--neutral-03, #ADA8C3)',
           textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
+          // whiteSpace: 'nowrap',
           fontFamily: 'Montserrat',
           fontSize: '14px',
           fontStyle: 'normal',

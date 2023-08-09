@@ -15,21 +15,21 @@ interface ChainDropwdonwProps {
 }
 
 
-const options: NetworkInfo[] = [
-  {
-    icon: '/icons/bnb-smart.svg', name: 'BNB Smart Chain', chainId: "0x38",
-    nativeCurrency: { name: 'BNB', decimals: 18, symbol: 'BNB' },
-    rpcUrls: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
-  },
+export const networkOptions: NetworkInfo[] = [
   {
     icon: 'icons/ether.svg', name: 'Ethereum Mainnet', chainId: "0x1",
     nativeCurrency: { name: 'ether', decimals: 18, symbol: 'eth' },
-    rpcUrls: 'https://eth.drpc.org/'
+    rpcUrls: 'https://mainnet.infura.io/v3/'
+  },
+  {
+    icon: '/icons/bnb-smart.svg', name: 'BNB Smart Chain', chainId: "0x38",
+    nativeCurrency: { name: 'BNB', decimals: 18, symbol: 'BNB' },
+    rpcUrls: 'https://bsc-dataseed.binance.org/'
   },
   {
     icon: '/icons/arbitrum.svg', name: 'Arbitrum One', chainId: "0xa4b1",
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-    rpcUrls: 'https://rpc.ankr.com/arbitrum'
+    rpcUrls: 'https://arbitrum-mainnet.infura.io'
   },
   {
     icon: '/icons/polygon.svg', name: 'Polygon', chainId: "0x89",
@@ -45,11 +45,11 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
   React.useEffect(() => {
     if (typeof props.onNetworkChange == "function") {
-      props.onNetworkChange(options[selectedIndex])
+      props.onNetworkChange(networkOptions[selectedIndex])
     }
   }, [props, selectedIndex]);
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    console.info(`You clicked ${networkOptions[selectedIndex]}`);
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -97,8 +97,8 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             }
           }}
           onClick={handleClick}>
-          <img style={{ width: '30px', height: '30px', paddingRight: '10px' }} src={options[selectedIndex].icon}></img>
-          {options[selectedIndex].name}
+          <img style={{ width: '30px', height: '30px', paddingRight: '10px' }} src={networkOptions[selectedIndex].icon}></img>
+          {networkOptions[selectedIndex].name}
           <ArrowDropDownIcon />
         </Button>
         {/* <Button
@@ -133,7 +133,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu" autoFocusItem>
-                  {options.map((option, index) => (
+                  {networkOptions.map((option, index) => (
                     <MenuItem
                       key={option.chainId}
                       selected={index === selectedIndex}

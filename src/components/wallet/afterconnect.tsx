@@ -15,7 +15,7 @@ const AfterConnect = ({ addrInfo }: AddType) => {
         flexDirection: 'row',
         width: '85%',
         padding:'49px 40px',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
         gap: '56px',
         borderRadius: '12px',

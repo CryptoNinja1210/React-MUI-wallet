@@ -63,6 +63,7 @@ const upcomingslides = [
 ]
 
 function UpComing(){  
+  
   return(
     <div>
       <Box sx={{ background: '#0A0A0B'}}>
@@ -104,9 +105,47 @@ function UpComing(){
               justifyContent: 'start',
               marginTop: '40px',
               paddingLeft: '100px',
+              position: 'relative'
             }}
           >
-            <Carousel className='carousel' show={5.2} slide={2} swiping={true} transition={0.5} swipeOn={1} useArrowKeys={true} >
+            <Carousel 
+              className='carousel' 
+              show={5.2} 
+              slide={2} 
+              swiping={true} 
+              transition={0.5} 
+              swipeOn={1} 
+              useArrowKeys={true} 
+              rightArrow={(
+                <Box
+                  sx={{
+                    backgroundImage:'url("icons/arrow-right.svg")',
+                    width:'70px',
+                    height:'70px',
+                    filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                    transform: 'translate(-70px, 150px)',
+                    backgroundSize:'cover',
+                    cursor:'pointer'
+                  }}
+                >
+                </Box>
+              )}
+              leftArrow={(
+                <Box
+                  sx={{
+                    backgroundImage:'url("icons/arrow-right.svg")',
+                    width:'70px',
+                    height:'70px',
+                    rotate: '180deg',
+                    filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                    backgroundSize:'cover',
+                    transform: 'translateY(-150px)',
+                    cursor:'pointer'
+                  }}
+                >
+                </Box>
+              )}
+            >
               {upcomingslides.map((item) => (
                 <UpcomingSlide {...item} key={item.title} />
               ))}
