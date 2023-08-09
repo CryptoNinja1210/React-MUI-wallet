@@ -2,7 +2,7 @@ import {Box, Typography} from '@mui/material';
 
 function Footer(){  
   return(
-    <Box sx={{pt:'100px', background: '#0A0A0B', display:'flex', flexDirection:'column'}}>
+    <Box sx={{pt:'30px', background: '#0A0A0B', display:'flex', flexDirection:'column'}}>
       <Box sx={{
         display:'flex',
         flexDirection:'row',

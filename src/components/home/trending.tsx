@@ -50,7 +50,14 @@ function Trending(){
           marginLeft: '100px',
         }}
       >
-        <Carousel className='carousel' show={4.2} slide={2} swiping={true} transition={0.5} swipeOn={1} >
+        <Carousel 
+          className='carousel' 
+          show={4.2} 
+          slide={2} 
+          swiping={true} 
+          transition={0.5} 
+          swipeOn={1}
+        >
           {trendingslides.map((item)=> (
             <TrendingSlide {...item} key={item.title} />
           ))}

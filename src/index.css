@@ -7,3 +7,6 @@
   font-weight: 200;
   color:white;
 }
+body {
+  overflow-x: hidden;
+}

@@ -29,6 +29,7 @@
 }
 .upcoming {
   display: block;
+  z-index: 999;
   text-align: center;
   font-family: syne;
   font-size: 48px;
