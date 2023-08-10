@@ -58,113 +58,123 @@ const picture =[{
   bac:"images/bac3.png"
 }]
 
-function Trending(){  
+function Content(){  
+  const x = window.innerWidth;
   return(
     <Box sx={{ background: '#0A0A0B', width: '100%', overflowX: 'hidden', position: 'relative'}}>
-      <Box 
-        sx={{
-          backgroundImage: 'url("backgrounds/vector1.svg")',
-          width: '536.475px',
-          height: '1066.688px',
-          transform: 'rotate(39.402deg)',
-          position:'absolute',
-          flexShrink: '0',
-          marginLeft: '85%',
-          marginTop: '-500px',
-          fill: 'rgba(143, 0, 255, 0.30)',
-          filter: 'blur(194.99147033691406px)',
-          background:'#8F00FF4D',
-        }}
-        >
-      </Box>
-      <Box 
-        sx={{
-          backgroundImage: 'url("backgrounds/vector3.svg")',
-          width: '820.528px',
-          height: '1195.159px',
-          transform: 'rotate(-162.478deg)',
-          flexShrink: '0',
-          marginLeft: '-30%',
-          position:'absolute',
-          marginTop: '500px',
-          fill: 'rgba(130, 24, 234, 0.50)',
-          filter: 'blur(297.25469970703125px)',
-          background:'#8218EA80',
-        }}
-        >          
-      </Box>
-      <Box 
-        sx={{
-          backgroundImage: 'url("backgrounds/vector3.svg")',
-          width: '820.528px',
-          height: '1195.159px',
-          flexShrink: '0',
-          marginLeft: '90%',
-          position:'absolute',
-          marginTop: '1200px',
-          fill: 'rgba(130, 24, 234, 0.50)',
-          filter: 'blur(297.25469970703125px)',
-          background:'#8218EA80',
-        }}
-        >
-      </Box>
-      <Box 
-          sx={{
-            backgroundImage: 'url("backgrounds/vector5.svg")',
-            position:'absolute',
-            width: '465.127px',
-            height: '1195.043px',
-            transform: 'rotate(39.402deg)',
-            flexShrink: '0',
-            marginLeft: '-15%',
-            marginTop: '2100px',
-            fill: 'rgba(138, 26, 238, 0.50)',
-            filter: 'blur(297px)',
-            background:'#8A1AEE80',
-          }}
-        >
-      </Box>
-      <Box 
-          sx={{
-            backgroundImage: 'url("backgrounds/vector6.svg")',
-            position:'absolute',
-            width: '1080px',
-            height: '1263px',
-            transform: 'rotate(-6deg)',
-            flexShrink: '0',
-            marginLeft: '80%',
-            marginTop: '2700px',
-            fill: 'rgba(138, 26, 238, 0.50)',
-            filter: 'blur(297px)',
-            background:'#8218EA80',
-          }}
-        >
-      </Box>
-      <Box 
-          sx={{
-            backgroundImage: 'url("backgrounds/vector3.svg")',
-            position:'absolute',
-            width: '612px',
-            height: '1263px',
-            transform: 'rotate(-6deg)',
-            flexShrink: '0',
-            marginLeft: '-30%',
-            marginTop: '3100px',
-            fill: 'rgba(138, 26, 238, 0.50)',
-            filter: 'blur(297px)',
-            background:'#8218EA80',
-          }}
-        >
-      </Box>
-      <Box sx={{ mx:'100px'}}>
+      {
+        (x > 900)  ? (
+          <>
+            <Box 
+              sx={{
+                backgroundImage: 'url("backgrounds/vector1.svg")',
+                width: '536.475px',
+                height: '1066.688px',
+                transform: 'rotate(39.402deg)',
+                position:'absolute',
+                flexShrink: '0',
+                marginLeft: '85%',
+                marginTop: '-500px',
+                fill: 'rgba(143, 0, 255, 0.30)',
+                filter: 'blur(194.99147033691406px)',
+                background:'#8F00FF4D',
+              }}
+              >
+            </Box>
+            <Box 
+              sx={{
+                backgroundImage: 'url("backgrounds/vector3.svg")',
+                width: '820.528px',
+                height: '1195.159px',
+                transform: 'rotate(-162.478deg)',
+                flexShrink: '0',
+                marginLeft: '-30%',
+                position:'absolute',
+                marginTop: '500px',
+                fill: 'rgba(130, 24, 234, 0.50)',
+                filter: 'blur(297.25469970703125px)',
+                background:'#8218EA80',
+              }}
+              >          
+            </Box>
+            <Box 
+              sx={{
+                backgroundImage: 'url("backgrounds/vector3.svg")',
+                width: '820.528px',
+                height: '1195.159px',
+                flexShrink: '0',
+                marginLeft: '90%',
+                position:'absolute',
+                marginTop: '1200px',
+                fill: 'rgba(130, 24, 234, 0.50)',
+                filter: 'blur(297.25469970703125px)',
+                background:'#8218EA80',
+              }}
+              >
+            </Box>
+            <Box 
+                sx={{
+                  backgroundImage: 'url("backgrounds/vector5.svg")',
+                  position:'absolute',
+                  width: '465.127px',
+                  height: '1195.043px',
+                  transform: 'rotate(39.402deg)',
+                  flexShrink: '0',
+                  marginLeft: '-15%',
+                  marginTop: '2100px',
+                  fill: 'rgba(138, 26, 238, 0.50)',
+                  filter: 'blur(297px)',
+                  background:'#8A1AEE80',
+                }}
+              >
+            </Box>
+            <Box 
+                sx={{
+                  backgroundImage: 'url("backgrounds/vector6.svg")',
+                  position:'absolute',
+                  width: '1080px',
+                  height: '1263px',
+                  transform: 'rotate(-6deg)',
+                  flexShrink: '0',
+                  marginLeft: '80%',
+                  marginTop: '2700px',
+                  fill: 'rgba(138, 26, 238, 0.50)',
+                  filter: 'blur(297px)',
+                  background:'#8218EA80',
+                }}
+              >
+            </Box>
+            <Box 
+                sx={{
+                  backgroundImage: 'url("backgrounds/vector3.svg")',
+                  position:'absolute',
+                  width: '612px',
+                  height: '1263px',
+                  transform: 'rotate(-6deg)',
+                  flexShrink: '0',
+                  marginLeft: '-30%',
+                  marginTop: '3100px',
+                  fill: 'rgba(138, 26, 238, 0.50)',
+                  filter: 'blur(297px)',
+                  background:'#8218EA80',
+                }}
+              >
+            </Box>
+          </>
+        ) : (
+          <></>
+        )
+      }
+      <Box sx={{ mx: { xs:'2rem', md:'100px'}}}>
         <Box sx={{pt:'100px'}}>
-          <div className='upcoming'>Our Key Features</div><br/>
+          <div className='feature'>Our Key Features</div><br/>
           <div className='subtitle'>Unleashing Limitless Potential in the Dynamic DeFi Universe</div>
         </Box>
         <Box 
           sx={{
             display:'flex',
-            flexDirection:'row',
+            flexDirection:{ md:'row', xs:'column-reverse'},
+            alignItems:'center',
             justifyContent:'space-between',
             marginTop:'50px'
           }}>
@@ -184,8 +194,9 @@ function Trending(){
         <Box 
           sx={{
             display:'flex',
-            flexDirection:'row',
             justifyContent:'space-between',
+            flexDirection:{ md:'row', xs:'column'},
+            alignItems:'center',
             marginTop:'50px'
           }}>
           <Box>
@@ -204,8 +215,9 @@ function Trending(){
         <Box 
           sx={{
             display:'flex',
-            flexDirection:'row',
             justifyContent:'space-between',
+            flexDirection:{ md:'row', xs:'column-reverse'},
+            alignItems:'center',
             marginTop:'50px'
           }}>
           <Box
@@ -222,33 +234,23 @@ function Trending(){
           </Box>            
         </Box>
         <Box sx={{pt:'100px'}}>
-          <div className='upcoming'>How it works</div><br/>
+          <div className='feature'>How it works</div><br/>
           <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
         </Box>    
-        <Box
-          sx={{
-            marginTop:'100px',
-            width: '1050px',
-            height: '780px',
-            mx:'auto',
-            flexShrink: 0,
-            backgroundImage: 'url("images/movie.png")',
-            backgroundRepeat:'no-repeat'
-          }}
-        >
-        </Box>
+        <img className='video' src='images/movie.png'></img>
         <Box 
           sx={{
             display:'flex',
-            flexDirection:'row',
             justifyContent:'space-between',
+            flexDirection:{ md:'row', xs:'column-reverse'},
+            alignItems:'center',
             marginTop:'50px'
           }}>
           <Box
             sx={{
               display:'flex',
               flexDirection:'column',
-              justifyContent:'space-around'
+              justifyContent:'space-around',
             }}>
             <Description title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
             <Box 
@@ -283,7 +285,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -294,7 +296,7 @@ function Trending(){
               sx={{
                 color: '#FFF',
                 fontFamily: 'Syne',
-                fontSize: '28px',
+                fontSize: {xs:'18px', md:'28px'},
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -313,7 +315,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -323,8 +325,8 @@ function Trending(){
             <Typography
               sx={{
                 color: '#FFF',
+                fontSize: {xs:'18px', md:'28px'},
                 fontFamily: 'Syne',
-                fontSize: '28px',
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -343,7 +345,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -354,7 +356,7 @@ function Trending(){
               sx={{
                 color: '#FFF',
                 fontFamily: 'Syne',
-                fontSize: '28px',
+                fontSize: {xs:'18px', md:'28px'},
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -381,7 +383,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -392,7 +394,7 @@ function Trending(){
               sx={{
                 color: '#FFF',
                 fontFamily: 'Syne',
-                fontSize: '28px',
+                fontSize: {xs:'18px', md:'28px'},
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -411,7 +413,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -422,7 +424,7 @@ function Trending(){
               sx={{
                 color: '#FFF',
                 fontFamily: 'Syne',
-                fontSize: '28px',
+                fontSize: {xs:'18px', md:'28px'},
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -441,7 +443,7 @@ function Trending(){
              sx={{
               color: '#ADA8C3',
               fontFamily: 'Montserrat',
-              fontSize: '16px',
+              fontSize: {xs:'11px', md:'16px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '25px',
@@ -452,7 +454,7 @@ function Trending(){
               sx={{
                 color: '#FFF',
                 fontFamily: 'Syne',
-                fontSize: '28px',
+                fontSize: {xs:'18px', md:'28px'},
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
@@ -465,11 +467,11 @@ function Trending(){
         <Box
           sx={{
             display: 'flex',
-            mx:'auto',
+            textAlign:'center',
+            width:'auto',
             mt:'50px',
             mb:'100px',
-            width: '90%',
-            padding: '64px 287px',
+            padding:'2rem',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
@@ -481,14 +483,12 @@ function Trending(){
           <Typography
             sx={{
               color: '#0A0A0B',
-              textAlign: 'center',
               fontFamily: 'Syne',
-              fontSize: '48px',
+              fontSize: {xs:'18px', md:'48px'},
               fontStyle: 'normal',
               fontWeight: '700',
               lineHeight: '52px', /* 108.333% */
               letterSpacing: '-0.4px',
-              width: '1001px',
             }}
           >
             Stay Updated, Engage, and Get Support in our Official Telegram Group
@@ -496,13 +496,11 @@ function Trending(){
           <Typography 
             sx={{
               color: '#0A0A0B',
-              textAlign: 'center',
               fontFamily: 'Montserrat',
-              fontSize: '20px',
+              fontSize: {xs:'12px', md:'18px'},
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: '32px',
-              width: '579px'
             }}
           >Join the Bonus DeFi Telegram Community and Connect with Fellow Enthusiasts</Typography>
           <Typography
@@ -513,9 +511,7 @@ function Trending(){
               fontStyle: 'normal',
               fontWeight: '700',
               lineHeight: 'normal',
-              display: 'flex',
               padding: '16px 32px',
-              justifyContent: 'center',
               alignItems: 'center',
               gap: '8px',
               borderRadius: '144px',
@@ -528,4 +524,4 @@ function Trending(){
     </Box>   
   )
 }
-export default Trending;
+export default Content;

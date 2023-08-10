@@ -7,7 +7,9 @@ function Footer(){
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
-        mx:'100px',
+        gap:'2rem',
+        flexWrap:{xs:'wrap', md:'nowrap'},
+        mx:{xs:'2rem', md:'100px'},
         alignItems:'flex-start'
       }}>
         <Box sx={{ display:'flex', flexDirection:'column'}}>
@@ -162,16 +164,25 @@ function Footer(){
           </Typography>
         </Box>
       </Box>
-      <hr style={{margin:'30px 100px 30px 100px'}}/>
-      <Box sx={{mx:'100px', mb:'40px', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
+      <hr className='hr' style={{margin:'30px 100px 30px 100px'}}/>
+      <Box 
+        sx={{
+          mx:'100px', 
+          mb:'40px', 
+          display:'flex', 
+          flexDirection:{md:'row',xs:'column-reverse'}, 
+          justifyContent:'space-between', 
+          alignItems:'center',
+          gap:'1rem'
+        }}>
         <Typography
           sx={{
             color: '#ADA8C3',
             fontFamily: 'Montserrat',
-            fontSize: '18px'}}>
+              fontSize: {xs:'12px', md:'18px'}}}>
               Copyright © Bonus Defi 2023
         </Typography>
-        <Box sx={{display:'flex', flexDirection:'row', alignItems:'center', gap: '10px'}}>
+        <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center', gap: { xs:'35px', md:'10px'}}}>
           <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/facebook.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
           </Box>
           <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/twitter.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            

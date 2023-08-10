@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import '../../App.css'
 
 interface PictureProps {
   square: string;
@@ -16,14 +17,12 @@ const Square: React.FC<PictureProps> = ({
       justifyContent: 'center',
       alignItems: 'center',
     }}>
-      <Box sx={{ width:'460px', height:'460px', backgroundImage: `url(${bac})`}}>
-        <Box
-          sx={{
-            width: '420px',
-            height: '374px',
-            backgroundImage: `url(${square})`
-          }}
-        />
+      <Box 
+        sx={{ 
+          width: {xs:'273px', md:'28.75rem'},
+          height: {xs:'251px', md:'28.75rem'},
+          backgroundImage: `url(${bac})`}}>
+        <img className="square" src={square}></img>
       </Box>
     </Box>
   )

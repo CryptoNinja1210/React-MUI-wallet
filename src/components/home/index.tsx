@@ -115,10 +115,10 @@ function index({
         />
         <AfterConnect addrInfo={addrInfo}/>
         <Box sx={{
-          pt:'100px',
-          pl:'100px',
-          // width: '100vw',
-          overflowX: 'hidden'
+          pt:'5rem',
+          pl:{xs:'2rem', md:'5rem'},
+          // pl:'5rem',
+          overflowX: 'hidden',
           }}>
           <span className='prediction'>Live Predictions</span>
           <Carousel className='carousel' show={5.8} slide={2} swiping={true} transition={0.5} swipeOn={1} >
