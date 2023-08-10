@@ -13,15 +13,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { ethers, providers } from "ethers";
 import Web3Modal from "web3modal";
-// import WalletConnectProvider from '@walletconnect/web3-provider';
-// import Fortmatic from 'fortmatic';
 import ChainDropdown from "../wallet/chaindropdown.tsx";
 import ConnectWallet from "../wallet/connectwallet.tsx";
 import DisconnectWallet from "../wallet/disconnectwallet.tsx";
 import "../../App.css";
-
-// "use strict";
-
 interface NetworkInfo {
   icon: string;
   name: string;
@@ -101,29 +96,7 @@ function Header({
   }
   React.useEffect(() => {
     connetWallet();
-    // disconnectWallet();
   }, []);
-  // React.useEffect(() => {
-  //   disconnectWallet();
-  // },[]);
-
-  // const providerOptions = {
-  //   walletconnect: {
-  //     package: WalletConnectProvider,
-  //     options: {
-  //       // Mikko's test key - don't copy as your mileage may vary
-  //       infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
-  //     }
-  //   },
-
-  //   fortmatic: {
-  //     package: Fortmatic,
-  //     options: {
-  //       // Mikko's TESTNET api key
-  //       key: "pk_test_391E26A3B43A3350"
-  //     }
-  //   }
-  // };
 
   const web3Modal = new Web3Modal({
     network: "mainnet",
@@ -158,8 +131,8 @@ function Header({
   return (
     <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
       <Container maxWidth="xl" sx={{ bgcolor: "" }}>
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Toolbar disableGutters sx={{flexDirection:{ xs: 'row-reverse', md:'row'}}}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -190,7 +163,7 @@ function Header({
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -251,9 +224,9 @@ function Header({
                 <Box
                   sx={{
                     pl: "10px",
-                    display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    display:{xs:'none', md:'flex'}
                   }}
                 >
                   <Typography>{netInfoState.name.slice(0, 3)}</Typography>

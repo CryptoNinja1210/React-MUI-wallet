@@ -63,10 +63,10 @@ const upcomingslides = [
 ]
 
 function UpComing(){  
-  
+  const x = window.innerWidth;
   return(
     <div>
-      <Box sx={{ background: '#0A0A0B'}}>
+      <Box sx={{ background: '#0A0A0B', mt:'-10px'}}>
         <Box 
           sx={{
             backgroundImage: 'url("backgrounds/vector2.svg")',
@@ -96,64 +96,92 @@ function UpComing(){
           }}
         >
         </Box>
-        <Box sx={{mt:"-470px", width: '100vw', overflowX: 'hidden'}}>
+        <Box sx={{mt:"-480px", width: '100vw', overflowX: 'hidden'}}>
           <span className='upcoming'>Upcoming Predictions</span>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'start',
-              marginTop: '40px',
-              paddingLeft: '100px',
-              position: 'relative'
-            }}
-          >
-            <Carousel 
-              className='carousel' 
-              show={5.2} 
-              slide={2} 
-              swiping={true} 
-              transition={0.5} 
-              swipeOn={1} 
-              useArrowKeys={true} 
-              rightArrow={(
-                <Box
-                  sx={{
-                    backgroundImage:'url("icons/arrow-right.svg")',
-                    width:'70px',
-                    height:'70px',
-                    filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
-                    transform: 'translate(-70px, 150px)',
-                    backgroundSize:'cover',
-                    cursor:'pointer'
-                  }}
+          {
+            x > 768 ? (
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'start',
+                  marginTop: '40px',
+                  paddingLeft: { xs:'1rem', md:'100px'},
+                  position: 'relative'
+                }}
+              >
+                <Carousel 
+                  className='carousel' 
+                  show={5.2} 
+                  slide={2} 
+                  swiping={true} 
+                  transition={0.5} 
+                  swipeOn={1} 
+                  useArrowKeys={true} 
+                  rightArrow={(
+                    <Box
+                      sx={{
+                        backgroundImage:'url("icons/arrow-right.svg")',
+                        width:'70px',
+                        height:'70px',
+                        filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                        transform: 'translate(-70px, 150px)',
+                        backgroundSize:'cover',
+                        cursor:'pointer'
+                      }}
+                    >
+                    </Box>
+                  )}
+                  leftArrow={(
+                    <Box
+                      sx={{
+                        backgroundImage:'url("icons/arrow-right.svg")',
+                        width:'70px',
+                        height:'70px',
+                        rotate: '180deg',
+                        filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                        backgroundSize:'cover',
+                        transform: 'translateY(-150px)',
+                        cursor:'pointer'
+                      }}
+                    >
+                    </Box>
+                  )}
                 >
-                </Box>
-              )}
-              leftArrow={(
-                <Box
-                  sx={{
-                    backgroundImage:'url("icons/arrow-right.svg")',
-                    width:'70px',
-                    height:'70px',
-                    rotate: '180deg',
-                    filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
-                    backgroundSize:'cover',
-                    transform: 'translateY(-150px)',
-                    cursor:'pointer'
-                  }}
+                  {upcomingslides.map((item) => (
+                    <UpcomingSlide {...item} key={item.title} />
+                  ))}
+                </Carousel>
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'start',
+                  marginTop: '40px',
+                  paddingLeft:'2rem',
+                  position: 'relative'
+                }}
+              >
+                <Carousel 
+                  className='carousel' 
+                  show={5.2} 
+                  slide={2} 
+                  swiping={true} 
+                  transition={0.5} 
+                  swipeOn={1}
                 >
-                </Box>
-              )}
-            >
-              {upcomingslides.map((item) => (
-                <UpcomingSlide {...item} key={item.title} />
-              ))}
-            </Carousel>
-          </Box>
+                  {upcomingslides.map((item) => (
+                    <UpcomingSlide {...item} key={item.title} />
+                  ))}
+                </Carousel>
+              </Box>              
+            )          
+          }
         </Box>
         <Box sx={{width:'100%', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000'}}>
-          <Box sx={{ display:'flex', flexDirection:'row', justifyContent:'center',gap:'1.5rem', alignItems:'center'}}>
+          <Box sx={{ display:'flex', scale:{xs:'0.8', md:'1'}, flexDirection:'row', justifyContent:{xs:'left', md:'center'}, gap:{xs:'3rem', md:'1.5rem'}, alignItems:'center'}}>
             <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', fontSize:'22px', gap:'8px' }}>
               <img src='icons/Ellipse 38.png' style={{width:'27px', height:'27px'}}></img>
               <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>RBT</Typography>

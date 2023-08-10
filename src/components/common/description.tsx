@@ -15,16 +15,16 @@ const Description: React.FC<DescriptionProps> = ({
     <Box sx={{
       display:'flex',
       flexDirection:'column',
-      width:'33rem',
+      // width:'33rem',
     }}>
       <Typography
         sx={{
           color: '#FFF',
           fontFamily: 'Syne',
-          fontSize: '36px',
+          fontSize: {xs:'18px', md:'2.25rem'},
           fontStyle: 'normal',
           fontWeight: '600',
-          lineHeight: '44px', /* 122.222% */
+          lineHeight: '2.75rem', /* 122.222% */
           textTransform: 'capitalize',
         }}
       >
@@ -32,26 +32,27 @@ const Description: React.FC<DescriptionProps> = ({
       </Typography>
       <Typography
         sx={{
-          fontFamily: 'Montserrat',
+          fontFamily: 'Inter',
           marginTop:'30px',
           color: '#ADA8C3',
-          fontSize: '16px',
+          fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '25px',
+          lineHeight: '1.5rem',
         }}
       >
         {subTitle1}
       </Typography>
       <Typography
         sx={{
-          fonFamily: 'Montserrat',
+          fonFamily: 'Inter',
           marginTop:'30px',
+          marginBottom:'30px',
           color: '#ADA8C3',
-          fontSize: '16px',
+          fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '25px',
+          lineHeight: '1.5rem',
         }}
       >
         {subTitle2}

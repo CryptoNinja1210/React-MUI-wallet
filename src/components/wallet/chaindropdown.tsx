@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, MenuItem, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuList } from '@mui/material';
+import { Button, Box, MenuItem, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuList } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 interface NetworkInfo {
@@ -98,19 +98,9 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
           }}
           onClick={handleClick}>
           <img style={{ width: '30px', height: '30px', paddingRight: '10px' }} src={networkOptions[selectedIndex].icon}></img>
-          {networkOptions[selectedIndex].name}
+          <Box sx={{ display: {xs: 'none', md:'block' }}}>{networkOptions[selectedIndex].name}</Box>
           <ArrowDropDownIcon />
         </Button>
-        {/* <Button
-          size="small"
-          aria-controls={open ? 'split-button-menu' : undefined}
-          aria-expanded={open ? 'true' : undefined}
-          aria-label="select merge strategy"
-          aria-haspopup="menu"
-          onClick={handleToggle}
-        >
-          <ArrowDropDownIcon />
-        </Button> */}
       </ButtonGroup>
       <Popper
         sx={{

@@ -40,14 +40,15 @@ function Trending(){
   return(
     <Box sx={{ background: '#0A0A0B'}}>
       <Box sx={{pt:'120px'}}>
-        <span className='upcoming'>Trending Predictions</span>
+        <span className='trending'>Trending Predictions</span>
       </Box>
       <Box 
         sx={{   
           flexShrink: '0',
           justifyContent: 'start',
           marginTop: '40px',
-          marginLeft: '100px',
+          marginLeft: { xs:'2rem', md:'100px'}
+          
         }}
       >
         <Carousel 

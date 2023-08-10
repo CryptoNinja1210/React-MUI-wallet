@@ -21,6 +21,7 @@ const AfterConnect = ({ addrInfo }: AddType) => {
         borderRadius: '12px',
         background: 'linear-gradient(138deg, rgba(156, 252, 0, 0.90) 0%, rgba(0, 252, 146, 0.90) 100%)',
         backdropFilter: 'blur(32px)',
+        flexWrap: {xs:'wrap', sm:'wrap', md:'nowrap'}
       }}>
         <img src="images/ellipse.svg" style={{width: '105px', height:'105px'}}/>
         <Typography 
@@ -31,12 +32,11 @@ const AfterConnect = ({ addrInfo }: AddType) => {
             fontStyle: 'normal',
             fontWeight: '600',
             lineHeight: '24px', /* 85.714% */
-            // whiteSpace: 'none'
           }}
         >
           Connected with {addrInfo && addrInfo.slice(0, 7) + ' ...'}
         </Typography>
-        <Box sx={{width:'45%',height:'100px', display:'flex', flexDirection:'row', justifyContent: 'space-between', alignItems: 'center', px:'40px', borderRadius:'12px', background:'#060607', py:'10px'}}>
+        <Box sx={{width:{xs:'90%', md:'45%'}, marginX:{xs:'25px'}, height:'100px', display:'flex', flexDirection:'row', justifyContent: 'space-between', alignItems: 'center', px:'40px', borderRadius:'12px', background:'#060607', py:'10px'}}>
           <Box sx={{display:'flex', flexDirection: 'column', alignItems:'start'}}>
             <Typography sx={{ fontFamily: 'Montserrat', fontSize: '15px', fontWeight: '500', lineHeight: '16.568px'}}>$0</Typography>
             <Typography sx={{color:'#8699B0', fontSize:'12px', fontFamily:'Montserrat', letterSpacing:'-0.12px'}}>to collect</Typography>
