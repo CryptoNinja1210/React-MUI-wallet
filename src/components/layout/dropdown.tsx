@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, MenuItem, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuList } from '@mui/material';
+import { Button, MenuItem, ButtonGroup, Grow, Paper, Popper, MenuList } from '@mui/material';
 
 interface dropPropTypes {
   label: string,
@@ -12,7 +12,7 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const handleClick = () => {
     // console.info(`You clicked`);
-    setOpen((prevOpen) => !prevOpen);
+    // setOpen((prevOpen) => !prevOpen);
   };
 
   const handleMenuItemClick = (
@@ -20,6 +20,7 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   ) => {
     setSelectedIndex(index);
     // setOpen(false);
+    setOpen(false);
     console.log(`you clicked ${menulist[index]}`)
   };
   const handleMouseEnter = () => {
@@ -40,18 +41,6 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   // const handleToggle = () => {
   //   setOpen((prevOpen) => !prevOpen);
   // };
-
-  const handleClose = (event: Event) => {
-
-    if (
-      anchorRef.current &&
-      anchorRef.current.contains(event.target as HTMLElement)
-    ) {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   console.log(anchorRef.current?.clientWidth)
 
@@ -107,19 +96,17 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
             className='bg-zinc-800 text-white rounded-xl mt-1'
           >
             <Paper>
-              <ClickAwayListener onClickAway={handleClose}>
-                <MenuList id="split-button-menu" autoFocusItem>
-                  {menulist.map((listItem, index) => (
-                    <MenuItem
-                      key={listItem}
-                      selected={index === selectedIndex}
-                      onClick={() => handleMenuItemClick(index)}
-                    >
-                      {listItem}
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </ClickAwayListener>
+              <MenuList id="split-button-menu" autoFocusItem>
+                {menulist.map((listItem, index) => (
+                  <MenuItem
+                    key={listItem}
+                    selected={index === selectedIndex}
+                    onClick={() => handleMenuItemClick(index)}
+                  >
+                    {listItem}
+                  </MenuItem>
+                ))}
+              </MenuList>
             </Paper>
           </Grow>
         )}

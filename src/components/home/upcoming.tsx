@@ -114,9 +114,9 @@ function UpComing(){
         >
         </Box>
         <Box
-          className="pt-20 pl-8 max-w-[1536px] w-full mt-[-470px] mx-auto"
+          className="pt-20 pl-8 max-w-[1536px] w-full mt-[-470px] mx-auto text-center"
         >
-          <span className='upcoming leading-normal'>Upcoming Predictions</span>
+          <span className='inline upcoming leading-normal'>Upcoming Predictions</span>
           <Carousel 
             className='carousel' 
             show={slideNum} 
