@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Box, MenuItem, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuList } from '@mui/material';
+import { Button, Box, MenuItem, ButtonGroup, Grow, Paper, Popper, MenuList } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 interface NetworkInfo {
@@ -60,18 +60,18 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
   //   setOpen((prevOpen) => !prevOpen);
   // };
 
-  const handleClose = (event: Event) => {
+  // const handleClose = (event: Event) => {
 
-    if (
-      anchorRef.current &&
-      anchorRef.current.contains(event.target as HTMLElement)
-    ) {
-      return;
-    }
+  //   if (
+  //     anchorRef.current &&
+  //     anchorRef.current.contains(event.target as HTMLElement)
+  //   ) {
+  //     return;
+  //   }
 
 
-    setOpen(false);
-  };
+  //   setOpen(false);
+  // };
 
   console.log(anchorRef.current?.clientWidth)
 
@@ -123,7 +123,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             className='bg-zinc-800 text-white rounded-3xl mt-2'
           >
             <Paper>
-              <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu" autoFocusItem>
                   {networkOptions.map((option, index) => (
                     <MenuItem
@@ -135,7 +134,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
                     </MenuItem>
                   ))}
                 </MenuList>
-              </ClickAwayListener>
             </Paper>
           </Grow>
         )}
