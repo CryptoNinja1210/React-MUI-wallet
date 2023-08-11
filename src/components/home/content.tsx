@@ -244,7 +244,7 @@ function Content(){
           <Box
             className='flex flex-col justify-around w-full md:max-w-xl'
           >
-            <Description title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
+            <Description isFinance={true} title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
             <Box 
               sx={{
                 display:'flex',
