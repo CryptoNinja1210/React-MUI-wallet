@@ -56,6 +56,18 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
     setOpen(false);
   };
 
+  const handleMouseLeave = () => {
+    setOpen(false);
+  }
+
+  const handleSubMouseEnter = () => {
+    setOpen(true);
+  }
+
+  const handleSubMouseLeave = () => {
+    setOpen(false);
+  }
+
   // const handleToggle = () => {
   //   setOpen((prevOpen) => !prevOpen);
   // };
@@ -91,12 +103,14 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             color: '#00FC65',
             borderRadius: '30px',
             px: '1.5rem',
-            ml: '0.8rem',
+            // ml: '0.8rem',
             '&:hover': {
               backgroundColor: '#212125',
-            }
+            },
+            width: '250px',
           }}
           onClick={handleClick}
+          onMouseLeave={handleMouseLeave}
         >
           <img className='w-[30px] h-[30px] pr-[10px]' src={networkOptions[selectedIndex].icon}/>
           <Box className="hidden md:block whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
@@ -106,12 +120,15 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
       <Popper
         sx={{
           zIndex: 1,
+          width: '250px',
         }}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}
         transition
         disablePortal
+        onMouseEnter={handleSubMouseEnter}
+        onMouseLeave={handleSubMouseLeave}
       >
         {({ TransitionProps, placement }) => (
           <Grow
@@ -120,7 +137,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
               transformOrigin:
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
-            className='bg-zinc-800 text-white rounded-3xl mt-2'
+            className='bg-zinc-800 text-white rounded-xl mt-2'
           >
             <Paper>
                 <MenuList id="split-button-menu" autoFocusItem>

@@ -37,22 +37,6 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
     setOpen(false);
   }
 
-  // const handleToggle = () => {
-  //   setOpen((prevOpen) => !prevOpen);
-  // };
-
-  // const handleClose = (event: Event) => {
-  //   if (
-  //     anchorRef.current &&
-  //     anchorRef.current.contains(event.target as HTMLElement)
-  //   ) {
-  //     return;
-  //   }
-  //   setOpen(false);
-  // };
-
-  // console.log(anchorRef.current?.clientWidth)
-
   return (
     <React.Fragment>
       <ButtonGroup variant="text" ref={anchorRef}>
