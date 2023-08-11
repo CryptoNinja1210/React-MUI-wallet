@@ -32,11 +32,6 @@ export const networkOptions: NetworkInfo[] = [
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
     rpcUrls: 'https://arbitrum-mainnet.infura.io'
   },
-  {
-    icon: '/icons/polygon.svg', name: 'Polygon', chainId: "0x89",
-    nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
-    rpcUrls: 'https://polygon-rpc.com/'
-  },
 ]
 
 
