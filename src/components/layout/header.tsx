@@ -170,7 +170,7 @@ function Header({
               />
               <img
                 onClick={handleMessage}
-                style={{ marginLeft: "0.8rem", cursor: "pointer" }}
+                style={{ marginLeft: "0.8rem", cursor: "pointer", marginRight: '0.8rem' }}
                 src="/icons/message-notif.svg"
               />
               <ChainDropdown onNetworkChange={onNetworkChange} />
