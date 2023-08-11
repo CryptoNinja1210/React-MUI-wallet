@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Button, MenuItem, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuList } from '@mui/material';
 
-
 interface dropPropTypes {
   label: string,
   menulist: Array<string>
@@ -23,6 +22,20 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
     // setOpen(false);
     console.log(`you clicked ${menulist[index]}`)
   };
+  const handleMouseEnter = () => {
+    setOpen((prevOpen) => !prevOpen);
+  }
+  const handleMouseLeave = () => {
+    setOpen(false);
+  }
+
+  const handleSubMouseEnter = () => {
+    setOpen(true);
+  }
+
+  const handleSubMouseLeave = () => {
+    setOpen(false);
+  }
 
   // const handleToggle = () => {
   //   setOpen((prevOpen) => !prevOpen);
@@ -66,6 +79,8 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
             borderRadius: '10px',
           }}
           onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           {label}
         </Button>
@@ -80,6 +95,8 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
         transition
         disablePortal
         placement='bottom-start'
+        onMouseEnter={handleSubMouseEnter}
+        onMouseLeave={handleSubMouseLeave}
       >
         {({ TransitionProps, placement }) => (
           <Grow
