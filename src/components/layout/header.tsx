@@ -112,8 +112,8 @@ function Header({
     }
   }
   React.useEffect(() => {
-    connetWallet();
-  });
+    ConnetWallet();
+  },[]);
 
   const web3Modal = new Web3Modal({
     network: "mainnet",
@@ -121,7 +121,7 @@ function Header({
     // providerOptions,
     // disableInjectedProvider: false,
   });
-  async function connetWallet() {
+  async function ConnetWallet() {
     await window.ethereum.request({
       method: "wallet_requestPermissions",
       params: [
@@ -199,7 +199,7 @@ function Header({
                   <DisconnectWallet handleDisconnect={disconnectWallet} />
                 </Box>
               ) : (
-                <ConnectWallet handleConnect={connetWallet} />
+                <ConnectWallet handleConnect={ConnetWallet} />
               )}
             </Box>
             <Box sx={{ display: { xs: "flex", lg: "none" }, justifyContent: { xs:'end', md:'none'}}}>
