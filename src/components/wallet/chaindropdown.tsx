@@ -6,7 +6,7 @@ interface NetworkInfo {
   icon: string;
   name: string;
   chainId: string;
-  nativeCurrency: { name: string, decimals: 18, symbol: string };
+  nativeCurrency: { name: string, decimals: number, symbol: string };
   rpcUrls: string;
 }
 
@@ -15,6 +15,7 @@ interface ChainDropwdonwProps {
 }
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const networkOptions: NetworkInfo[] = [
   {
     icon: 'icons/ether.svg', name: 'Ethereum Mainnet', chainId: "0x1",
@@ -65,6 +66,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
   // };
 
   const handleClose = (event: Event) => {
+
     if (
       anchorRef.current &&
       anchorRef.current.contains(event.target as HTMLElement)
@@ -72,8 +74,11 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
       return;
     }
 
+
     setOpen(false);
   };
+
+  console.log(anchorRef.current?.clientWidth)
 
   return (
     <React.Fragment>
@@ -96,9 +101,10 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
               backgroundColor: '#212125',
             }
           }}
-          onClick={handleClick}>
-          <img style={{ width: '30px', height: '30px', paddingRight: '10px' }} src={networkOptions[selectedIndex].icon}></img>
-          <Box sx={{ display: {xs: 'none', md:'block' }}}>{networkOptions[selectedIndex].name}</Box>
+          onClick={handleClick}
+        >
+          <img className='w-[30px] h-[30px] pr-[10px]' src={networkOptions[selectedIndex].icon}/>
+          <Box className="hidden md:block whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
           <ArrowDropDownIcon />
         </Button>
       </ButtonGroup>
@@ -119,6 +125,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
               transformOrigin:
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
+            className='bg-zinc-800 text-white rounded-3xl mt-2'
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
@@ -129,7 +136,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
                       selected={index === selectedIndex}
                       onClick={() => handleMenuItemClick(index)}
                     >
-                      <img src={option.icon} style={{ width: '30px', height: '30px', paddingRight: '10px' }} alt="" />{option.name}
+                      <img src={option.icon} className='w-[30px] h-[30px] pr-[10px]' alt="" />{option.name}
                     </MenuItem>
                   ))}
                 </MenuList>

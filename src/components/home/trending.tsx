@@ -37,26 +37,29 @@ const trendingslides = [
 ]
 
 function Trending(){  
+  const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 423;
   return(
-    <Box sx={{ background: '#0A0A0B'}}>
+    <Box
+      className='flex flex-col justify-center items-center h-[100vh] pb-24 bg-[#0A0A0B]'
+    >
       <Box sx={{pt:'120px'}}>
         <span className='trending'>Trending Predictions</span>
       </Box>
       <Box 
-        sx={{   
+        sx={{ 
           flexShrink: '0',
           justifyContent: 'start',
           marginTop: '40px',
           marginLeft: { xs:'2rem', md:'100px'}
-          
         }}
+        className="pt-20 pl-8 max-w-[1536px] w-full mt-[40px] mx-auto"
       >
         <Carousel 
           className='carousel' 
-          show={4.2} 
-          slide={2} 
-          swiping={true} 
-          transition={0.5} 
+          show={slideNum}
+          slide={2}
+          swiping={true}
+          transition={0.5}
           swipeOn={1}
         >
           {trendingslides.map((item)=> (

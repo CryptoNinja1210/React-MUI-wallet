@@ -12,71 +12,75 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
   description,
 }) => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        position: 'relative',
-        flexDirection: 'column',
-        alignItems: 'start', 
-        backgroundColor: `${trendbac}`,
-        width: '398px',
-        height: '250px',
-        px: '40px',
-        py: '40px',
-        borderRadius: '10px',
-      }}
-    >
-      <Box>
-        <img
-          src="icons/electrical-plug2.svg"
-          style={{
-            width: '36px',
-            height: '36px',
-            padding: '9px',
-            borderRadius: '9px',
-            backgroundColor: 'white',
-          }}
-        />
-      </Box>
-      <Typography
+    <div className='group'>
+      <Box
         sx={{
-          fontFamily: 'Montserrat',
-          fontSize: '24px',
-          fontWeight: '800',
-          lineHeight: '27px',
-          paddingTop: '20px',
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        sx={{
+          display: 'flex',
+          position: 'relative',
+          flexDirection: 'column',
+          alignItems: 'start', 
+          backgroundColor: `${trendbac}`,
+          width: '398px',
+          height: '250px',
+          px: '40px',
+          py: '40px',
           overflow: 'hidden',
-          color: '#fff',
-          textOverflow: 'ellipsis',
-          fontFamily: 'Montserrat',
-          fontSize: '14px',
-          fontWeight: '100',
-          lineHeight: '18px',
-          paddingTop: '15px',
+          borderRadius: '10px',
         }}
       >
-        {description}
-      </Typography>
-      <Box>
-        <img
-          src="images/Glossy.png"
-          style={{
-            position: 'absolute',
-            width: '152px',
-            height: '150px',
-            right: '10px',
-            top:'50px',
-            opacity: '0.2',
+        <Box>
+          <img
+            src="icons/electrical-plug2.svg"
+            style={{
+              width: '36px',
+              height: '36px',
+              padding: '9px',
+              borderRadius: '9px',
+              backgroundColor: 'white',
+            }}
+          />
+        </Box>
+        <Typography
+          sx={{
+            fontFamily: 'Montserrat',
+            fontSize: '24px',
+            fontWeight: '800',
+            lineHeight: '27px',
+            paddingTop: '20px',
           }}
-        />
+        >
+          {title}
+        </Typography>
+        <Typography
+          sx={{
+            overflow: 'hidden',
+            color: '#fff',
+            textOverflow: 'ellipsis',
+            fontFamily: 'Montserrat',
+            fontSize: '14px',
+            fontWeight: '100',
+            lineHeight: '18px',
+            paddingTop: '15px',
+          }}
+          className='z-50'
+        >
+          {description}
+        </Typography>
+        <Box>
+          <img
+            src="images/Glossy.png"
+            style={{
+              position: 'absolute',
+              width: '152px',
+              height: '150px',
+              right: '10px',
+              top:'50px',
+            }}
+            className='opacity-40 group-hover:scale-[170%] group-hover:rotate-[30deg] transition-transform duration-75 ease-in-out'
+          />
+        </Box>
       </Box>
-    </Box>
+    </div>
   )
 };
 

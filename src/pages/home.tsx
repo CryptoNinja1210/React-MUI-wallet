@@ -26,12 +26,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100vw',
-        overflowX: 'hidden'
-      }}>
+      <Box 
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          overflowX: 'hidden',
+        }}
+      >
         <Header addrInfo={addrInfo} setAddrInfo={setAddrInfo} netInfoState={netInfoState} setNetInfoState={setNetInfoState}/>
         <Index addrInfo={addrInfo}/>
         <Upcoming />

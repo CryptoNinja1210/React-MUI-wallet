@@ -19,9 +19,10 @@ const Square: React.FC<PictureProps> = ({
     }}>
       <Box 
         sx={{ 
-          width: {xs:'273px', md:'28.75rem'},
-          height: {xs:'251px', md:'28.75rem'},
-          backgroundImage: `url(${bac})`}}>
+          backgroundImage: `url(${bac})`
+        }}
+        className="w-[273px] md:w-[28.75rem] h-[273px] md:h-[28.75rem]"
+      >
         <img className="square" src={square}></img>
       </Box>
     </Box>

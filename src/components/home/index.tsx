@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Carousel } from '@trendyol-js/react-carousel';
 import LiveSlide from '../common/liveslide.tsx';
 import {Box, Typography} from '@mui/material';
@@ -83,22 +84,42 @@ interface AddrInfoType {
   addrInfo: string
 }
 
-function index({
+function Index({
   addrInfo
 }: AddrInfoType){  
+  const leftArrowRef = useRef<HTMLButtonElement>(null);
+  const rightArrowRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const myTimeInterval = setInterval(() => {
+      rightArrowRef.current!.click();
+    }, 1500);
+    return () => {
+      if (myTimeInterval) {
+        clearInterval(myTimeInterval);
+      }
+    }
+  },[]);
+  const slideNum = window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 64) / 303;
+
   return(
     <Box sx={{
       height: 'calc(100vh - 102px)',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
     }}>
-      <Box sx={{
+      <Box 
+        sx={{
           paddingTop: '100px',
-          width: '100vw', 
+          marginX: 'auto',
+          maxWidth: '1536px', 
+          width: '100%',
           height: '100vh', 
           flexShrink: '0',
           mt: '-102px',
-          position:'absolute',
         }}
-        >
+      >
         <Box sx={{
           zIndex:'-1',
           position: 'absolute',
@@ -114,20 +135,31 @@ function index({
           }}
         />
         <AfterConnect addrInfo={addrInfo}/>
-        <Box sx={{
-          pt:'5rem',
-          pl:{xs:'2rem', md:'5rem'},
-          // pl:'5rem',
-          overflowX: 'hidden',
-          }}>
+        <Box 
+          className="pt-40 pl-8"
+        >
           <span className='prediction'>Live Predictions</span>
-          <Carousel className='carousel' show={5.8} slide={2} swiping={true} transition={0.5} swipeOn={1} >
+          <Carousel 
+            className='carousel' 
+            show={slideNum} 
+            slide={1} 
+            swiping={true} 
+            transition={0.5} 
+            swipeOn={1} 
+            leftArrow={(
+              <button ref={leftArrowRef} className='hidden'>left</button>
+            )}
+            rightArrow={(
+              <button ref={rightArrowRef} className='hidden'>right</button>
+            )}
+            // class='transition-transform duration-1000 ease-in-out'
+          >
             {liveslides.map((item) => (
               <LiveSlide {...item} key={item.title}
               />
             ))}
           </Carousel>
-        </Box>        
+        </Box>
         <Box sx={{ mt:'40px',  transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
           <Typography
             sx={{
@@ -160,4 +192,4 @@ function index({
     </Box>
   )
 }
-export default index;
+export default Index;
