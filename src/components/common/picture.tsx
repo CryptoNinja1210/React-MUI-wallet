@@ -3,7 +3,7 @@ import '../../App.css'
 
 interface PictureProps {
   square: string;
-  bac: string;
+  bac?: string;
   className?: string
 }
 
