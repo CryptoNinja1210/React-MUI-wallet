@@ -258,7 +258,7 @@ function Content(){
             </Box>
           </Box>
           <Box>
-            <Picture square={picture[3].square} bac={picture[3].bac}/>
+            <Picture square={picture[3].square} bac={picture[3].bac} className='backdrop-blur-lg'/>
           </Box>            
         </Box>
         <Box sx={{

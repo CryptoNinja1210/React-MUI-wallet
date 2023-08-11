@@ -47,7 +47,6 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
       <ButtonGroup variant="text" ref={anchorRef}>
         <Button
           sx={{
-            mt: 2,
             display: "block",
             color: "#8699B0",
             whiteSpace: "nowrap",

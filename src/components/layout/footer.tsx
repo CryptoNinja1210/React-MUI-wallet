@@ -13,7 +13,7 @@ function Footer(){
         alignItems:'flex-start'
       }}>
         <Box
-          className='flex flex-row w-full max-w-[1536px] justify-around'
+          className='flex flex-row w-full max-w-[1536px] justify-around mx-auto'
         >
           <Box sx={{ display:'flex', flexDirection:'column'}}>
             <Box
