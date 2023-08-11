@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Carousel } from '@trendyol-js/react-carousel';
 import UpcomingSlide from '../common/upcomingslide.tsx';
 import {Box, Typography} from '@mui/material';
@@ -62,11 +63,27 @@ const upcomingslides = [
   }
 ]
 
-function UpComing(){  
-  const x = window.innerWidth;
+function UpComing(){
+  const rightArrowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const myTimeInterval = setInterval(() => {
+      rightArrowRef.current!.click();
+    }, 3000);
+    return () => {
+      if (myTimeInterval) {
+        clearInterval(myTimeInterval);
+      }
+    }
+  },[]);
+  const slideNum = window.innerWidth > 1536 ? 4.6 : (window.innerWidth - 64) / 323;
   return(
     <div>
-      <Box sx={{ background: '#0A0A0B', mt:'-10px'}}>
+      <Box 
+        sx={{ 
+          background: '#0A0A0B',
+        }}
+      >
         <Box 
           sx={{
             backgroundImage: 'url("backgrounds/vector2.svg")',
@@ -96,119 +113,115 @@ function UpComing(){
           }}
         >
         </Box>
-        <Box sx={{mt:"-480px", width: '100vw', overflowX: 'hidden'}}>
-          <span className='upcoming'>Upcoming Predictions</span>
-          {
-            x > 768 ? (
+        <Box
+          className="pt-20 pl-8 max-w-[1536px] w-full mt-[-470px] mx-auto"
+        >
+          <span className='upcoming leading-normal'>Upcoming Predictions</span>
+          <Carousel 
+            className='carousel' 
+            show={slideNum} 
+            slide={1} 
+            swiping={true} 
+            transition={0.5}
+            swipeOn={1} 
+            useArrowKeys={true} 
+            rightArrow={(
               <Box
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'start',
-                  marginTop: '40px',
-                  paddingLeft: { xs:'1rem', md:'100px'},
-                  position: 'relative'
+                  backgroundImage:'url("icons/arrow-right.svg")',
+                  width:'70px',
+                  height:'70px',
+                  filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                  backgroundSize:'cover',
+                  cursor:'pointer',
+                  position: 'absolute',
                 }}
+                className='-translate-x-[100px] translate-y-[150px]'
               >
-                <Carousel 
-                  className='carousel' 
-                  show={5.2} 
-                  slide={2} 
-                  swiping={true} 
-                  transition={0.5} 
-                  swipeOn={1} 
-                  useArrowKeys={true} 
-                  rightArrow={(
-                    <Box
-                      sx={{
-                        backgroundImage:'url("icons/arrow-right.svg")',
-                        width:'70px',
-                        height:'70px',
-                        filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
-                        transform: 'translate(-70px, 150px)',
-                        backgroundSize:'cover',
-                        cursor:'pointer'
-                      }}
-                    >
-                    </Box>
-                  )}
-                  leftArrow={(
-                    <Box
-                      sx={{
-                        backgroundImage:'url("icons/arrow-right.svg")',
-                        width:'70px',
-                        height:'70px',
-                        rotate: '180deg',
-                        filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
-                        backgroundSize:'cover',
-                        transform: 'translateY(-150px)',
-                        cursor:'pointer'
-                      }}
-                    >
-                    </Box>
-                  )}
-                >
-                  {upcomingslides.map((item) => (
-                    <UpcomingSlide {...item} key={item.title} />
-                  ))}
-                </Carousel>
               </Box>
-            ) : (
+            )}
+            leftArrow={(
               <Box
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'start',
-                  marginTop: '40px',
-                  paddingLeft:'2rem',
-                  position: 'relative'
+                  backgroundImage:'url("icons/arrow-right.svg")',
+                  width:'70px',
+                  height:'70px',
+                  rotate: '180deg',
+                  filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                  backgroundSize:'cover',
+                  cursor:'pointer',
+                  position: 'absolute',
+                  zIndex: 999999,
                 }}
+                className='-translate-y-[130px] translate-x-[35px]'
               >
-                <Carousel 
-                  className='carousel' 
-                  show={5.2} 
-                  slide={2} 
-                  swiping={true} 
-                  transition={0.5} 
-                  swipeOn={1}
-                >
-                  {upcomingslides.map((item) => (
-                    <UpcomingSlide {...item} key={item.title} />
-                  ))}
-                </Carousel>
-              </Box>              
-            )          
-          }
+              </Box>
+            )}
+          >
+            {upcomingslides.map((item) => (
+              <UpcomingSlide {...item} key={item.title} />
+            ))}
+          </Carousel>
         </Box>
-        <Box sx={{width:'100%', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000'}}>
-          <Box sx={{ display:'flex', scale:{xs:'0.8', md:'1'}, flexDirection:'row', justifyContent:{xs:'left', md:'center'}, gap:{xs:'3rem', md:'1.5rem'}, alignItems:'center'}}>
-            <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', fontSize:'22px', gap:'8px' }}>
-              <img src='icons/Ellipse 38.png' style={{width:'27px', height:'27px'}}></img>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>RBT</Typography>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$2.38</Typography>
-            </Box>
-            <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
-              <img src='icons/Ellipse 39.png' style={{width:'27px', height:'27px'}}></img>
-              <Typography sx={{  fontFamily:'Inter', fontSize:'22.5px'}}>RBS</Typography>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$0.03</Typography>
-            </Box>
-            <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
-              <img src='icons/Ellipse 40.png' style={{width:'27px', height:'27px'}}></img>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>BNB</Typography>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$241.73</Typography>
-            </Box>
-            <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
-              <img src='icons/Ellipse 41.png' style={{width:'27px', height:'27px'}}></img>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>BTC</Typography>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$26414</Typography>
-            </Box>
-            <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
-              <img src='icons/Ellipse 42.png' style={{width:'27px', height:'27px'}}></img>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>ETH</Typography>
-              <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$1719.27</Typography>
-            </Box>
-          </Box>
-        </Box>
+        <div className='w-full flex justify-center'>
+          <Carousel
+            className='carousel' 
+            show={1} 
+            slide={1} 
+            swiping={false} 
+            transition={0.5}
+            swipeOn={1} 
+            useArrowKeys={true} 
+            rightArrow={(
+              <Box
+                ref={rightArrowRef}
+                sx={{
+                  backgroundImage:'url("icons/arrow-right.svg")',
+                  width:'70px',
+                  height:'70px',
+                  filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                  backgroundSize:'cover',
+                  cursor:'pointer',
+                  position: 'absolute',
+                }}
+                className='-translate-x-[100px] translate-y-[150px] hidden'
+              >
+              </Box>
+            )}
+          >
+            {Array(5).fill('hello').map(() => (
+              <Box sx={{width:'100vw', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000'}}>
+                <Box sx={{ display:'flex', scale:{xs:'0.8', md:'1'}, flexDirection:'row', justifyContent:{xs:'left', md:'center'}, gap:{xs:'3rem', md:'1.5rem'}, alignItems:'center'}}>
+                  <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', fontSize:'22px', gap:'8px' }}>
+                    <img src='icons/Ellipse 38.png' style={{width:'27px', height:'27px'}}></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>RBT</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$2.38</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
+                    <img src='icons/Ellipse 39.png' style={{width:'27px', height:'27px'}}></img>
+                    <Typography sx={{  fontFamily:'Inter', fontSize:'22.5px'}}>RBS</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$0.03</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
+                    <img src='icons/Ellipse 40.png' style={{width:'27px', height:'27px'}}></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>BNB</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$241.73</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
+                    <img src='icons/Ellipse 41.png' style={{width:'27px', height:'27px'}}></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>BTC</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$26414</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', fontSize:'22px', gap:'8px'}}>
+                    <img src='icons/Ellipse 42.png' style={{width:'27px', height:'27px'}}></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>ETH</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:'22.5px'}}>$1719.27</Typography>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Carousel>
+        </div>
       </Box>   
     </div>
   )

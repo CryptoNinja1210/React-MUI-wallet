@@ -7,13 +7,13 @@ import {
   Typography,
   Menu,
   Container,
-  Button,
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ethers, providers } from "ethers";
 import Web3Modal from "web3modal";
 import ChainDropdown from "../wallet/chaindropdown.tsx";
+import DropDown from './dropdown.tsx';
 import ConnectWallet from "../wallet/connectwallet.tsx";
 import DisconnectWallet from "../wallet/disconnectwallet.tsx";
 import "../../App.css";
@@ -36,7 +36,24 @@ interface SetInfoType {
   setAddrInfo: (addr: string) => void;
 }
 
-const pages = ["Prediction", "Trending Project", "Features", "How It Works"];
+const navDropProps = [
+  {
+    label: "Prediction",
+    menulist: ['Recent Prediction', 'Upcoming Prediction', 'Create Prediction']
+  },
+  {
+    label: 'Trending Project',
+    menulist: ['See all trending projects', 'Create Project'],
+  },
+  {
+    label: 'Features',
+    menulist: ['See all features', 'Create Feature'],
+  },
+  {
+    label: 'How It Works',
+    menulist: ['See Video', 'Create demo video'],
+  }
+]
 // let selectedAccount: string;
 // let web3Modal: Web3Modal;
 function Header({
@@ -96,7 +113,7 @@ function Header({
   }
   React.useEffect(() => {
     connetWallet();
-  }, []);
+  });
 
   const web3Modal = new Web3Modal({
     network: "mainnet",
@@ -131,76 +148,14 @@ function Header({
   return (
     <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
       <Container maxWidth="xl" sx={{ bgcolor: "" }}>
-        <Toolbar disableGutters sx={{flexDirection:{ xs: 'row-reverse', md:'row'}}}>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            <img src="/images/image 1356.png" alt="logo" className="logo" />
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  display: "block",
-                  color: "#8699B0",
-                  fontFamily: "arial",
-                  fontSize: "14px",
-                  fontWeight: "600",
-                  lineHeight: "24px" /* 171.429% */,
-                  textTransform: "none",
-                  pt: "20px",
-                }}
-              >
-                {page}
-              </Button>
+        <Toolbar disableGutters sx={{flexDirection:{ xs:'row'}}}>
+          <img src="/images/image 1356.png" alt="logo" className="logo" />
+          <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
+            {navDropProps.map((item) => (
+              <DropDown label={item.label} key={item.label} menulist={item.menulist}/>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0, display: "flex" }}>
+          <Box sx={{ flexGrow: 1, display: "flex" }}>
             <img
               onClick={handleSetting}
               style={{ cursor: "pointer" }}
@@ -239,6 +194,40 @@ function Header({
             ) : (
               <ConnectWallet handleConnect={connetWallet} />
             )}
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              className="md:hidden"
+            >
+              {navDropProps.map((item) => (
+                <MenuItem key={item.label} onClick={handleCloseNavMenu}>
+                  <Typography>{item.label}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
         </Toolbar>
       </Container>

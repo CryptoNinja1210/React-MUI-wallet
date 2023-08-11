@@ -59,131 +59,132 @@ const picture =[{
 }]
 
 function Content(){  
-  const x = window.innerWidth;
   return(
-    <Box sx={{ background: '#0A0A0B', width: '100%', overflowX: 'hidden', position: 'relative'}}>
-      {
-        (x > 900)  ? (
-          <>
-            <Box 
-              sx={{
-                backgroundImage: 'url("backgrounds/vector1.svg")',
-                width: '536.475px',
-                height: '1066.688px',
-                transform: 'rotate(39.402deg)',
-                position:'absolute',
-                flexShrink: '0',
-                marginLeft: '85%',
-                marginTop: '-500px',
-                fill: 'rgba(143, 0, 255, 0.30)',
-                filter: 'blur(194.99147033691406px)',
-                background:'#8F00FF4D',
-              }}
-              >
-            </Box>
-            <Box 
-              sx={{
-                backgroundImage: 'url("backgrounds/vector3.svg")',
-                width: '820.528px',
-                height: '1195.159px',
-                transform: 'rotate(-162.478deg)',
-                flexShrink: '0',
-                marginLeft: '-30%',
-                position:'absolute',
-                marginTop: '500px',
-                fill: 'rgba(130, 24, 234, 0.50)',
-                filter: 'blur(297.25469970703125px)',
-                background:'#8218EA80',
-              }}
-              >          
-            </Box>
-            <Box 
-              sx={{
-                backgroundImage: 'url("backgrounds/vector3.svg")',
-                width: '820.528px',
-                height: '1195.159px',
-                flexShrink: '0',
-                marginLeft: '90%',
-                position:'absolute',
-                marginTop: '1200px',
-                fill: 'rgba(130, 24, 234, 0.50)',
-                filter: 'blur(297.25469970703125px)',
-                background:'#8218EA80',
-              }}
-              >
-            </Box>
-            <Box 
-                sx={{
-                  backgroundImage: 'url("backgrounds/vector5.svg")',
-                  position:'absolute',
-                  width: '465.127px',
-                  height: '1195.043px',
-                  transform: 'rotate(39.402deg)',
-                  flexShrink: '0',
-                  marginLeft: '-15%',
-                  marginTop: '2100px',
-                  fill: 'rgba(138, 26, 238, 0.50)',
-                  filter: 'blur(297px)',
-                  background:'#8A1AEE80',
-                }}
-              >
-            </Box>
-            <Box 
-                sx={{
-                  backgroundImage: 'url("backgrounds/vector6.svg")',
-                  position:'absolute',
-                  width: '1080px',
-                  height: '1263px',
-                  transform: 'rotate(-6deg)',
-                  flexShrink: '0',
-                  marginLeft: '80%',
-                  marginTop: '2700px',
-                  fill: 'rgba(138, 26, 238, 0.50)',
-                  filter: 'blur(297px)',
-                  background:'#8218EA80',
-                }}
-              >
-            </Box>
-            <Box 
-                sx={{
-                  backgroundImage: 'url("backgrounds/vector3.svg")',
-                  position:'absolute',
-                  width: '612px',
-                  height: '1263px',
-                  transform: 'rotate(-6deg)',
-                  flexShrink: '0',
-                  marginLeft: '-30%',
-                  marginTop: '3100px',
-                  fill: 'rgba(138, 26, 238, 0.50)',
-                  filter: 'blur(297px)',
-                  background:'#8218EA80',
-                }}
-              >
-            </Box>
-          </>
-        ) : (
-          <></>
-        )
-      }
-      <Box sx={{ mx: { xs:'2rem', md:'100px'}}}>
+    <Box 
+      sx={{
+        background: '#0A0A0B',
+        // width: '100%',
+        overflowX: 'none',
+        position: 'relative',
+      }}
+    >
+      <Box sx={{
+        display: {xs:'none', md:'flex'}
+      }}>
+        <Box 
+          sx={{
+            backgroundImage: 'url("backgrounds/vector1.svg")',
+            width: '536.475px',
+            height: '1066.688px',
+            transform: 'rotate(39.402deg)',
+            position:'absolute',
+            flexShrink: '0',
+            marginLeft: '85%',
+            marginTop: '-500px',
+            fill: 'rgba(143, 0, 255, 0.30)',
+            filter: 'blur(194.99147033691406px)',
+            background:'#8F00FF4D',
+          }}
+          >
+        </Box>
+        <Box 
+          sx={{
+            backgroundImage: 'url("backgrounds/vector3.svg")',
+            width: '820.528px',
+            height: '1195.159px',
+            transform: 'rotate(-162.478deg)',
+            flexShrink: '0',
+            marginLeft: '-30%',
+            position:'absolute',
+            marginTop: '500px',
+            fill: 'rgba(130, 24, 234, 0.50)',
+            filter: 'blur(297.25469970703125px)',
+            background:'#8218EA80',
+          }}
+          >          
+        </Box>
+        <Box 
+          sx={{
+            backgroundImage: 'url("backgrounds/vector3.svg")',
+            width: '820.528px',
+            height: '1195.159px',
+            flexShrink: '0',
+            marginLeft: '90%',
+            position:'absolute',
+            marginTop: '1200px',
+            fill: 'rgba(130, 24, 234, 0.50)',
+            filter: 'blur(297.25469970703125px)',
+            background:'#8218EA80',
+          }}
+          >
+        </Box>
+        <Box 
+            sx={{
+              backgroundImage: 'url("backgrounds/vector5.svg")',
+              position:'absolute',
+              width: '465.127px',
+              height: '1195.043px',
+              transform: 'rotate(39.402deg)',
+              flexShrink: '0',
+              marginLeft: '-15%',
+              marginTop: '2100px',
+              fill: 'rgba(138, 26, 238, 0.50)',
+              filter: 'blur(297px)',
+              background:'#8A1AEE80',
+            }}
+          >
+        </Box>
+        <Box 
+            sx={{
+              backgroundImage: 'url("backgrounds/vector6.svg")',
+              position:'absolute',
+              width: '1080px',
+              height: '1263px',
+              transform: 'rotate(-6deg)',
+              flexShrink: '0',
+              marginLeft: '80%',
+              marginTop: '2700px',
+              fill: 'rgba(138, 26, 238, 0.50)',
+              filter: 'blur(297px)',
+              background:'#8218EA80',
+            }}
+          >
+        </Box>
+        <Box 
+            sx={{
+              backgroundImage: 'url("backgrounds/vector3.svg")',
+              position:'absolute',
+              width: '612px',
+              height: '1263px',
+              transform: 'rotate(-6deg)',
+              flexShrink: '0',
+              marginLeft: '-30%',
+              marginTop: '3100px',
+              fill: 'rgba(138, 26, 238, 0.50)',
+              filter: 'blur(297px)',
+              background:'#8218EA80',
+            }}
+          >
+        </Box>
+      </Box>
+      <Box
+        className="w-full max-w-[1536px] mx-auto px-8"
+      >
         <Box sx={{pt:'100px'}}>
           <div className='feature'>Our Key Features</div><br/>
           <div className='subtitle'>Unleashing Limitless Potential in the Dynamic DeFi Universe</div>
         </Box>
-        <Box 
+        <Box
           sx={{
             display:'flex',
             flexDirection:{ md:'row', xs:'column-reverse'},
-            alignItems:'center',
-            justifyContent:'space-between',
-            marginTop:'50px'
-          }}>
+            justifyContent:{md:'space-around', xs:'center'},
+          }}
+          className="items-center mt-12 w-full"
+        >
           <Box
-            sx={{
-              display:'flex',
-              flexDirection:'column',
-              justifyContent:'space-around'
-            }}>
+            className='flex flex-col justify-around w-full md:max-w-xl'
+          >
             <Description title={description[0].title} subTitle1={description[0].subTitle1} subTitle2={description[0].subTitle2}/>
             <GetButton name={getbutton[0].name}/>
           </Box>
@@ -194,20 +195,17 @@ function Content(){
         <Box 
           sx={{
             display:'flex',
-            justifyContent:'space-between',
             flexDirection:{ md:'row', xs:'column'},
-            alignItems:'center',
-            marginTop:'50px'
-          }}>
+            justifyContent:{md:'space-around', xs:'center'},
+          }}
+          className="items-center mt-12 w-full"
+        >
           <Box>
             <Picture square={picture[1].square} bac={picture[1].bac}/>
-          </Box>            
+          </Box> 
           <Box
-            sx={{
-              display:'flex',
-              flexDirection:'column',
-              justifyContent:'space-around'
-            }}>
+            className='flex flex-col justify-around w-full md:max-w-xl'
+          >
             <Description title={description[1].title} subTitle1={description[1].subTitle1} subTitle2={description[1].subTitle2}/>
             <GetButton name={getbutton[1].name}/>
           </Box>
@@ -215,17 +213,14 @@ function Content(){
         <Box 
           sx={{
             display:'flex',
-            justifyContent:'space-between',
-            flexDirection:{ md:'row', xs:'column-reverse'},
-            alignItems:'center',
-            marginTop:'50px'
-          }}>
+            flexDirection:{ md:'row', xs:'column'},
+            justifyContent:{md:'space-around', xs:'center'},
+          }}
+          className="items-center mt-12 w-full"
+        >
           <Box
-            sx={{
-              display:'flex',
-              flexDirection:'column',
-              justifyContent:'space-around'
-            }}>
+            className='flex flex-col justify-around w-full md:max-w-xl'
+          >
             <Description title={description[2].title} subTitle1={description[2].subTitle1} subTitle2={description[2].subTitle2}/>
             <GetButton name={getbutton[2].name}/>
           </Box>
@@ -236,22 +231,19 @@ function Content(){
         <Box sx={{pt:'100px'}}>
           <div className='feature'>How it works</div><br/>
           <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
-        </Box>    
-        <img className='video' src='images/movie.png'></img>
+        </Box>
+        <img className='mt-24 flex w-auto mx-auto' src='images/movie.png'></img>
         <Box 
           sx={{
             display:'flex',
-            justifyContent:'space-between',
-            flexDirection:{ md:'row', xs:'column-reverse'},
-            alignItems:'center',
-            marginTop:'50px'
-          }}>
+            flexDirection:{ md:'row', xs:'column'},
+            justifyContent:{md:'space-around', xs:'center'},
+          }}
+          className="items-center mt-12 w-full"
+        >
           <Box
-            sx={{
-              display:'flex',
-              flexDirection:'column',
-              justifyContent:'space-around',
-            }}>
+            className='flex flex-col justify-around w-full md:max-w-xl'
+          >
             <Description title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
             <Box 
               sx={{
@@ -279,8 +271,10 @@ function Content(){
             sx={{
               display:'flex',
               flexDirection:'column',
-              justifyContent:'space-between'            
-            }}>
+              justifyContent:'space-between',       
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',
@@ -305,12 +299,15 @@ function Content(){
               }}
             >205,682,922</Typography>
           </Box>
+          <Box sx={{borderRight:'3px solid #ADA8C3'}}></Box>
           <Box 
             sx={{
               display:'flex',
               flexDirection:'column',
               justifyContent:'space-between'            
-            }}>
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',
@@ -335,12 +332,15 @@ function Content(){
               }}
             >387,756,414</Typography>
           </Box>
+          <Box sx={{borderRight:'3px solid #ADA8C3'}}></Box>
           <Box 
             sx={{
               display:'flex',
               flexDirection:'column',
               justifyContent:'space-between'            
-            }}>
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',
@@ -378,7 +378,9 @@ function Content(){
               display:'flex',
               flexDirection:'column',
               justifyContent:'space-between'            
-            }}>
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',
@@ -403,12 +405,15 @@ function Content(){
               }}
             >$290 million</Typography>
           </Box>
+          <Box sx={{borderRight:'3px solid #ADA8C3'}}></Box>
           <Box 
             sx={{
               display:'flex',
               flexDirection:'column',
               justifyContent:'space-between'            
-            }}>
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',
@@ -433,12 +438,15 @@ function Content(){
               }}
             >868,132,226</Typography>
           </Box>
+          <Box sx={{borderRight:'3px solid #ADA8C3'}}></Box>
           <Box 
             sx={{
               display:'flex',
               flexDirection:'column',
               justifyContent:'space-between'            
-            }}>
+            }}
+            className="w-1/3 text-center"
+          >
             <Typography
              sx={{
               color: '#ADA8C3',

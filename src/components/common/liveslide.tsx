@@ -18,14 +18,28 @@ const LiveSlide: React.FC<LiveSlideProps> = ({
   count
 }) =>{
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'row', alignItems:'center', gap: '13px', width: '282px', height: '121px', background: '#18191C', borderRadius: '12px', py:'24px', px:'16px' }}>
+    <Box 
+      sx={{ 
+        display: 'flex', 
+        flexDirection: 'row', 
+        alignItems:'center', 
+        gap: '13px', 
+        width: '282px', 
+        height: '121px', 
+        background: '#18191C', 
+        borderRadius: '12px', 
+        py:'24px', 
+        px:'16px' 
+      }}
+    >
       <img className='brand' src={brand} alt="diamond" />
       <Box>      
         <Typography 
           sx={{
             fontSize: '15px',
             fontWeight: '400',
-            lineHeight: '20px',
+                fontFamily: "montserrat",
+                lineHeight: '20px',
             textAlign: 'left',
             letterSpacing:'0.07rem',
         }}>
@@ -37,6 +51,7 @@ const LiveSlide: React.FC<LiveSlideProps> = ({
               sx={{
                 fontSize: '11px',
                 fontWeight: '400',
+                fontFamily: "montserrat",
                 lineHeight: '15px',
                 letterSpacing: '-0.01em',
                 color: '#8699B0',
@@ -46,6 +61,7 @@ const LiveSlide: React.FC<LiveSlideProps> = ({
             <Typography
               sx={{
                 fontSize: '13px',
+                fontFamily: "montserrat",
                 lineHeight: '17px',
                 letterSpacing:'0.07rem',
             }}>
