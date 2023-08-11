@@ -147,87 +147,95 @@ function Header({
 
   return (
     <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
-      <Container maxWidth="xl" sx={{ bgcolor: "" }}>
-        <Toolbar disableGutters sx={{flexDirection:{ xs:'row'}}}>
-          <img src="/images/image 1356.png" alt="logo" className="logo" />
-          <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
-            {navDropProps.map((item) => (
-              <DropDown label={item.label} key={item.label} menulist={item.menulist}/>
-            ))}
+      <Container maxWidth="xl" className="items-center">
+        <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
+          <Box className='flex flex-row place-items-center'>
+            <img src="/images/image 1356.png" alt="logo" className="logo" />
+            <Box sx={{ display: { xs: "none", lg: "flex" } }}>
+              {navDropProps.map((item) => (
+                <DropDown label={item.label} key={item.label} menulist={item.menulist}/>
+              ))}
+            </Box>
           </Box>
-          <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <img
-              onClick={handleSetting}
-              style={{ cursor: "pointer" }}
-              src="/icons/setting.svg"
-            />
-            <img
-              onClick={handleMessage}
-              style={{ marginLeft: "0.8rem", cursor: "pointer" }}
-              src="/icons/message-notif.svg"
-            />
-            <ChainDropdown onNetworkChange={onNetworkChange} />
-            {addrInfo ? (
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                }}
-              >
+          <Box
+            className="flex flex-row items-center"
+          >
+            <Box
+              className='flex flex-row my-auto'
+            >
+              <img
+                onClick={handleSetting}
+                style={{ cursor: "pointer" }}
+                src="/icons/setting.svg"
+              />
+              <img
+                onClick={handleMessage}
+                style={{ marginLeft: "0.8rem", cursor: "pointer" }}
+                src="/icons/message-notif.svg"
+              />
+              <ChainDropdown onNetworkChange={onNetworkChange} />
+              {addrInfo ? (
                 <Box
                   sx={{
-                    pl: "10px",
-                    flexDirection: "column",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-start",
                     alignItems: "center",
-                    display:{xs:'none', md:'flex'}
                   }}
                 >
-                  <Typography>{netInfoState.name.slice(0, 3)}</Typography>
-                  <Typography>
-                    {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
-                  </Typography>
+                  <Box
+                    sx={{
+                      pl: "10px",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      display:{xs:'none', md:'flex'}
+                    }}
+                  >
+                    <Typography>{netInfoState.name.slice(0, 3)}</Typography>
+                    <Typography>
+                      {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
+                    </Typography>
+                  </Box>
+                  <DisconnectWallet handleDisconnect={disconnectWallet} />
                 </Box>
-                <DisconnectWallet handleDisconnect={disconnectWallet} />
-              </Box>
-            ) : (
-              <ConnectWallet handleConnect={connetWallet} />
-            )}
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              className="md:hidden"
-            >
-              {navDropProps.map((item) => (
-                <MenuItem key={item.label} onClick={handleCloseNavMenu}>
-                  <Typography>{item.label}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              ) : (
+                <ConnectWallet handleConnect={connetWallet} />
+              )}
+            </Box>
+            <Box sx={{ display: { xs: "flex", lg: "none" }, justifyContent: { xs:'end', md:'none'}}}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                className="md:hidden"
+              >
+                {navDropProps.map((item) => (
+                  <MenuItem key={item.label} onClick={handleCloseNavMenu}>
+                    <Typography>{item.label}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
           </Box>
         </Toolbar>
       </Container>
