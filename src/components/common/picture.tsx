@@ -3,12 +3,14 @@ import '../../App.css'
 
 interface PictureProps {
   square: string;
-  bac: string;
+  bac?: string;
+  className?: string
 }
 
 const Square: React.FC<PictureProps> = ({
   square,
-  bac
+  bac,
+  className,
 }) =>{
   return (
     <Box sx={{
@@ -21,7 +23,7 @@ const Square: React.FC<PictureProps> = ({
         sx={{ 
           backgroundImage: `url(${bac})`
         }}
-        className="w-[273px] md:w-[28.75rem] h-[273px] md:h-[28.75rem]"
+        className={`w-[273px] md:w-[28.75rem] h-[273px] md:h-[28.75rem] ${className}`}
       >
         <img className="square" src={square}></img>
       </Box>

@@ -170,8 +170,10 @@ function Content(){
       <Box
         className="w-full max-w-[1536px] mx-auto px-8"
       >
-        <Box sx={{pt:'100px'}}>
-          <div className='feature'>Our Key Features</div><br/>
+        <Box 
+          className='mt-[100px] text-center space-y-5'
+        >
+          <div className='inline feature '>Our Key Features</div><br/>
           <div className='subtitle'>Unleashing Limitless Potential in the Dynamic DeFi Universe</div>
         </Box>
         <Box
@@ -228,8 +230,10 @@ function Content(){
             <Picture square={picture[2].square} bac={picture[2].bac}/>
           </Box>            
         </Box>
-        <Box sx={{pt:'100px'}}>
-          <div className='feature'>How it works</div><br/>
+        <Box 
+          className='mt-[100px] text-center space-y-5'
+        >
+          <div className='inline feature '>How it works</div><br/>
           <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
         </Box>
         <img className='mt-24 flex w-auto mx-auto' src='images/movie.png'></img>
@@ -258,7 +262,7 @@ function Content(){
             </Box>
           </Box>
           <Box>
-            <Picture square={picture[3].square} bac={picture[3].bac}/>
+            <Picture square={picture[3].square} bac={picture[3].bac} className='backdrop-blur-lg'/>
           </Box>            
         </Box>
         <Box sx={{
