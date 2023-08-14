@@ -3,11 +3,8 @@ import {
   AppBar,
   Box,
   Toolbar,
-  IconButton,
   Typography,
-  Menu,
   Container,
-  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ethers, providers } from "ethers";
@@ -16,7 +13,14 @@ import ChainDropdown from "../wallet/chaindropdown.tsx";
 import DropDown from './dropdown.tsx';
 import ConnectWallet from "../wallet/connectwallet.tsx";
 import DisconnectWallet from "../wallet/disconnectwallet.tsx";
+import PopOverTSX from './popover.tsx';
 import "../../App.css";
+
+//ant design components
+import { HappyProvider } from '@ant-design/happy-work-theme';
+import { Button as Button_Antd, ConfigProvider } from 'antd';
+import ChattingBox from "./chatting/chattingBox.tsx";
+
 interface NetworkInfo {
   icon: string;
   name: string;
@@ -46,14 +50,19 @@ const navDropProps = [
     menulist: ['See all trending projects', 'Create Project'],
   },
   {
+    label: 'How It Works',
+    menulist: ['See Video', 'Create demo video'],
+  },
+  {
     label: 'Features',
     menulist: ['See all features', 'Create Feature'],
   },
-  {
-    label: 'How It Works',
-    menulist: ['See Video', 'Create demo video'],
-  }
 ]
+
+interface NavDropPropsTypes {
+  label: string;
+  menulist: string[];
+}
 // let selectedAccount: string;
 // let web3Modal: Web3Modal;
 function Header({
@@ -63,27 +72,27 @@ function Header({
   setNetInfoState,
 }: SetInfoType) {
   //
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
   const [provider, setProvider] = React.useState<providers.Web3Provider | null>(
     null
   );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  const [showMessage, setShowMessage] = React.useState(false);
+  const [showPopOver, setShowPopOver] = React.useState(false);
+
   const onNetworkChange = (netInfo: NetworkInfo) => {
-    console.log(netInfo.chainId);
+    // console.log(netInfo.chainId);
     switchNetwork(netInfo);
     setNetInfoState(netInfo);
   };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+
+  const handleClose = () => {
+    setShowPopOver(false);
   };
 
   const handleSetting = () => {};
 
-  const handleMessage = () => {};
+  const handleMessage = () => {
+    setShowMessage(prevState => !prevState);
+  };
 
   async function switchNetwork(netinfo: NetworkInfo) {
     if (window.ethereum.networkVersion !== netinfo.chainId) {
@@ -111,17 +120,16 @@ function Header({
       }
     }
   }
-  React.useEffect(() => {
-    connetWallet();
-  });
 
-  const web3Modal = new Web3Modal({
-    network: "mainnet",
-    cacheProvider: false,
-    // providerOptions,
-    // disableInjectedProvider: false,
-  });
-  async function connetWallet() {
+  
+  const connetWallet = React.useCallback(async () => {
+    const web3Modal = new Web3Modal({
+      network: "mainnet",
+      cacheProvider: false,
+      // providerOptions,
+      // disableInjectedProvider: false,
+    });
+
     await window.ethereum.request({
       method: "wallet_requestPermissions",
       params: [
@@ -132,13 +140,19 @@ function Header({
     });
     const connection = await web3Modal.connect();
     // console.log(connection);
-
+  
     const pv = new ethers.providers.Web3Provider(connection);
     setProvider(pv);
     const signer = pv.getSigner();
     const addr = await signer.getAddress();
     setAddrInfo(addr);
-  }
+  }, [setProvider, setAddrInfo]);
+  
+  React.useEffect(() => {
+    connetWallet();
+  }, [connetWallet]);
+  
+  
   async function disconnectWallet() {
     console.log("Killing the wallet connection", provider);
     setAddrInfo("");
@@ -147,6 +161,7 @@ function Header({
 
   return (
     <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
+      <ChattingBox showMessage={showMessage} setShowMessage={setShowMessage} />
       <Container maxWidth="xl" className="items-center">
         <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
           <Box className='flex flex-row place-items-center'>
@@ -202,44 +217,70 @@ function Header({
                 <ConnectWallet handleConnect={connetWallet} />
               )}
             </Box>
-            <Box sx={{ display: { xs: "flex", lg: "none" }, justifyContent: { xs:'end', md:'none'}}}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
+            <Box sx={{ display: { xs: "flex", lg: "none" }, justifyContent: { xs:'end', lg:'none'}}}>
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: '#ffffff',
+                  },
                 }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                className="md:hidden"
               >
-                {navDropProps.map((item) => (
-                  <MenuItem key={item.label} onClick={handleCloseNavMenu}>
-                    <Typography>{item.label}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
+                <HappyProvider>
+                  <Button_Antd
+                    shape="circle"
+                    size="middle"
+                    className="text-black font-bold flex justify-center items-center border-none"
+                    onClick={()=>setShowPopOver(true)}
+                  >
+                    <MenuIcon className="text-white"/>
+                  </Button_Antd>
+                </HappyProvider>
+              </ConfigProvider>
             </Box>
           </Box>
         </Toolbar>
       </Container>
+      <div id="popOver" className={`absolute top-24 w-[500px] ${showPopOver ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-all duration-500 ease-in-out`}>
+        <NavMenuContent handleClose={handleClose} navDropProps={navDropProps}/>
+      </div>
     </AppBar>
   );
 }
+interface NavMenuContentProps {
+  handleClose: () => void;
+  navDropProps: NavDropPropsTypes[];
+}
+
+const NavMenuContent = ({ handleClose, navDropProps}: NavMenuContentProps) => {
+  return (
+    <div className={`w-[100%] max-w-lg mx-auto bg-black flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#00b96b',
+          },
+        }}
+      >
+        <HappyProvider>
+          <Button_Antd
+            shape="circle"
+            size="middle"
+            className="absolute top-7 right-14 text-black font-bold flex justify-center items-center border-none"
+            onClick={handleClose}
+          >
+            <img src="/icons/cross.svg" />
+          </Button_Antd>
+        </HappyProvider>
+      </ConfigProvider>
+      <PopOverTSX handleClose={handleClose} navDropProps={navDropProps}/>
+      <Box className='flex flex-row justify-around items-center gap-x-8 md:gap-x-3 mb-12 mx-20'>
+        <Box className='w-6 h-6 bg-[url("icons/facebook.png")] rounded-lg border border-gray-600 '/>
+        <Box className='w-6 h-6 bg-[url("icons/twitter.png")] rounded-lg border border-gray-600 '/>
+        <Box className='w-6 h-6 bg-[url("icons/linkedin.png")] rounded-lg border border-gray-600 '/>
+        <Box className='w-6 h-6 bg-[url("icons/instagram.png")] rounded-lg border border-gray-600 '/>
+      </Box>
+    </div>
+  )
+}
+
 export default Header;

@@ -28,7 +28,7 @@ export const networkOptions: NetworkInfo[] = [
     rpcUrls: 'https://bsc-dataseed.binance.org/'
   },
   {
-    icon: '/icons/arbitrum.svg', name: 'Arbitrum One', chainId: "0xa4b1",
+    icon: '/icons/Aptos_WHT.svg', name: 'Arbitrum One', chainId: "0xa4b1",
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
     rpcUrls: 'https://arbitrum-mainnet.infura.io'
   },
@@ -107,7 +107,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             '&:hover': {
               backgroundColor: '#212125',
             },
-            width: '250px',
+            width: {md:'250px'},
           }}
           onClick={handleClick}
           onMouseLeave={handleMouseLeave}
