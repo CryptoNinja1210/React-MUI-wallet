@@ -17,7 +17,6 @@ const Description: React.FC<DescriptionProps> = ({
     <Box sx={{
       display:'flex',
       flexDirection:'column',
-      // width:'33rem',
     }}>
       <Typography
         sx={{

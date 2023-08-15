@@ -63,7 +63,6 @@ function Content(){
     <Box 
       sx={{
         background: '#0A0A0B',
-        // width: '100%',
         overflowX: 'none',
         position: 'relative',
       }}
@@ -499,7 +498,6 @@ function Content(){
               fontSize: {xs:'18px', md:'48px'},
               fontStyle: 'normal',
               fontWeight: '700',
-              // lineHeight: 'normal', /* 108.333% */
               letterSpacing: '-0.4px',
             }}
             className='leading-normal'

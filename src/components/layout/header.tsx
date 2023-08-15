@@ -63,8 +63,6 @@ interface NavDropPropsTypes {
   label: string;
   menulist: string[];
 }
-// let selectedAccount: string;
-// let web3Modal: Web3Modal;
 function Header({
   addrInfo,
   setAddrInfo,
@@ -79,7 +77,6 @@ function Header({
   const [showPopOver, setShowPopOver] = React.useState(false);
 
   const onNetworkChange = (netInfo: NetworkInfo) => {
-    // console.log(netInfo.chainId);
     switchNetwork(netInfo);
     setNetInfoState(netInfo);
   };
@@ -120,19 +117,13 @@ function Header({
       }
     }
   }
-  // React.useEffect(() => {
-  //   connetWallet();
-  // });
 
   const connetWallet = React.useCallback(async () => {
     const web3Modal = new Web3Modal({
       network: "mainnet",
       cacheProvider: false,
-      // providerOptions,
-      // disableInjectedProvider: false,
     });
 
-  // async function connetWallet() {
     await window.ethereum.request({
       method: "wallet_requestPermissions",
       params: [
@@ -142,7 +133,6 @@ function Header({
       ],
     });
     const connection = await web3Modal.connect();
-    // console.log(connection);
   
     const pv = new ethers.providers.Web3Provider(connection);
     setProvider(pv);

@@ -11,7 +11,6 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   const anchorRef = React.useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const handleClick = () => {
-    // console.info(`You clicked`);
     setOpen((prevOpen) => !prevOpen);
   };
 

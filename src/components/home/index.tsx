@@ -152,7 +152,6 @@ function Index({
             rightArrow={(
               <button ref={rightArrowRef} className='hidden'>right</button>
             )}
-            // class='transition-transform duration-1000 ease-in-out'
           >
             {liveslides.map((item) => (
               <LiveSlide {...item} key={item.title}

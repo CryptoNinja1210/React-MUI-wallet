@@ -68,23 +68,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
     setOpen(false);
   }
 
-  // const handleToggle = () => {
-  //   setOpen((prevOpen) => !prevOpen);
-  // };
-
-  // const handleClose = (event: Event) => {
-
-  //   if (
-  //     anchorRef.current &&
-  //     anchorRef.current.contains(event.target as HTMLElement)
-  //   ) {
-  //     return;
-  //   }
-
-
-  //   setOpen(false);
-  // };
-
   console.log(anchorRef.current?.clientWidth)
 
   return (
@@ -103,7 +86,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             color: '#00FC65',
             borderRadius: '30px',
             px: '1.5rem',
-            // ml: '0.8rem',
             '&:hover': {
               backgroundColor: '#212125',
             },
