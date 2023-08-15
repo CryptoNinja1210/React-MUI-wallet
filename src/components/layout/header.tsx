@@ -120,8 +120,10 @@ function Header({
       }
     }
   }
+  // React.useEffect(() => {
+  //   connetWallet();
+  // });
 
-  
   const connetWallet = React.useCallback(async () => {
     const web3Modal = new Web3Modal({
       network: "mainnet",
@@ -130,6 +132,7 @@ function Header({
       // disableInjectedProvider: false,
     });
 
+  // async function connetWallet() {
     await window.ethereum.request({
       method: "wallet_requestPermissions",
       params: [
