@@ -100,7 +100,7 @@ interface chattingBox {
 const ChattingBox = ({showMessage, setShowMessage}: chattingBox) => {
   const [chattingLog, setChattingLog] = useState(chattingHistory);
   return (
-    <div className={`${showMessage ? 'opacity-100' : 'opacity-0 pointer-events-none'} absolute bottom-5 right-5 h-[calc(100vh-230px)] w-[400px] bg-gray-800 rounded-xl transition-all duration-700 ease-in-out flex flex-col justify-between`}>
+    <div className={`${showMessage ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed bottom-5 right-5 h-[calc(100vh-230px)] w-[400px] bg-gray-800 rounded-xl transition-all duration-700 ease-in-out flex flex-col justify-between`}>
       <ChattingHeader setShowMessage={setShowMessage}/>
       <ChattingPane className="h-auto" chattingLog={chattingLog} />
       <ChattingEditor

@@ -24,7 +24,7 @@ const LiveSlide: React.FC<LiveSlideProps> = ({
         flexDirection: 'row', 
         alignItems:'center', 
         gap: '13px', 
-        width: '282px', 
+        width: '287px', 
         height: '121px', 
         background: '#18191C', 
         borderRadius: '12px', 
@@ -38,8 +38,8 @@ const LiveSlide: React.FC<LiveSlideProps> = ({
           sx={{
             fontSize: '15px',
             fontWeight: '400',
-                fontFamily: "montserrat",
-                lineHeight: '20px',
+            fontFamily: "montserrat",
+            lineHeight: '20px',
             textAlign: 'left',
             letterSpacing:'0.07rem',
         }}>

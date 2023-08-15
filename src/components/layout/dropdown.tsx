@@ -9,19 +9,21 @@ interface dropPropTypes {
 export default function ChainDropdown({label, menulist}: dropPropTypes) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  // const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [hoverSubMenu, setHoverSubMenu] = React.useState(0);
   const handleClick = () => {
-    setOpen((prevOpen) => !prevOpen);
+    // setOpen((prevOpen) => !prevOpen);
   };
 
   const handleMenuItemClick = (
     index: number,
   ) => {
-    setSelectedIndex(index);
+    // setSelectedIndex(index);
     setOpen(false);
     console.log(`you clicked ${menulist[index]}`)
   };
   const handleMouseEnter = () => {
+    setHoverSubMenu(0);
     setOpen(true);
   }
   const handleMouseLeave = () => {
@@ -29,12 +31,30 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   }
 
   const handleSubMouseEnter = () => {
+    setHoverSubMenu(0);
     setOpen(true);
   }
 
   const handleSubMouseLeave = () => {
     setOpen(false);
   }
+
+  const handleHoverSubItem = (index: number) => {
+    setHoverSubMenu(index)
+  }
+
+  // const handleLeaveSubItem = () => {
+  //   if(!open) {
+  //     const myInterval = setTimeout(() => {
+  //       setHoverSubMenu(0);
+  //     }, 500);
+  //     return () => {
+  //       if(myInterval){
+  //         clearTimeout(myInterval);
+  //       }
+  //     }
+  //   }
+  // }
 
   return (
     <React.Fragment>
@@ -93,8 +113,12 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
                 {menulist.map((listItem, index) => (
                   <MenuItem
                     key={listItem}
-                    selected={index === selectedIndex}
+                    // selected={index === selectedIndex}
                     onClick={() => handleMenuItemClick(index)}
+                    // className={`hover:bg-gray-700 ${index === selectedIndex ? `bg-gray-700` : ``}`}
+                    className={`hover:bg-gray-700 ${hoverSubMenu == index ? `bg-gray-700` : ``}`}
+                    onMouseEnter={()=>handleHoverSubItem(index)}
+                    // onMouseLeave={handleLeaveSubItem}
                   >
                     {listItem}
                   </MenuItem>
