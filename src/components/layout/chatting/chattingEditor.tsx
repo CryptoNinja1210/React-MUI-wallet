@@ -34,6 +34,7 @@ const ChattingEditor = ({
   const handleKeyDown = (event:KeyboardEvent) => {
     if (event.key === 'Enter') {
       sendBtnRef.current?.click();
+      event.preventDefault();
     }
   };
   const handleSend = () => {
@@ -57,7 +58,7 @@ const ChattingEditor = ({
   useEffect(() => {
     if(inputRef.current) {
       inputRef.current.style.height = '48px'
-      if(newMessage.length !== 0) {
+      if(newMessage.length) {
         inputRef.current.style.height = `${inputRef.current.scrollHeight + 10}px`
       }
     }
