@@ -3,7 +3,7 @@ import { Stack} from '@mui/material';
 import { Button as Button_Antd, ConfigProvider } from 'antd';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-export default function ConnectWallet({ handleConnect } : { handleConnect: () => {} }){
+export default function ConnectWallet({ handleConnect } : { handleConnect: () => void }){
   return(
     <Stack spacing={2} direction='row' ml={'0.5rem'}>
       <ConfigProvider

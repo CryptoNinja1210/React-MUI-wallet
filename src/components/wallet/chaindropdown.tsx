@@ -28,9 +28,9 @@ export const networkOptions: NetworkInfo[] = [
     rpcUrls: 'https://bsc-dataseed.binance.org/'
   },
   {
-    icon: '/icons/Aptos_WHT.svg', name: 'Arbitrum One', chainId: "0xa4b1",
+    icon: '/icons/arbitrum-arb-logo.svg', name: 'Arbitrum One', chainId: "0xa4b1",
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-    rpcUrls: 'https://arbitrum-mainnet.infura.io'
+    rpcUrls: 'https://arb1.arbitrum.io/rpc'
   },
 ]
 
@@ -38,7 +38,7 @@ export const networkOptions: NetworkInfo[] = [
 export default function ChainDropdown(props: ChainDropwdonwProps) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   React.useEffect(() => {
     if (typeof props.onNetworkChange == "function") {
       props.onNetworkChange(networkOptions[selectedIndex])

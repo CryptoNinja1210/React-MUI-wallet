@@ -112,7 +112,7 @@ function Header({
                 chainName: netinfo.name,
                 chainId: netinfo.chainId,
                 nativeCurrency: netinfo.nativeCurrency,
-                rpcUrls: netinfo.rpcUrls,
+                rpcUrls: [netinfo.rpcUrls],
               },
             ],
           });
@@ -253,7 +253,7 @@ function Header({
           }
         }}
       >
-        <NavMenuContent handleClose={handleClose} navDropProps={navDropProps}/>
+        <NavMenuContent handleClose={handleClose} navDropProps={navDropProps} connetWallet={connetWallet}/>
       </Box>
     </AppBar>
   );
@@ -261,11 +261,12 @@ function Header({
 interface NavMenuContentProps {
   handleClose: () => void;
   navDropProps: NavDropPropsTypes[];
+  connetWallet: () => void
 }
 
-const NavMenuContent = ({ handleClose, navDropProps}: NavMenuContentProps) => {
+const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuContentProps) => {
   return (
-    <div className={`w-full mx-auto min-h-[768px] justify-between bg-black bg-opacity-90 flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
+    <div className={`w-full mx-auto pt-12 min-h-[768px] justify-around bg-black bg-opacity-90 flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
       <ConfigProvider
         theme={{
           token: {
@@ -285,6 +286,9 @@ const NavMenuContent = ({ handleClose, navDropProps}: NavMenuContentProps) => {
         </HappyProvider>
       </ConfigProvider>
       <PopOverTSX handleClose={handleClose} navDropProps={navDropProps}/>
+      <div className="flex justify-center items-center my-auto py-3">
+        <ConnectWallet handleConnect={connetWallet} />
+      </div>
       <Box className='flex flex-row justify-around items-center gap-x-8 md:gap-x-3 mb-12 mx-20'>
         <Box className='w-6 h-6 bg-[url("icons/facebook.png")] rounded-lg border border-gray-600 '/>
         <Box className='w-6 h-6 bg-[url("icons/twitter.png")] rounded-lg border border-gray-600 '/>

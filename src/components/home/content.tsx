@@ -499,9 +499,10 @@ function Content(){
               fontSize: {xs:'18px', md:'48px'},
               fontStyle: 'normal',
               fontWeight: '700',
-              lineHeight: '52px', /* 108.333% */
+              // lineHeight: 'normal', /* 108.333% */
               letterSpacing: '-0.4px',
             }}
+            className='leading-normal'
           >
             Stay Updated, Engage, and Get Support in our Official Telegram Group
           </Typography>
