@@ -119,9 +119,9 @@ function UpComing(){
           <span className='inline upcoming leading-normal'>Upcoming Predictions</span>
           <Carousel 
             className='carousel' 
-            show={slideNum} 
-            slide={4} 
-            swiping={true} 
+            show={slideNum}
+            slide={4}
+            swiping={true}
             transition={0.5}
             swipeOn={1} 
             useArrowKeys={true} 
