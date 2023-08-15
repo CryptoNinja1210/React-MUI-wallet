@@ -120,7 +120,7 @@ function UpComing(){
           <Carousel 
             className='carousel' 
             show={slideNum} 
-            slide={1} 
+            slide={4} 
             swiping={true} 
             transition={0.5}
             swipeOn={1} 
