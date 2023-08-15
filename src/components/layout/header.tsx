@@ -233,7 +233,7 @@ function Header({
                     shape="circle"
                     size="middle"
                     className="text-black font-bold flex justify-center items-center border-none"
-                    onClick={()=>setShowPopOver(true)}
+                    onClick={()=>setShowPopOver(prevState => !prevState)}
                   >
                     <MenuIcon className="text-white"/>
                   </Button_Antd>
@@ -243,9 +243,18 @@ function Header({
           </Box>
         </Toolbar>
       </Container>
-      <div id="popOver" className={`absolute top-24 w-[500px] ${showPopOver ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-all duration-500 ease-in-out`}>
+      <Box
+        id="popOver"
+        className={`absolute top-24 w-[500px] max-md:left-0 right-0 mx-auto ${!showPopOver ? 'pointer-events-none' : ''} transition-all duration-500 ease-in-out`}
+        sx={{
+          opacity: {
+            xs: showPopOver ? 1 : 0,
+            lg: 0
+          }
+        }}
+      >
         <NavMenuContent handleClose={handleClose} navDropProps={navDropProps}/>
-      </div>
+      </Box>
     </AppBar>
   );
 }
@@ -256,7 +265,7 @@ interface NavMenuContentProps {
 
 const NavMenuContent = ({ handleClose, navDropProps}: NavMenuContentProps) => {
   return (
-    <div className={`w-[100%] max-w-lg mx-auto bg-black flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
+    <div className={`w-full mx-auto min-h-[768px] justify-between bg-black bg-opacity-90 flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
       <ConfigProvider
         theme={{
           token: {

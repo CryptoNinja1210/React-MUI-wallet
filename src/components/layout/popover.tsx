@@ -29,8 +29,14 @@ const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
   };
 
   return (
-    <div className="w-[100%] mx-auto my-12 flex flex-col justify-center items-center px-auto">
-      <div className="flex flex-col justify-center items-center">
+    <div 
+      className="w-[100%] mx-auto my-12 flex flex-col justify-center items-center p-auto"
+      style={{
+        paddingTop: 'auto',
+        paddingBottom: 'auto'
+      }}
+    >
+      <div className="flex flex-col justify-center items-center p-auto">
         {navDropProps.map(item => (
           <div key={item.label} className="flex flex-col justify-center w-full">
             <div
