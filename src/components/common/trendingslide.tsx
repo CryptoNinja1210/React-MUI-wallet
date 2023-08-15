@@ -27,8 +27,9 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
           overflow: 'hidden',
           borderRadius: '10px',
         }}
+        className=" hover:shadow-md hover:shadow-inner hover:shadow-white"
       >
-        <Box>
+        <Box sx={{hover:"filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))'"}} >
           <img
             src="icons/electrical-plug2.svg"
             style={{
@@ -76,7 +77,7 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
               right: '10px',
               top:'50px',
             }}
-            className='opacity-40 group-hover:scale-[170%] group-hover:rotate-[30deg] transition-transform duration-75 ease-in-out'
+            className='opacity-40 group-hover:scale-[170%] group-hover:rotate-[30deg] transition-transform duration-100 ease-in-out'
           />
         </Box>
       </Box>
