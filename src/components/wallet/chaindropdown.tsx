@@ -28,9 +28,9 @@ export const networkOptions: NetworkInfo[] = [
     rpcUrls: 'https://bsc-dataseed.binance.org/'
   },
   {
-    icon: '/icons/arbitrum.svg', name: 'Arbitrum One', chainId: "0xa4b1",
+    icon: '/icons/arbitrum-arb-logo.svg', name: 'Arbitrum One', chainId: "0xa4b1",
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-    rpcUrls: 'https://arbitrum-mainnet.infura.io'
+    rpcUrls: 'https://arb1.arbitrum.io/rpc'
   },
 ]
 
@@ -38,7 +38,7 @@ export const networkOptions: NetworkInfo[] = [
 export default function ChainDropdown(props: ChainDropwdonwProps) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   React.useEffect(() => {
     if (typeof props.onNetworkChange == "function") {
       props.onNetworkChange(networkOptions[selectedIndex])
@@ -68,23 +68,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
     setOpen(false);
   }
 
-  // const handleToggle = () => {
-  //   setOpen((prevOpen) => !prevOpen);
-  // };
-
-  // const handleClose = (event: Event) => {
-
-  //   if (
-  //     anchorRef.current &&
-  //     anchorRef.current.contains(event.target as HTMLElement)
-  //   ) {
-  //     return;
-  //   }
-
-
-  //   setOpen(false);
-  // };
-
   console.log(anchorRef.current?.clientWidth)
 
   return (
@@ -103,11 +86,10 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             color: '#00FC65',
             borderRadius: '30px',
             px: '1.5rem',
-            // ml: '0.8rem',
             '&:hover': {
               backgroundColor: '#212125',
             },
-            width: '250px',
+            width: {md:'250px'},
           }}
           onClick={handleClick}
           onMouseLeave={handleMouseLeave}

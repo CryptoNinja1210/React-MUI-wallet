@@ -189,7 +189,7 @@ function UpComing(){
               </Box>
             )}
           >
-            {Array(5).fill('hello').map(() => (
+            {Array(5).fill('').map(() => (
               <Box sx={{width:'100vw', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000'}}>
                 <Box sx={{ display:'flex', scale:{xs:'0.8', md:'1'}, flexDirection:'row', justifyContent:{xs:'left', md:'center'}, gap:{xs:'3rem', md:'1.5rem'}, alignItems:'center'}}>
                   <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', fontSize:'22px', gap:'8px' }}>
