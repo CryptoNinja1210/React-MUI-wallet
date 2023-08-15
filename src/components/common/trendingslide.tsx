@@ -27,7 +27,7 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
           overflow: 'hidden',
           borderRadius: '10px',
         }}
-        className=" hover:shadow-md hover:shadow-inner hover:shadow-white"
+        className="hover:drop-shadow-md shadow-inner hover:shadow-white"
       >
         <Box sx={{hover:"filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))'"}} >
           <img
