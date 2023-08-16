@@ -43,7 +43,7 @@ const ChattingPane = ({className, chattingLog}: chattingProps) => {
                       : ((new Date().getFullYear() - item.time.getFullYear()).toFixed(0) + 'years ago')}
                 </p>
               </div>
-              <div className= {`bg-[#24262B] p-2 break-words rounded-xl max-w-[300px] ${item.id === '01' ? 'rounded-tr-none text-[#909EAB]' : 'rounded-tl-none text-[#909EAB]'}`} key={index}>
+              <div className= {`bg-[#24262B] p-2 break-words rounded-xl max-w-[250px] ${item.id === '01' ? 'rounded-tr-none text-[#909EAB]' : 'rounded-tl-none text-[#909EAB]'}`} key={index}>
                 {item.message}
               </div>
             </div>

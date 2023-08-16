@@ -66,7 +66,7 @@ interface NavDropPropsTypes {
 function Header({
   addrInfo,
   setAddrInfo,
-  netInfoState,
+  // netInfoState,
   setNetInfoState,
 }: SetInfoType) {
   //
@@ -199,7 +199,7 @@ function Header({
                       display:{xs:'none', md:'flex'}
                     }}
                   >
-                    <Typography>{netInfoState.name.slice(0, 3)}</Typography>
+                    {/* <Typography>{netInfoState.name.slice(0, 3)}</Typography> */}
                     <Typography>
                       {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
                     </Typography>
