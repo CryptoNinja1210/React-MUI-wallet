@@ -256,7 +256,7 @@ interface NavMenuContentProps {
 
 const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuContentProps) => {
   return (
-    <div className={`w-full mx-auto pt-12 min-h-[768px] justify-around bg-black bg-opacity-90 flex flex-col gap-1 rounded-none transition-all duration-2000 ease-in-out`}>
+    <div className={`relative w-[372px] min-h-auto mx-auto py-20 px-8 flex flex-col justify-start bg-[#0A0A0B] gap-1 rounded-xl transition-all duration-2000 ease-in-out`}>
       <ConfigProvider
         theme={{
           token: {
@@ -268,22 +268,22 @@ const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuConte
           <Button_Antd
             shape="circle"
             size="middle"
-            className="absolute top-7 right-14 text-black font-bold flex justify-center items-center border-none"
+            className="absolute top-7 right-7 w-7 h-7 text-black font-bold flex justify-center items-center border-none"
             onClick={handleClose}
           >
-            <img src="/icons/cross.svg" />
+            <img className="w-7 h-7" src="/icons/cross.svg" />
           </Button_Antd>
         </HappyProvider>
       </ConfigProvider>
       <PopOverTSX handleClose={handleClose} navDropProps={navDropProps}/>
-      <div className="flex justify-center items-center my-auto py-3">
-        <ConnectWallet handleConnect={connetWallet} />
+      <div className="flex justify-center items-center my-5 py-3">
+        <ConnectWallet handleConnect={connetWallet} showArr={true}/>
       </div>
-      <Box className='flex flex-row justify-around items-center gap-x-8 md:gap-x-3 mb-12 mx-20'>
-        <Box className='w-6 h-6 bg-[url("icons/facebook.png")] rounded-lg border border-gray-600 '/>
-        <Box className='w-6 h-6 bg-[url("icons/twitter.png")] rounded-lg border border-gray-600 '/>
-        <Box className='w-6 h-6 bg-[url("icons/linkedin.png")] rounded-lg border border-gray-600 '/>
-        <Box className='w-6 h-6 bg-[url("icons/instagram.png")] rounded-lg border border-gray-600 '/>
+      <Box className='flex flex-row justify-between items-center mb-2 mx-10'>
+        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/facebook.png" className="w-8 h-8" alt=""/></Box>
+        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/twitter.png" className="w-8 h-8" alt=""/></Box>
+        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/linkedin.png" className="w-8 h-8" alt=""/></Box>
+        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/instagram.png" className="w-8 h-8" alt=""/></Box>
       </Box>
     </div>
   )

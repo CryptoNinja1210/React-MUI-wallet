@@ -13,7 +13,7 @@ interface NavDropPropsTypes {
 }
 
 const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
-  const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [expandedItem, setExpandedItem] = useState<string>('');
 
   const handleClick = (listItem: string) => {
     console.log(listItem);
@@ -21,26 +21,27 @@ const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
   };
 
   const handleToggle = (label: string) => {
-    if (expandedItems.includes(label)) {
-      setExpandedItems(prevItems => prevItems.filter(item => item !== label));
+    if (expandedItem == label) {
+      setExpandedItem('')
     } else {
-      setExpandedItems(prevItems => [...prevItems, label]);
+      setExpandedItem(label);
     }
   };
 
   return (
     <div 
-      className="w-[100%] m-auto  flex flex-col justify-center items-center p-auto"
+      className="w-full mt-0 mb-auto flex flex-col justify-between items-center p-auto"
       style={{
         paddingTop: 'auto',
         paddingBottom: 'auto'
       }}
     >
-      <div className="flex flex-col justify-center items-center p-auto">
+      <div className="flex flex-col">
         {navDropProps.map(item => (
-          <div key={item.label} className="flex flex-col justify-center w-full">
+          <div key={item.label} className="flex flex-col w-full ">
             <div
-              className={`${expandedItems.includes(item.label) ? "text-lime-500" : "text-white"} text-3xl font-mono font-bold w-full py-2 border-b-2 border-gray-600 text-center cursor-pointer`}
+              style={{fontFamily: 'montserrat'}}
+              className={`${expandedItem == item.label ? "text-lime-500" : "text-white"} text-[14px] font-mono font-bold w-full py-5 pl-3 border-b-2 border-gray-600 text-start cursor-pointer`}
               onClick={() => handleToggle(item.label)}
             >
               <p>{item.label}</p>
@@ -52,15 +53,16 @@ const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
                 }}
                 className={`flex flex-col overflow-hidden h-full`}
               >
-                <div className={`${expandedItems.includes(item.label) ? "h-auto" : "h-0"} transition-all duration-1000 ease-in-out`}>
+                <div className={`${expandedItem == item.label ? "h-auto" : "h-0"} transition-all duration-1000 ease-in-out`}>
                   {item.menulist.map(listItem => (
                     <div
-                      className="group relative border-b-2 border-transparent hover:border-gray-600 text-center "
+                      className="group relative border-b-2 border-transparent hover:border-gray-600 text-start "
                       key={listItem}
                     >
                       <Button_Antd
                         size="middle"
-                        className="text-2xl font-mono font-bold flex justify-center items-center w-full h-full text-gray-400 hover:text-white hover:bg-slate-500 py-2 border-none rounded-none"
+                        style={{fontFamily: 'montserrat'}}
+                        className="text-[14px] font-bold flex text-start w-full h-full text-gray-400 hover:text-white hover:bg-slate-500 py-2 border-none rounded-none"
                         onClick={() => handleClick(listItem)}
                       >
                         {listItem}

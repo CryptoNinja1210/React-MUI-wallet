@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Button, Box, MenuItem, ButtonGroup, Grow, Paper, Popper, MenuList } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 interface NetworkInfo {
   icon: string;
@@ -18,22 +17,21 @@ interface ChainDropwdonwProps {
 // eslint-disable-next-line react-refresh/only-export-components
 export const networkOptions: NetworkInfo[] = [
   {
-    icon: 'icons/ether.svg', name: 'Ethereum Mainnet', chainId: "0x1",
-    nativeCurrency: { name: 'ether', decimals: 18, symbol: 'eth' },
-    rpcUrls: 'https://mainnet.infura.io/v3/'
-  },
-  {
     icon: '/icons/bnb-smart.svg', name: 'BNB Smart Chain', chainId: "0x38",
     nativeCurrency: { name: 'BNB', decimals: 18, symbol: 'BNB' },
     rpcUrls: 'https://bsc-dataseed.binance.org/'
   },
   {
-    icon: '/icons/arbitrum-arb-logo.svg', name: 'Arbitrum One', chainId: "0xa4b1",
+    icon: 'icons/ether.svg', name: 'Ethereum', chainId: "0x1",
+    nativeCurrency: { name: 'ether', decimals: 18, symbol: 'eth' },
+    rpcUrls: 'https://mainnet.infura.io/v3/'
+  },
+  {
+    icon: '/icons/aptos.svg', name: 'Aptos', chainId: "0xa4b1",
     nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
     rpcUrls: 'https://arb1.arbitrum.io/rpc'
   },
 ]
-
 
 export default function ChainDropdown(props: ChainDropwdonwProps) {
   const [open, setOpen] = React.useState(false);
@@ -96,7 +94,8 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
         >
           <img className='w-[30px] h-[30px] pr-[10px]' src={networkOptions[selectedIndex].icon}/>
           <Box className="hidden md:block whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
-          <ArrowDropDownIcon />
+          <img src='/icons/Vector 60.svg' alt='' className='mx-3 w-4 h-4'/>
+          {/* <VectorIcon /> */}
         </Button>
       </ButtonGroup>
       <Popper
