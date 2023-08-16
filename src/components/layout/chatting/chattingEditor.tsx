@@ -42,9 +42,9 @@ const ChattingEditor = ({
       setChattingLog(
         [...chattingLog,
           {
-            id: `message_${Date.now()}`,
-            user: 'Moriah Buckridge',
-            avatar: '/images/avatar1.jpg',
+            id: `01`,
+            user: 'User 01',
+            avatar: '/images/user01.svg',
             message: newMessage,
             time: new Date(),
           }
@@ -66,7 +66,7 @@ const ChattingEditor = ({
   console.log(inputRef.current?.value)
   return (
     <div
-      className="w-full bg-gray-950 px-3 py-4 flex items-center"
+      className="w-full bg-[#232329] px-3 py-4 flex items-center"
     >
       <div className={`relative w-full min-w-[200px] flex items-center`}>
         {showPicker && 
@@ -79,19 +79,19 @@ const ChattingEditor = ({
           onChange={(e) => handleChange(e)}
           onKeyDown={handleKeyDown}
           value={newMessage}
-          className={`peer w-full resize-none overflow-hidden block rounded-[7px] border border-blue-200 border-t-transparent bg-transparent pl-3 pr-20 py-2.5 overflow-x-hidden text-md font-normal text-blue-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-200 placeholder-shown:border-t-blue-200 focus:border-2 focus:border-teal-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-50`}
+          className={`peer w-full bg-[#151517] resize-none overflow-hidden items-center block rounded-md pl-3 pr-20 pt-3.5 overflow-x-hidden text-xl font-normal text-[#909EAB] outline outline-0 focus:outline-0 disabled:border-0 disabled:bg-blue-50`}
           placeholder=""
-          style={{height: '48px'}}
+          // style={{height: '48px'}}
         />
         <HappyProvider>
           <Button_Antd
             ref={sendBtnRef}
             shape="circle"
             size="large"
-            className="absolute right-2 text-black font-bold flex justify-center items-center border-none bg-[rgb(81,252,91)] "
+            className="absolute right-2 text-black font-bold flex justify-center items-center border-none bg-[linear-gradient(164deg, #9CFC00 0%, #00FC92 78.96%) bg-gradient-to-br from-[#9CFC00] to-[#00FC92] "
             onClick={handleSend}
           >
-            <img className="w-5 h-5" src="/icons/send.svg"/>
+            <img className="w-6 h-6" src="/icons/send.svg"/>
           </Button_Antd>
           <Button_Antd
             shape="circle"
@@ -102,8 +102,8 @@ const ChattingEditor = ({
             <img className="w-7 h-7" src="/icons/emoji-smile.svg"/>
           </Button_Antd>
         </HappyProvider>
-        <label className="flex before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-md font-normal leading-tight text-blue-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-200 after:transition-all peer-placeholder-shown:text-md peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-xs peer-focus:leading-tight peer-focus:text-teal-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-teal-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-teal-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-500">
-          Type your message here...
+        <label style={{fontFamily: 'Montserrat'}} className="flex before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-md leading-tight text-[#7E8792] transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:transition-all peer-placeholder-shown:text-md peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-400 peer-focus:text-xs peer-focus:leading-tight peer-focus:text-gray-300peer-focus:before:border-l-2   peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-gray-400">
+          Type your message
         </label>
       </div>
     </div>

@@ -2,184 +2,187 @@ import {Box, Typography} from '@mui/material';
 
 function Footer(){  
   return(
-    <Box sx={{pt:'30px', background: '#0A0A0B', display:'flex', flexDirection:'column'}}>
-      <Box sx={{
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'space-between',
-        gap:'2rem',
-        flexWrap:{xs:'wrap', md:'nowrap'},
-        mx:{xs:'2rem', md:'100px'},
-        alignItems:'flex-start'
-      }}>
+    <Box 
+      className='py-4 bg-[#15151E] flex flex-col'
+      sx={{paddingX:{ xs:'30px', lg:'50px', xl:'15rem'}}}
+    >
+      <Box 
+        sx={{
+          display:'flex',
+          flexDirection:'row',
+          justifyContent:'space-between',
+          gap:'2rem',
+          flexWrap:{xs:'wrap', md:'nowrap'},
+          alignItems:'flex-start'
+        }}
+        className='w-full'
+      >
         <Box
-          className='flex flex-row w-full max-w-[1536px] justify-around mx-auto'
+          className='flex flex-col lg:flex-row w-full max-w-[1920px] justify-between mx-auto'
         >
-          <Box sx={{ display:'flex', flexDirection:'column'}}>
-            <Box
-              sx={{
-                backgroundImage:'url("images/bonus.png")',
-                width: '111px',
-                height: '61px',
-                marginBottom:'30px'
-              }}
-            >
-
+          <Box className='flex flex-col lg:justify-around w-full items-start mb-5'>
+            <Box sx={{width:{md:'60%'}}}>
+              <Box className='mb-12'>
+                <img src='images/bonus.png' alt='' className='h-[61px] min-w-[111px] object-cover'/>
+              </Box>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  fontSize: '14px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: '21px',
+                  textTransform: 'capitalize',
+                }}
+              >
+                Revolutionize your project's success in the DeFi ecosystem and captivate your community with Bonus DeFi's groundbreaking features and organic marketing strategies.
+              </Typography>
             </Box>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: '14px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: '21px',
-                textTransform: 'capitalize',
-                width: '356px'
-              }}
-            >
-              Revolutionize your project's success in the DeFi ecosystem and captivate your community with Bonus DeFi's groundbreaking features and organic marketing strategies.
-            </Typography>
           </Box>
-          <Box sx={{ display:'flex', flexDirection:'column'}}>
-            <Typography
-              sx={{
-                color: '#FFF',
-                fontFamily: 'Syne',
-                fontSize: '20px',
-                fontStyle: 'normal',
-                fontWeight: '700',
-                lineHeight: '32px',
-                letterSpacing: '-0.6px',
-                marginBottom:'30px'
+          <div className='flex flex-row lg:justify-around justify-between w-full items-center '>
+            <Box sx={{ display:'flex', flexDirection:'column'}}>
+              <Typography
+                sx={{
+                  color: '#FFF',
+                  fontFamily: 'Syne',
+                  fontSize: '20px',
+                  fontStyle: 'normal',
+                  fontWeight: '700',
+                  lineHeight: '32px',
+                  letterSpacing: '-0.6px',
+                  marginBottom:'30px'
 
-              }}
+                }}
+              >
+                Pages
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Home
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Prediction
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Contract Information
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Features
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  How It Works
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  FAQS
+              </Typography>
+              
+            </Box>
+            <Box 
+              className='flex flex-col justify-start items-start mt-0 mb-auto'
             >
-              Pages
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
+              <Typography
+                sx={{
+                  color: '#FFF',
+                  fontFamily: 'Syne',
+                  fontSize: '20px',
+                  fontStyle: 'normal',
+                  fontWeight: '700',
+                  lineHeight: '32px',
+                  letterSpacing: '-0.6px',
+                  marginBottom:'30px'
+                  
+                }}
               >
-                Home
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Prediction
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Contract Information
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Features
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                How It Works
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                FAQS
-            </Typography>
-            
-          </Box>
-          <Box sx={{ display:'flex', flexDirection:'column'}}>
-            <Typography
-              sx={{
-                color: '#FFF',
-                fontFamily: 'Syne',
-                fontSize: '20px',
-                fontStyle: 'normal',
-                fontWeight: '700',
-                lineHeight: '32px',
-                letterSpacing: '-0.6px',
-                marginBottom:'30px'
-                
-              }}
-            >
-                Legal
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Privacy Policy
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Terms of Services
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                About Us
-            </Typography>
-            <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                marginBottom:'10px',
-                fontSize: '16px'}}
-              >
-                Contact Information
-            </Typography>
-          </Box>
+                  Legal
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Privacy Policy
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Terms of Services
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  About Us
+              </Typography>
+              <Typography
+                sx={{
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat',
+                  marginBottom:'10px',
+                  fontSize: '16px'}}
+                >
+                  Contact Information
+              </Typography>
+            </Box>
+          </div>
         </Box>
       </Box>
-      <hr className='hr' style={{margin:'30px 100px 30px 100px'}}/>
+      <hr className='hr' style={{margin:'30px 0px 30px 0px'}}/>
       <Box 
         sx={{
           mx:'auto', 
           mb:'40px', 
           display:'flex', 
           flexDirection:{md:'row',xs:'column-reverse'}, 
-          justifyContent:'space-between', 
+          justifyContent:'space-around ', 
           alignItems:'center',
           gap:'1rem'
         }}
-        className='flex flex-row w-full max-w-[1500px] justify-between'
+        className='flex flex-row w-full max-w-[1536px] justify-between'
       >
         <Typography
           sx={{

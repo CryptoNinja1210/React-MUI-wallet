@@ -104,20 +104,20 @@ function Index({
 
   return(
     <Box sx={{
-      height: 'calc(100vh - 102px)',
+      // height: 'calc(100vh - 102px)',
+      height: '700px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
     }}>
       <Box 
         sx={{
-          paddingTop: '100px',
+          paddingTop: '50px',
           marginX: 'auto',
           maxWidth: '1536px', 
           width: '100%',
-          height: '100vh', 
           flexShrink: '0',
-          mt: '-102px',
+          mt: '-200px',
         }}
       >
         <Box sx={{
@@ -136,7 +136,7 @@ function Index({
         />
         <AfterConnect addrInfo={addrInfo}/>
         <Box 
-          className="pt-40 pl-8"
+          className="pt-32 pl-8"
         >
           <span className='prediction'>Live Predictions</span>
           <Carousel 
@@ -159,15 +159,16 @@ function Index({
             ))}
           </Carousel>
         </Box>
-        <Box sx={{ mt:'40px',  transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
+        <Box sx={{ mt:'80px',  transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
           <Typography
             sx={{
-              fontFamily: 'syne',
+              fontFamily: 'Syne',
               fontSize: '4.3rem',
               lineHeight: '1.3',
               fontWeight: '800',
               textAlign: 'center',
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
+              letterSpacing: '1.75px'
             }}
           >
             The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
@@ -179,9 +180,10 @@ function Index({
             fontWeight: '100',
             lineHeight: '25px',
             textAlign: 'center',
-            color: 'white',
             zIndex: '100',
             position: 'relative',
+            color: '#EBEBEB',
+            fontFamily: 'Montserrat',
             display: addrInfo? 'none' : '  block'
           }}
         >
