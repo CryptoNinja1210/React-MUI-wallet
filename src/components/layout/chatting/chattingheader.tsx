@@ -7,8 +7,8 @@ interface chattingHeaderProps {
 
 const ChattingHeader = ({setShowMessage}: chattingHeaderProps) => {
   return (
-    <div className="w-full h-24 rounded-t-xl bg-[#131314] text-xl font-bold text-white py-12 px-5 items-center flex flex-row justify-between">
-    <p>Chat</p>
+    <div className="w-full h-[62px] bg-[#131314] text-xl font-bold text-white py-6 px-5 items-center flex flex-row justify-between">
+    <p style={{fontSize:'16px'}}>Chat</p>
       <div className="flex flex-row gap-3">
         <HappyProvider>
           <Button_Antd
