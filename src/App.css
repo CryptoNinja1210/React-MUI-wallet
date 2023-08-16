@@ -18,8 +18,7 @@
   -webkit-text-fill-color: transparent;
 }
 .carousel {
-  margin-top: 70px;
-  /* padding-right: 50px; */
+  margin-top: 32px;
 }
 .brand {
   width: 64px;
@@ -33,7 +32,6 @@
   font-family: syne;
   font-size: 3rem;
   font-style: normal;
-  /* margin-top: -470px; */
   font-weight: 700;
   line-height: 45px; /* 93.75% */
   background: linear-gradient(90deg, #03fcc6 0%, #EACCF8 50%, #0703fc 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
@@ -60,12 +58,6 @@
     display: inline;
     font-size: 20px;
   }
-  /* .square {
-    width:'251px';
-    height:'231px';
-    display: flex;
-    align-items: center;
-  } */
   .hr {
     margin:'30px 2rem 30px 2rem';
   }

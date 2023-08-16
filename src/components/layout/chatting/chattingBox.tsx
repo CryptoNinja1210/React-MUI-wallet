@@ -7,86 +7,86 @@ import ChattingPane from "./chattingpane";
 
 const chattingHistory = [
   {
-    id: 'message_000',
-    user: 'Moriah Buckridge',
-    avatar: '/images/avatar1.jpg',
+    id: '01',
+    user: 'User 01',
+    avatar: '/images/user01.svg',
     message: 'This is message_000.',
     time: new Date('2022.07.07 00:00:00')
   },
   {
-    id: 'message_001',
-    user: 'User 02',
-    avatar: '/images/avatar2.jpg',
+    id: '04',
+    user: 'User 04',
+    avatar: '/images/user04.svg',
     message: 'This is message_001.',
     time: new Date('2023.08.013 12:05:00')
   },
   {
-    id: 'message_002',
-    user: 'User 03',
-    avatar: '/images/avatar3.jpg',
+    id: '25',
+    user: 'User 25',
+    avatar: '/images/user25.svg',
     message: 'This is message_002.',
     time: new Date('2023.08.013 12:07:00')
   },
   {
-    id: 'message_003',
-    user: 'User 02',
-    avatar: '/images/avatar2.jpg',
+    id: '27',
+    user: 'User 27',
+    avatar: '/images/user27.svg',
     message: 'This is message_003.',
     time: new Date('2023.08.013 12:09:00')
   },
   {
-    id: 'message_004',
-    user: 'User 03',
-    avatar: '/images/avatar3.jpg',
+    id: '82',
+    user: 'User 82',
+    avatar: '/images/user82.svg',
     message: 'This is message_004.',
     time: new Date('2023.08.013 12:10:00')
   },
   {
-    id: 'message_005',
-    user: 'Moriah Buckridge',
-    avatar: '/images/avatar1.jpg',
-    message: 'I am Moriah Buckridge, React & Next.js developer.',
+    id: '01',
+    user: 'User 01',
+    avatar: '/images/user01.svg',
+    message: 'I am User 01, React & Next.js developer.',
     time: new Date('2023.08.013 12:11:00')
   },
   {
-    id: 'message_006',
-    user: 'User 03',
-    avatar: '/images/avatar3.jpg',
+    id: '04',
+    user: 'User 04',
+    avatar: '/images/user04.svg',
     message: 'This is message_006.',
     time: new Date('2023.08.013 12:12:00')
   },
   {
-    id: 'message_007',
-    user: 'Moriah Buckridge',
-    avatar: '/images/avatar1.jpg',
+    id: '01',
+    user: 'User 01',
+    avatar: '/images/user01.svg',
     message: 'https://join.skype.com/invite/q7kutPqmW3gp',
     time: new Date('2023.08.013 12:13:00')
   },
   {
-    id: 'message_008',
-    user: 'Moriah Buckridge',
-    avatar: '/images/avatar1.jpg',
+    id: '04',
+    user: 'User 04',
+    avatar: '/images/user04.svg',
     message: 'petj.ring@gmail.com',
     time: new Date('2023.08.013 12:14:00')
   },
   {
-    id: 'message_009',
-    user: 'User 02',
-    avatar: '/images/avatar2.jpg',
+    id: '25',
+    user: 'User 25',
+    avatar: '/images/user25.svg',
     message: 'This is message_009.',
     time: new Date('2023.08.013 12:15:00')
   },
   {
-    id: 'message_010',
-    user: 'Moriah Buckridge',
-    avatar: '/images/avatar1.jpg',
+    id: '27',
+    user: 'User 27',
+    avatar: '/images/user27.svg',
     message: 'https://t.me/SweetCoding',
     time: new Date('2023.08.013 12:16:00')
   },
   {
-    id: 'message_011',
-    user: 'User 02',
-    avatar: '/images/avatar2.jpg',
+    id: '82',
+    user: 'User 82',
+    avatar: '/images/user82.svg',
     message: 'This is message_011.',
     time: new Date('2023.08.013 12:17:00')
   },
