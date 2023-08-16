@@ -192,13 +192,13 @@ function Footer(){
               Copyright © Bonus Defi 2023
         </Typography>
         <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center', gap: { xs:'35px', md:'10px'}}}>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/facebook.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/facebook.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/twitter.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/twitter.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/linkedin.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/linkedin.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("icons/instagram.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/instagram.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
           </Box>
         </Box>
       </Box>
