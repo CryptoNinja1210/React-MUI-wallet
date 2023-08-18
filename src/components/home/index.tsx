@@ -69,14 +69,6 @@ const liveslides = [
     deadline:"5d-52m-20s",
     person:"/icons/person.svg",
     count:50
-  },
-  {
-    brand:"/images/diamond.svg",
-    title:"Diamond Club",
-    ending:"Ending in",
-    deadline:"5d-52m-20s",
-    person:"/icons/person.svg",
-    count:50
   }
 ]
 
@@ -100,7 +92,7 @@ function Index({
       }
     }
   },[]);
-  const slideNum = window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 64) / 303;
+  const slideNum = window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 64) / 306.7;
 
   return(
     <Box sx={{
@@ -136,7 +128,7 @@ function Index({
         />
         <AfterConnect addrInfo={addrInfo}/>
         <Box 
-          className="pt-32 pl-8"
+          className="pt-32 px-8"
         >
           <span className='prediction'>Live Predictions</span>
           <Carousel 
@@ -159,36 +151,40 @@ function Index({
             ))}
           </Carousel>
         </Box>
-        <Box sx={{ mt:'80px',  transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
+        <Box sx={{display:'flex', flexDirection:'column'}}>
+          <Box sx={{ mt:'80px', transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
+            <Typography
+              sx={{
+                fontFamily: 'Syne',
+                fontSize: '60px',
+                lineHeight: '1.3',
+                fontWeight: '800',
+                textAlign: 'center',
+                textTransform: 'capitalize',
+                letterSpacing: '3px',
+                transform: 'scale(1.5, 1)',
+              }}
+            >
+              The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
+            </Typography>
+          </Box>
           <Typography
             sx={{
-              fontFamily: 'Syne',
-              fontSize: '4.3rem',
-              lineHeight: '1.3',
-              fontWeight: '800',
+              fontSize: '16px',
+              lineHeight: '25px',
               textAlign: 'center',
-              textTransform: 'capitalize',
-              letterSpacing: '1.75px'
+              fontWeight: '100',
+              zIndex: '100',
+              position: 'relative',
+              color: '#EBEBEB',
+              fontStyle:'normal',
+              fontFamily: 'Montserrat',
+              display: addrInfo? 'none' : '  block'
             }}
           >
-            The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
+            "Predict, Stake, and Win: Bonus DeFi Unleashes Instant Utility and Organic Marketing for Any Token!
           </Typography>
         </Box>
-        <Typography
-          sx={{
-            fontSize: '15px',
-            fontWeight: '100',
-            lineHeight: '25px',
-            textAlign: 'center',
-            zIndex: '100',
-            position: 'relative',
-            color: '#EBEBEB',
-            fontFamily: 'Montserrat',
-            display: addrInfo? 'none' : '  block'
-          }}
-        >
-          "Predict, Stake, and Win: Bonus DeFi Unleashes Instant Utility and Organic Marketing for Any Token!
-        </Typography>
       </Box>
     </Box>
   )

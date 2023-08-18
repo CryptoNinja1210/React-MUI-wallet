@@ -87,7 +87,8 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             '&:hover': {
               backgroundColor: '#212125',
             },
-            width: {md:'250px'},
+            width: {md:'253px'},
+            height: '41px'
           }}
           onClick={handleClick}
           onMouseLeave={handleMouseLeave}

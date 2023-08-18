@@ -155,7 +155,7 @@ function Header({
   return (
     <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
       <ChattingBox showMessage={showMessage} setShowMessage={setShowMessage} />
-      <Container maxWidth="xl" className="items-center">
+      <Container maxWidth="xl" className="px-8 items-center">
         <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
           <Box className='flex flex-row place-items-center'>
             <img src="/images/image 1356.png" alt="logo" className="logo" />
@@ -174,7 +174,7 @@ function Header({
               <img
                 onClick={handleSetting}
                 style={{ cursor: "pointer" }}
-                src="/icons/setting.svg"
+                src="/icons/settings.svg"
               />
               <img
                 onClick={handleMessage}
@@ -279,11 +279,11 @@ const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuConte
       <div className="flex justify-center items-center my-5 py-3">
         <ConnectWallet handleConnect={connetWallet} showArr={true}/>
       </div>
-      <Box className='flex flex-row justify-between items-center mb-2 mx-10'>
-        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/facebook.png" className="w-8 h-8" alt=""/></Box>
-        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/twitter.png" className="w-8 h-8" alt=""/></Box>
-        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/linkedin.png" className="w-8 h-8" alt=""/></Box>
-        <Box className='w-8 h-8 rounded-lg border border-gray-600 '><img src="icons/instagram.png" className="w-8 h-8" alt=""/></Box>
+      <Box className='flex flex-row justify-between items-center mb-2 mx-16'>
+        <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/facebook.svg" className="w-5 h-5" alt=""/></Box>
+        <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/twitter.svg" className="w-5 h-5" alt=""/></Box>
+        <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/linkedin.svg" className="w-5 h-5" alt=""/></Box>
+        <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/instagram.svg" className="w-5 h-5" alt=""/></Box>
       </Box>
     </div>
   )

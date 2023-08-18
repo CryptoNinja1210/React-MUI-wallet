@@ -37,7 +37,7 @@ const trendingslides = [
 ]
 
 function Trending(){  
-  const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 423;
+  const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 420.6;
   return(
     <Box
       className='flex flex-col justify-center items-center pb-24 bg-[#0A0A0B]'
@@ -52,7 +52,7 @@ function Trending(){
           marginTop: '10px !important',
           marginLeft: { xs:'2rem', md:'100px'}
         }}
-        className="pl-8 max-w-[1536px] w-full mt-[40px] mx-auto"
+        className="px-8 max-w-[1536px] w-full mt-[40px] mx-auto"
       >
         <Carousel 
           className='carousel' 

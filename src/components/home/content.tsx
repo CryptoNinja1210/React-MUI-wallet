@@ -61,32 +61,33 @@ const picture =[{
 function Content(){  
   return(
     <div className='relative'>
-      <Box 
-        sx={{
-          backgroundImage: 'url("backgrounds/vector1.svg")',
-          width: '536.475px',
-          height: '1066.688px',
-          transform: 'rotate(39.402deg)',
-          position:'absolute',
-          flexShrink: '0',
-          marginLeft: '85%',
-          marginTop: '-500px',
-          fill: 'rgba(143, 0, 255, 0.30)',
-          filter: 'blur(194.99147033691406px)',
-          background: {xs: 'none', md:'#8F00FF4D'},
-        }}
-        >
-      </Box>
-      <Box 
+      
+      <Box
         sx={{
           background: '#0A0A0B',
           overflowX: 'none',
           position: 'relative',
-          zIndex: -34
+          // zIndex: 
         }}
       >
+        <Box 
+          sx={{
+            backgroundImage: 'url("backgrounds/vector1.svg")',
+            width: '536.475px',
+            height: '1066.688px',
+            transform: 'rotate(39.402deg)',
+            position:'absolute',
+            flexShrink: '0',
+            marginLeft: '85%',
+            marginTop: '-500px',
+            fill: 'rgba(143, 0, 255, 0.30)',
+            filter: 'blur(194.99147033691406px)',
+            background: {xs: 'none', md:'#8F00FF4D'},
+            zIndex: 0
+          }}
+        />
         <Box sx={{
-          display: {xs:'none', md:'flex'}
+          display: {xs:'none', md:'flex', zIndex: 0}
         }}>
           <Box 
             sx={{
@@ -100,9 +101,9 @@ function Content(){
               marginTop: '500px',
               fill: 'rgba(130, 24, 234, 0.50)',
               filter: 'blur(297.25469970703125px)',
-              background:'#8218EA80',
+              background:'#8218EA80'
             }}
-            >          
+            >
           </Box>
           <Box 
             sx={{
@@ -115,7 +116,7 @@ function Content(){
               marginTop: '1200px',
               fill: 'rgba(130, 24, 234, 0.50)',
               filter: 'blur(297.25469970703125px)',
-              background:'#8218EA80',
+              background:'#8218EA80'
             }}
             >
           </Box>
@@ -131,7 +132,7 @@ function Content(){
                 marginTop: '2100px',
                 fill: 'rgba(138, 26, 238, 0.50)',
                 filter: 'blur(297px)',
-                background:'#8A1AEE80',
+                background:'#8A1AEE80'
               }}
             >
           </Box>
@@ -147,7 +148,7 @@ function Content(){
                 marginTop: '2700px',
                 fill: 'rgba(138, 26, 238, 0.50)',
                 filter: 'blur(297px)',
-                background:'#8218EA80',
+                background:'#8218EA80'
               }}
             >
           </Box>
@@ -163,13 +164,13 @@ function Content(){
                 marginTop: '3100px',
                 fill: 'rgba(138, 26, 238, 0.50)',
                 filter: 'blur(297px)',
-                background:'#8218EA80',
+                background:'#8218EA80'
               }}
             >
           </Box>
         </Box>
         <Box
-          className="w-full max-w-[1536px] mx-auto px-8 lg:pb-4 pb-2"
+          className="w-full max-w-[1536px] mx-auto px-8 lg:pb-4 pb-2 z-50"
         >
           <Box 
             className='pt-[40px] text-center space-y-5'
@@ -503,6 +504,7 @@ function Content(){
                 fontStyle: 'normal',
                 fontWeight: '700',
                 letterSpacing: '-0.4px',
+                width:'80%'
               }}
               className='leading-normal'
             >
@@ -512,10 +514,11 @@ function Content(){
               sx={{
                 color: '#0A0A0B',
                 fontFamily: 'Montserrat',
-                fontSize: {xs:'12px', md:'18px'},
+                fontSize: {xs:'12px', md:'20px'},
                 fontStyle: 'normal',
                 fontWeight: '500',
                 lineHeight: '32px',
+                width:'70%'
               }}
             >Join the Bonus DeFi Telegram Community and Connect with Fellow Enthusiasts</Typography>
             <Typography

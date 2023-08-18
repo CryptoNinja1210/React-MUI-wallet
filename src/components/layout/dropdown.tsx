@@ -42,26 +42,12 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   const handleHoverSubItem = (index: number) => {
     setHoverSubMenu(index)
   }
-
-  // const handleLeaveSubItem = () => {
-  //   if(!open) {
-  //     const myInterval = setTimeout(() => {
-  //       setHoverSubMenu(0);
-  //     }, 500);
-  //     return () => {
-  //       if(myInterval){
-  //         clearTimeout(myInterval);
-  //       }
-  //     }
-  //   }
-  // }
-
   return (
     <React.Fragment>
       <ButtonGroup variant="text" ref={anchorRef}>
         <Button
           sx={{
-            mt: 2,
+            mx:'1',
             display: "block",
             color: "#8699B0",
             whiteSpace: "nowrap",

@@ -23,6 +23,7 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        textAlign:'left',
         backgroundImage: `${card}`,
         backgroundRepeat: 'no-repeat',
         width: '288px',
@@ -79,7 +80,7 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
       </Typography>
       <Box
         sx={{
-          mt: '12px',
+          mt: '20px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
@@ -145,7 +146,7 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '25px' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
         <Typography
           sx={{
             color: '#999',

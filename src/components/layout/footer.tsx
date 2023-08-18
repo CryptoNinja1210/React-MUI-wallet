@@ -3,7 +3,7 @@ import {Box, Typography} from '@mui/material';
 function Footer(){  
   return(
     <Box 
-      className='py-4 bg-[#15151E] flex flex-col'
+      className='py-8 bg-[#15151E] flex flex-col'
       sx={{paddingX:{ xs:'30px', lg:'50px', xl:'15rem'}}}
     >
       <Box 
@@ -20,9 +20,9 @@ function Footer(){
         <Box
           className='flex flex-col lg:flex-row w-full max-w-[1920px] justify-between mx-auto'
         >
-          <Box className='flex flex-col lg:justify-around w-full items-start mb-5'>
-            <Box sx={{width:{md:'60%'}}}>
-              <Box className='mb-12'>
+          <Box className='flex flex-col lg:justify-start items-start mb-5' sx={{width:'70%'}}>
+            <Box sx={{width:'60%'}}>
+              <Box className='mb-5'>
                 <img src='images/bonus.png' alt='' className='h-[61px] min-w-[111px] object-cover'/>
               </Box>
               <Typography
@@ -171,11 +171,10 @@ function Footer(){
           </div>
         </Box>
       </Box>
-      <hr className='hr' style={{margin:'30px 0px 30px 0px'}}/>
+      <hr className='hr' style={{margin:'30px 0px 30px 0px', border:'1px solid #282D45'}}/>
       <Box 
         sx={{
           mx:'auto', 
-          mb:'40px', 
           display:'flex', 
           flexDirection:{md:'row',xs:'column-reverse'}, 
           justifyContent:'space-around ', 
@@ -191,15 +190,19 @@ function Footer(){
               fontSize: {xs:'12px', md:'18px'}}}>
               Copyright © Bonus Defi 2023
         </Typography>
-        <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center', gap: { xs:'35px', md:'10px'}}}>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/facebook.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+        <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center', gap: { xs:'35px', md:'15px'}}}>
+          <Box className='p-[5px] rounded-[8px] border border-[#282D45] '>
+            <img src='icons/facebook.png' className='w-4 h-4 lg:w-6 lg:h-6'></img>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/twitter.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box className='p-[5px] rounded-[8px] border border-[#282D45] '>
+            <img src='icons/twitter.png' className='w-4 h-4 lg:w-6 lg:h-6 '></img>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/linkedin.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
+          <Box className='p-[5px] rounded-[8px] border border-[#282D45] '>
+            <img src='icons/linkedin.png' className='w-4 h-4 lg:w-6 lg:h-6 '></img>            
           </Box>
-          <Box sx={{width: '24px', height: '24px',backgroundImage:'url("/icons/instagram.png")', borderRadius:'8px', border:'1px solid #282D45'}}>            
-          </Box>
+          <Box className='p-[5px] rounded-[8px] border border-[#282D45] '>
+            <img src='icons/instagram.png' className='w-4 h-4 lg:w-6 lg:h-6 '></img>            
+          </Box>        
         </Box>
       </Box>
     </Box>   
