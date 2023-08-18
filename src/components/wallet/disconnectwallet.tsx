@@ -17,8 +17,8 @@ export default function DisconnectWallet({ handleDisconnect } : { handleDisconne
           <Button_Antd
             type="primary"
             shape="round"
-            size="middle"
-            className="font-[arial] font-bold leading-5 bg-green-500 text-black h-[41px]"
+            style={{fontSize:'14px', lineHeight:'20px', letterSpacing:'0.5px'}}
+            className="font-[Syne] font-bold leading-5 bg-[#00FC65] text-black h-[41px] w-48"
             onClick={() => handleDisconnect()}
           >
             Disconnect

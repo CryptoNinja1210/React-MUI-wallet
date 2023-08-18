@@ -17,11 +17,11 @@ export default function ConnectWallet({ handleConnect, showArr } : { handleConne
           <Button_Antd
             type="primary"
             shape="round"
-            size="middle"
-            className="font-[arial] font-bold leading-5 bg-green-500 text-black h-[41px] whitespace-nowrap"
+            style={{fontSize:'14px', lineHeight:'20px', letterSpacing:'0.5px'}}
+            className="font-[Syne] font-bold leading-5 bg-[#00FC65] text-black h-[41px] whitespace-nowrap w-48"
             onClick={() => handleConnect()}
           >
-            {`Connect Wallet ${showArr ? '↗' : ''}`}
+            {`Connect Waller ${showArr ? '↗' : ''}`}
           </Button_Antd>
         </HappyProvider>
       </ConfigProvider>
