@@ -53,6 +53,31 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
         <Box>
           <div
             style={{
+              background: 'url(images/Glossy.png)',
+              position: 'absolute',
+              width: '152px',
+              height: '150px',
+              right: '10px',
+              top:'60px',
+              backgroundRepeat: 'no-repeat',
+            }}
+            className='
+            flex justify-center items-center
+              mix-blend-soft-light
+              opacity-30
+              group-hover:scale-[170%] 
+              group-hover:rotate-[30deg] 
+              transition-transform 
+              duration-100 
+              ease-in-out
+              brightness-150
+            '
+          >
+          </div>
+        </Box>
+        <Box>
+          <div
+            style={{
               position: 'absolute',
               width: '152px',
               height: '150px',
