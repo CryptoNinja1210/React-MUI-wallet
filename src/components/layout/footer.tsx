@@ -3,7 +3,7 @@ import {Box, Typography} from '@mui/material';
 function Footer(){  
   return(
     <Box 
-      className='py-8 bg-[#15151E] flex flex-col'
+      className='py-8 bg-[#15151E] flex flex-col z-50'
       sx={{paddingX:{ xs:'30px', lg:'50px', xl:'15rem'}}}
     >
       <Box 

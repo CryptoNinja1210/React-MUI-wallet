@@ -98,8 +98,10 @@ function UpComing(){
             flexShrink: '0',
             marginLeft: '-35%',
             fill: 'rgba(130, 24, 234, 0.50)',
-            filter: 'blur(297.25469970703125px)',
+            filter: 'blur(297px)',
             background: {xs:'none', md: '#8218EA80'},
+            position: 'relative',
+            zIndex:'10'
           }}
         >
         </Box>
@@ -123,7 +125,7 @@ function UpComing(){
         >
           <span className='inline upcoming leading-normal'>Upcoming Predictions</span>
           <Carousel 
-            className='carousel' 
+            className='carousel absolute z-50' 
             show={slideNum}
             slide={4}
             swiping={true}
@@ -133,7 +135,6 @@ function UpComing(){
             rightArrow={(
               <Box
                 sx={{
-                  // backgroundImage:'url("icons/arrow-right.svg")',
                   width:'70px',
                   height:'70px',
                   filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
@@ -149,10 +150,8 @@ function UpComing(){
             leftArrow={(
               <Box
                 sx={{
-                  // backgroundImage:'url("icons/arrow-right.svg")',
                   width:'70px',
                   height:'70px',
-                  // rotate: '180deg',
                   filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
                   backgroundSize:'cover',
                   cursor:'pointer',

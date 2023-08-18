@@ -55,7 +55,7 @@ const picture =[{
 },
 {
   square:"images/love.png",
-  bac:"images/bac3.png"
+  bac:"images/Lovebac.png"
 }]
 
 function Content(){  
@@ -67,7 +67,6 @@ function Content(){
           background: '#0A0A0B',
           overflowX: 'none',
           position: 'relative',
-          // zIndex: 
         }}
       >
         <Box 
@@ -83,7 +82,6 @@ function Content(){
             fill: 'rgba(143, 0, 255, 0.30)',
             filter: 'blur(194.99147033691406px)',
             background: {xs: 'none', md:'#8F00FF4D'},
-            zIndex: 0
           }}
         />
         <Box sx={{
@@ -233,7 +231,7 @@ function Content(){
             </Box>            
           </Box>
           <Box 
-            className='mt-[100px] text-center space-y-5'
+            className='mt-[150px] text-center space-y-5'
           >
             <div className='inline feature '>How it works</div><br/>
             <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
@@ -247,7 +245,7 @@ function Content(){
               flexDirection:{ md:'row', xs:'column'},
               justifyContent:{md:'space-around', xs:'center'},
             }}
-            className="items-center mt-12 w-full"
+            className="items-center mt-28 w-full"
           >
             <Box
               className='flex flex-col justify-around w-full md:max-w-xl mx-32'
@@ -266,15 +264,14 @@ function Content(){
               </Box>
             </Box>
             <Box>
-              <Picture square={picture[3].square} bac={picture[3].bac} className='backdrop-blur-lg'/>
+              <Picture square={picture[3].square} bac={picture[3].bac} className={'bg-cover scale-125 pt-16'} />
             </Box>            
           </Box>
           <Box sx={{
             display:'flex',
             flexDirection:'row',
             justifyContent:'space-around',
-            marginTop:'100px'
-            }}>
+          }}>
             <Box 
               sx={{
                 display:'flex',
@@ -485,7 +482,7 @@ function Content(){
               display: 'flex',
               textAlign:'center',
               width:'auto',
-              mt:'50px',
+              mt:'150px',
               mb: {md:'100px',xs: '30px'},
               padding:'2rem',
               flexDirection: 'column',
