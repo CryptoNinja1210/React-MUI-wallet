@@ -138,11 +138,12 @@ function UpComing(){
                   width:'70px',
                   height:'70px',
                   filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                  backgroundImage: pressedArrow ? `url(icons/arrow-right.svg)` : `url(icons/arrow-left.svg)`,
                   backgroundSize:'cover',
                   cursor:'pointer',
                   position: 'absolute',
                 }}
-                className={`${pressedArrow?`translate-y-[150px] -translate-x-[100px] bg-[url(icons/arrow-right.svg)]`:`bg-[url(icons/arrow-left.svg)] rotate-180 translate-y-[140px] -translate-x-[100px] pointer-events-none `}`}
+                className={`${pressedArrow?`translate-y-[150px] -translate-x-[100px]`:`rotate-180 translate-y-[140px] -translate-x-[100px] pointer-events-none `}`}
                 onClick={handleArrow}
               >
               </Box>
@@ -153,12 +154,16 @@ function UpComing(){
                   width:'70px',
                   height:'70px',
                   filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                  backgroundImage: pressedArrow ? `url(icons/arrow-left.svg)` : `url(icons/arrow-right.svg)`,
                   backgroundSize:'cover',
                   cursor:'pointer',
                   position: 'absolute',
                   zIndex: 999999,
                 }}
-                className={`${pressedArrow?`translate-y-[150px] -translate-x-[35px] bg-[url(icons/arrow-left.svg)] pointer-events-none`:`bg-[url(icons/arrow-right.svg)] rotate-180 translate-y-[143px] -translate-x-[35px]`}`}
+                className={`${
+                  pressedArrow
+                  ? `translate-y-[150px] -translate-x-[35px] pointer-events-none`
+                  : `rotate-180 translate-y-[143px] -translate-x-[35px]`}`}
                 onClick={handleArrow}
               >
               </Box>
