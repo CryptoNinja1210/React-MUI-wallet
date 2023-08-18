@@ -169,7 +169,7 @@ function UpComing(){
             ))}
           </Carousel>
         </Box>
-        <div className='w-full flex justify-center'>
+        <div className='w-full flex justify-center relative z-10'>
           <Carousel
             className='carousel' 
             show={1} 
@@ -195,8 +195,8 @@ function UpComing(){
               </Box>
             )}
           >
-            {Array(5).fill('').map(() => (
-              <Box sx={{width:'100vw', paddingTop:'30px', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000', paddingX: '100px'}}>
+            {Array(5).fill('').map((_, id) => (
+              <Box key={ 'banner_' + id} sx={{width:'100vw', paddingTop:'30px', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000', paddingX: '100px'}}>
                 <Box sx={{ maxWidth: '90vw', scale: {xs: '0.8', md: '1'}, display:'flex', flexDirection:'row', justifyContent:'center', gap:{xs:'3rem', md:'2rem'}, alignItems:'center'}}>
                   <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:'8px' }}>
                     <img src='icons/Ellipse 38.png' className='w-5 lg:w-7'></img>

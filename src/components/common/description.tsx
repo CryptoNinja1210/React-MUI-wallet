@@ -32,22 +32,20 @@ const Description: React.FC<DescriptionProps> = ({
       >
         {title}
       </Typography>
-      <Typography>
-        <Typography
-          sx={{
-            fontFamily: 'Syne',
-            fontSize: {xs:'18px', md:'2.25rem'},
-            fontStyle: 'normal',
-            fontWeight: '600',
-            lineHeight: '2.75rem', /* 122.222% */
-            textTransform: 'capitalize',
-          }}
-          className={`${isFinance ? 'block' : 'hidden'}`}
-        >
-          {`The Ultimate Decentralized `}
-          <span className="text-lime-400">Finance</span>
-          {` Platform`}
-        </Typography>
+      <Typography
+        sx={{
+          fontFamily: 'Syne',
+          fontSize: {xs:'18px', md:'2.25rem'},
+          fontStyle: 'normal',
+          fontWeight: '600',
+          lineHeight: '2.75rem', /* 122.222% */
+          textTransform: 'capitalize',
+        }}
+        className={`${isFinance ? 'block' : 'hidden'}`}
+      >
+        {`The Ultimate Decentralized `}
+        <span className="text-lime-400">Finance</span>
+        {` Platform`}
       </Typography>
       <Typography
         sx={{

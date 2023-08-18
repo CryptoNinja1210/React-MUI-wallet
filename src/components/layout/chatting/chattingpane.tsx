@@ -26,7 +26,7 @@ const ChattingPane = ({className, chattingLog}: chattingProps) => {
     <div ref={chatContainerRef} style={{fontFamily: 'Montserrat'}} className={`${className} w-full bg-[#1C1E22] overflow-y-scroll no-scrollbar py-0`}>
       <div>
         {chattingLog.map((item, index) => (
-          <div className={`flex ${item.id === '01' ? 'flex-row-reverse' : 'flex-row'} m-6 items-start `}>
+          <div key={item.message} className={`flex ${item.id === '01' ? 'flex-row-reverse' : 'flex-row'} m-6 items-start `}>
             <div className="min-w-fit relative flex flex-col justify-center items-center">
               <img className="min-w-fit w-12 h-12 rounded-full" src={item.avatar}/>
               <div className={`absolute -bottom-2 w-[80%] h-5 ${Number(item.id) ==25 ? 'bg-[#FFC329]' : Number(item.id) == 82 ? 'bg-[#9D63F6]' : 'bg-[#ffffff]'} rounded-md text-center text-black font-bold text-sm`}>{`V${item.id}`}</div>

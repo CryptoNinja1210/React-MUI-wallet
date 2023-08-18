@@ -7,7 +7,7 @@ interface AddType {
 const AfterConnect = ({ addrInfo }: AddType) => {
   return (
     <Box 
-      className={`mt-[100px] mx-12 ${addrInfo? 'flex' : 'hidden'} flex-col md:flex-row justify-around items-center rounded-xl backdrop-blur-sm bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 py-12 mx-8 space-y-5 md:space-y-0 space-x-5 p-5`}
+      className={`mt-[150px] mx-12 ${addrInfo? 'flex' : 'hidden'} flex-col md:flex-row justify-around items-center rounded-xl backdrop-blur-sm bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 py-12 mx-8 space-y-5 md:space-y-0 space-x-5 p-5`}
     >
       <img src="images/ellipse.svg" style={{width: '105px', height:'105px'}}/>
       <Typography 
@@ -28,7 +28,7 @@ const AfterConnect = ({ addrInfo }: AddType) => {
           <Typography sx={{ fontFamily: 'Montserrat', fontSize: '15px', fontWeight: '500', lineHeight: '16.568px'}}>$0</Typography>
           <Typography sx={{color:'#8699B0', fontSize:'12px', fontFamily:'Montserrat', letterSpacing:'-0.12px'}}>to collect</Typography>
         </Box>
-        <Box sx={{ background:'none', color:'#00FC65', borderRadius:'20px', border:'1px solid #00FC65', px:'33px', py:'10px', fontSize:'14px', fontFamily:'Syne', letterSpacing: '0.5px', lineHeight:'20px', leadingTrim:'both'}}>Buy Token</Box>
+        <Box className='hover:bg-[#00FC65] hover:text-[#060607] hover:font-bold' sx={{ background:'none', color:'#00FC65', borderRadius:'20px', border:'1px solid #00FC65', px:'33px', py:'10px', fontSize:'14px', fontFamily:'Syne', letterSpacing: '0.5px', lineHeight:'20px', leadingTrim:'both'}}>Buy Token</Box>
       </Box>
     </Box>
   )

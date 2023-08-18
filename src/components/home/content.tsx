@@ -248,7 +248,7 @@ function Content(){
             className="items-center mt-28 w-full"
           >
             <Box
-              className='flex flex-col justify-around w-full md:max-w-xl mx-32'
+              className='flex flex-col justify-around w-full md:max-w-xl ml-24'
             >
               <Description isFinance={true} title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
               <Box 
