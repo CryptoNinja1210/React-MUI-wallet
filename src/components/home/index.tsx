@@ -156,21 +156,21 @@ function Index({
             <Typography
               sx={{
                 fontFamily: 'Syne',
-                fontSize: '60px',
+                // fontSize: '90px',
                 lineHeight: '1.3',
                 fontWeight: '800',
                 textAlign: 'center',
                 textTransform: 'capitalize',
                 letterSpacing: '3px',
-                transform: 'scale(1.5, 1)',
               }}
+              className='word-break md:scale-y-75 scale-y-75 md:text-[90px] text-5xl'
             >
               The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
             </Typography>
           </Box>
           <Typography
             sx={{
-              fontSize: '16px',
+              // fontSize: '16px',
               lineHeight: '25px',
               textAlign: 'center',
               fontWeight: '100',
@@ -181,6 +181,7 @@ function Index({
               fontFamily: 'Montserrat',
               display: addrInfo? 'none' : '  block'
             }}
+            className='md:text-[16px] text-[12px]'
           >
             "Predict, Stake, and Win: Bonus DeFi Unleashes Instant Utility and Organic Marketing for Any Token!
           </Typography>
