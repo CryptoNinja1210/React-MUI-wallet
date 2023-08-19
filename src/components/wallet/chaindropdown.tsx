@@ -123,7 +123,7 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
                       key={option.chainId}
                       selected={index === selectedIndex}
                       onClick={() => handleMenuItemClick(index)}
-                      className={`hover:bg-gray-700 ${selectedIndex == index ? `bg-gray-700` : ``}`}
+                      className={`hover:bg-gray-700 ${selectedIndex == index ? `bg-gray-700 hover:bg-gray-700` : ``}`}
                       sx={{fontFamily:'Syne-Bold'}}
                     >
                       <img src={option.icon} className='w-[30px] h-[30px] pr-[10px]' alt="" />{option.name}

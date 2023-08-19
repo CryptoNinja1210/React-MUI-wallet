@@ -8,6 +8,7 @@ import Trending from "../components/home/trending"
 import Content from "../components/home/content"
 import { Box } from '@mui/joy';
 import Footer from '../components/layout/footer';
+import ChattingBox from '../components/layout/chatting/chattingBox';
 
 export default function Home() {
 
@@ -34,11 +35,18 @@ export default function Home() {
           overflowX: 'hidden',
         }}
       >
-        <Header addrInfo={addrInfo} setAddrInfo={setAddrInfo} netInfoState={netInfoState} setNetInfoState={setNetInfoState}/>
-        {/* <ChattingBox
-          showMessage={true} 
-          // setShowMessage={setShowMessage}
-        /> */}
+        <Header
+          showMessage={showMessage}
+          setShowMessage={setShowMessage}
+          addrInfo={addrInfo}
+          setAddrInfo={setAddrInfo}
+          netInfoState={netInfoState}
+          setNetInfoState={setNetInfoState}
+        />
+        <ChattingBox
+          showMessage={showMessage}
+          setShowMessage={setShowMessage} 
+        />
         <Index addrInfo={addrInfo}/>
         <Upcoming />
         <Trending />

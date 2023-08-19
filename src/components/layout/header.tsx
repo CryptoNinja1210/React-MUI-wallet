@@ -19,7 +19,6 @@ import "../../App.css";
 //ant design components
 import { HappyProvider } from '@ant-design/happy-work-theme';
 import { Button as Button_Antd, ConfigProvider } from 'antd';
-import ChattingBox from "./chatting/chattingBox.tsx";
 
 interface NetworkInfo {
   icon: string;
@@ -34,6 +33,8 @@ interface NetworkInfo {
 }
 
 interface SetInfoType {
+  showMessage: boolean;
+  setShowMessage: (showMessage: boolean) => void;
   netInfoState: NetworkInfo;
   setNetInfoState: (netInfoState: NetworkInfo) => void;
   addrInfo: string;
@@ -64,16 +65,17 @@ interface NavDropPropsTypes {
   menulist: string[];
 }
 function Header({
+  showMessage,
+  setShowMessage,
   addrInfo,
   setAddrInfo,
-  // netInfoState,
   setNetInfoState,
 }: SetInfoType) {
   //
   const [provider, setProvider] = React.useState<providers.Web3Provider | null>(
     null
   );
-  const [showMessage, setShowMessage] = React.useState(false);
+  // const [showMessage, setShowMessage] = React.useState(false);
   const [showPopOver, setShowPopOver] = React.useState(false);
 
   const onNetworkChange = (netInfo: NetworkInfo) => {
@@ -88,7 +90,7 @@ function Header({
   const handleSetting = () => {};
 
   const handleMessage = () => {
-    setShowMessage(prevState => !prevState);
+    setShowMessage(!showMessage);
   };
 
   async function switchNetwork(netinfo: NetworkInfo) {
@@ -154,7 +156,6 @@ function Header({
 
   return (
     <AppBar position="fixed" sx={{ background: "none", zIndex: "999" }} className="backdrop-blur-xl">
-      <ChattingBox showMessage={showMessage} setShowMessage={setShowMessage} />
       <Container maxWidth="xl" className="px-8 items-center">
         <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
           <Box className='flex flex-row place-items-center'>

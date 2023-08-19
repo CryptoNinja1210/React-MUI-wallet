@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        '100' : '100',
+      },
       dropShadow: {
         glow: [
           "0 0px 5px rgba(0,0, 255, 0.2)",
