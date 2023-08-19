@@ -233,7 +233,7 @@ function Content(){
           <Box 
             className='mt-[150px] text-center space-y-5'
           >
-            <div className='inline feature '>How it works</div><br/>
+            <div className='inline feature'>How it works</div><br/>
             <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
           </Box>
           <Box sx={{px:{xs:'30px', md:'160px'}}}>
@@ -276,99 +276,93 @@ function Content(){
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between',       
+                justifyContent:'center',
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Circulating Supply</Typography>
-              <Typography
-                sx={{
-                  color: '#FFF',
-                  fontFamily: 'Syne',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
-                  textTransform: 'capitalize',
-                }}
-              >205,682,922</Typography>
+              <Box>
+                <Typography
+                  sx={{
+                    color: '#ADA8C3',
+                    fontFamily: 'Montserrat-Medium',
+                    fontSize: {xs:'11px', md:'16px'},
+                    lineHeight: '25px',
+                    textTransform: 'capitalize',
+                  }}
+                >Circulating Supply</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontFamily: 'Syne-SemiBold',
+                    fontSize: {xs:'18px', md:'28px'},
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >205,682,922</Typography>
+              </Box>
             </Box>
             <Box sx={{borderRight:'1px solid #42355B'}}></Box>
             <Box 
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between'            
+                justifyContent:'center',
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Total supply</Typography>
-              <Typography
+              <Box>
+                <Typography
                 sx={{
-                  color: '#FFF',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontFamily: 'Syne',
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: {xs:'11px', md:'16px'},
+                  lineHeight: '25px',
                   textTransform: 'capitalize',
                 }}
-              >387,756,414</Typography>
+                >Total supply</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontSize: {xs:'18px', md:'28px'},
+                    fontFamily: 'Syne-SemiBold',
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >387,756,414</Typography>
+              </Box>
             </Box>
             <Box sx={{borderRight:'1px solid #42355B'}}></Box>
             <Box 
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between'            
+                justifyContent:'center',
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Max Supply</Typography>
-              <Typography
+              <Box>
+                <Typography
                 sx={{
-                  color: '#FFF',
-                  fontFamily: 'Syne',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: {xs:'11px', md:'16px'},
+                  lineHeight: '25px',
                   textTransform: 'capitalize',
                 }}
-              >750,000,000</Typography>
+                >Max Supply</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontFamily: 'Syne-SemiBold',
+                    fontSize: {xs:'18px', md:'28px'},
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >750,000,000</Typography>
+              </Box>
             </Box>
           </Box>
           <Box sx={{
@@ -382,99 +376,92 @@ function Content(){
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between'            
+                justifyContent:'center',
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Market cap</Typography>
-              <Typography
+              <Box>
+                <Typography
                 sx={{
-                  color: '#FFF',
-                  fontFamily: 'Syne',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: {xs:'11px', md:'16px'},
+                  lineHeight: '25px',
                   textTransform: 'capitalize',
                 }}
-              >$290 million</Typography>
+                >Market cap</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontFamily: 'Syne-SemiBold',
+                    fontSize: {xs:'18px', md:'28px'},
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >$290 million</Typography>
+              </Box>
             </Box>
             <Box sx={{borderRight:'1px solid #42355B'}}></Box>
             <Box 
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between'            
+                justifyContent:'center',
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Burned to date</Typography>
-              <Typography
+              <Box>
+                <Typography
                 sx={{
-                  color: '#FFF',
-                  fontFamily: 'Syne',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: {xs:'11px', md:'16px'},
+                  lineHeight: '25px',
                   textTransform: 'capitalize',
                 }}
-              >868,132,226</Typography>
+                >Burned to date</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontFamily: 'Syne-SemiBold',
+                    fontSize: {xs:'18px', md:'28px'},
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >868,132,226</Typography>
+              </Box>
             </Box>
             <Box sx={{borderRight:'1px solid #42355B'}}></Box>
             <Box 
               sx={{
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'space-between'            
+                alignItems: 'center'       
               }}
-              className="w-1/3 text-center"
+              className="w-1/3 text-left"
             >
-              <Typography
-              sx={{
-                color: '#ADA8C3',
-                fontFamily: 'Montserrat',
-                fontSize: {xs:'11px', md:'16px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: '25px',
-                textTransform: 'capitalize',
-              }}
-              >Current emissions</Typography>
-              <Typography
+              <Box>
+                <Typography
                 sx={{
-                  color: '#FFF',
-                  fontFamily: 'Syne',
-                  fontSize: {xs:'18px', md:'28px'},
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  lineHeight: 'normal',
-                  letterSpacing: '0.98px',
+                  color: '#ADA8C3',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: {xs:'11px', md:'16px'},
+                  lineHeight: '25px',
                   textTransform: 'capitalize',
                 }}
-              >4.55/block</Typography>
+                >Current emissions</Typography>
+                <Typography
+                  sx={{
+                    color: '#FFF',
+                    fontFamily: 'Syne-SemiBold',
+                    fontSize: {xs:'18px', md:'28px'},
+                    letterSpacing: '0.98px',
+                    textTransform: 'capitalize',
+                  }}
+                >4.55/block</Typography>
+              </Box>
             </Box>
           </Box>
           <Box
@@ -484,7 +471,7 @@ function Content(){
               width:'auto',
               mt:'150px',
               mb: {md:'100px',xs: '30px'},
-              padding:'2rem',
+              padding:'3rem',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
@@ -496,42 +483,35 @@ function Content(){
             <Typography
               sx={{
                 color: '#0A0A0B',
-                fontFamily: 'Syne',
+                fontFamily: 'Syne-Bold',
+                lineHeight:'52px',
                 fontSize: {xs:'18px', md:'48px'},
-                fontStyle: 'normal',
-                fontWeight: '700',
                 letterSpacing: '-0.4px',
                 width:'80%'
               }}
-              className='leading-normal'
             >
               Stay Updated, Engage, and Get Support in our Official Telegram Group
             </Typography>
             <Typography 
               sx={{
                 color: '#0A0A0B',
-                fontFamily: 'Montserrat',
+                fontFamily: 'Inter-Medium',
                 fontSize: {xs:'12px', md:'20px'},
-                fontStyle: 'normal',
-                fontWeight: '500',
                 lineHeight: '32px',
-                width:'70%'
+                width:'70%',
+                marginTop: '10px'
               }}
             >Join the Bonus DeFi Telegram Community and Connect with Fellow Enthusiasts</Typography>
             <Typography
               sx={{
                 color: '#0A0A0B',
-                fontFamily: 'Syne',
+                fontFamily: 'Syne-Bold',
                 fontSize: '14px',
-                fontStyle: 'normal',
-                fontWeight: '700',
-                lineHeight: 'normal',
                 padding: '16px 32px',
                 alignItems: 'center',
-                gap: '8px',
                 borderRadius: '144px',
                 background: '#FFF',
-                marginTop:'30px'
+                marginTop:'20px'
               }}
             >Join Telegram</Typography>
           </Box>

@@ -12,6 +12,7 @@ import Footer from '../components/layout/footer';
 export default function Home() {
 
   const [addrInfo, setAddrInfo] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
   const [netInfoState, setNetInfoState] = useState({
     icon: 'icons/ether.svg', 
     name: 'Ethereum Mainnet', 
@@ -34,6 +35,10 @@ export default function Home() {
         }}
       >
         <Header addrInfo={addrInfo} setAddrInfo={setAddrInfo} netInfoState={netInfoState} setNetInfoState={setNetInfoState}/>
+        {/* <ChattingBox
+          showMessage={true} 
+          // setShowMessage={setShowMessage}
+        /> */}
         <Index addrInfo={addrInfo}/>
         <Upcoming />
         <Trending />

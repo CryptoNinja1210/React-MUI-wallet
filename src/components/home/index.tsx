@@ -95,21 +95,22 @@ function Index({
   const slideNum = window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 64) / 306.7;
 
   return(
-    <Box sx={{
-      // height: 'calc(100vh - 102px)',
-      height: '700px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-    }}>
+    <Box 
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        pt:'200px',
+        transform: 'translateY(0)'
+      }}
+      // className='h-[100vh] 2xl:h-full'
+    >
       <Box 
         sx={{
-          paddingTop: '50px',
           marginX: 'auto',
           maxWidth: '1536px', 
           width: '100%',
           flexShrink: '0',
-          mt: '-200px',
         }}
       >
         <Box sx={{
@@ -119,20 +120,25 @@ function Index({
           left: 0,
           right: 0,
           width: '100vw',
-          height: '100vh',
+          height: '100%',
           backgroundImage: 'url("backgrounds/blockchain-gradient.png")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
+          // backgroundPositionY: '300px',
           filter: 'grayscale(100%)',
           }}
         />
         <AfterConnect addrInfo={addrInfo}/>
         <Box 
-          className="pt-32 px-8"
+        className={`${addrInfo?`pt-28`:`pt-0`} 2xl:pr-8 sm:pr-0 sm:pl-8`}
+          sx={{
+            pr:{xs:'0'},
+            pl: {xs:'32px'}
+          }}
         >
           <span className='prediction'>Live Predictions</span>
           <Carousel 
-            className='carousel' 
+            className='carousel relative z-50' 
             show={slideNum} 
             slide={1} 
             swiping={true} 
@@ -151,29 +157,27 @@ function Index({
             ))}
           </Carousel>
         </Box>
-        <Box sx={{display:'flex', flexDirection:'column'}}>
-          <Box sx={{ mt:'80px', transform: 'rotateX(-55deg)',display: addrInfo? 'none' : 'block' }}>
+        <Box sx={{display:'flex', flexDirection:'column', marginBottom: '130px'}}>
+          <Box sx={{ mt:{xs:'50px',md:'120px'},display: addrInfo? 'none' : 'block' }}>
             <Typography
               sx={{
-                fontFamily: 'Syne',
-                // fontSize: '90px',
-                lineHeight: '1.3',
-                fontWeight: '800',
+                fontFamily: 'Syne-ExtraBold',
+                lineHeight: {md:'60px', sm:'36px'},
+                fontSize: {md: '50px', sm:'36px'},
                 textAlign: 'center',
                 textTransform: 'capitalize',
-                letterSpacing: '3px',
+                letterSpacing: '1.75px',
               }}
-              className='word-break md:scale-y-75 scale-y-75 md:text-[90px] text-5xl'
+              className='word-break'
             >
               The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
             </Typography>
           </Box>
           <Typography
             sx={{
-              // fontSize: '16px',
+              paddingTop: '32px',              
               lineHeight: '25px',
               textAlign: 'center',
-              fontWeight: '100',
               zIndex: '100',
               position: 'relative',
               color: '#EBEBEB',

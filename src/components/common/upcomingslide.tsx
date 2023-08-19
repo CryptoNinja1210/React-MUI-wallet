@@ -52,10 +52,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
       <Typography
         sx={{
           color: 'var(--neutral-01100, #FFF)',
-          fontFamily: 'Montserrat',
+          fontFamily: 'Montserrat-SemiBold',
           fontSize: '18px',
-          fontStyle: 'normal',
-          fontWeight: '400',
           lineHeight: '27px',
           paddingTop: '20px',
         }}
@@ -94,7 +92,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
               fontFamily: 'Montserrat',
               fontSize: '12.049px',
               fontStyle: 'normal',
-              fontWeight: '400',
               lineHeight: '15.062px',
               letterSpacing: '-0.12px',
             }}
@@ -104,10 +101,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           <Typography
             sx={{
               color: '#FFF',
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat-Medium',
               fontSize: '13.556px',
-              fontStyle: 'normal',
-              fontWeight: 500,
               lineHeight: '16.568px',
               pt: '5px',
             }}
@@ -122,8 +117,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
               textAlign: 'right',
               fontFamily: 'Montserrat',
               fontSize: '12.049px',
-              fontStyle: 'normal',
-              fontWeight: '400',
               lineHeight: '15.062px',
               letterSpacing: '-0.12px',
               pt: '5px',
@@ -134,10 +127,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           <Typography
             sx={{
               color: '#FFF',
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat-Medium',
               fontSize: '13.556px',
-              fontStyle: 'normal',
-              fontWeight: 500,
               lineHeight: '16.568px',
               pt: '5px',
             }}
@@ -152,8 +143,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
             color: '#999',
             fontFamily: 'Montserrat',
             fontSize: '12.049px',
-            fontStyle: 'normal',
-            fontWeight: '400',
             lineHeight: '15.062px',
             letterSpacing: '-0.12px',
             paddingBottom: '5px',
@@ -181,10 +170,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
             <Typography
               sx={{
                 color: '#00FC65',
-                fontFamily: 'Syne',
+                fontFamily: 'Syne-Bold',
                 fontSize: '12px',
-                fontStyle: 'normal',
-                fontWeight: '700',
                 lineHeight: '15px',
                 letterSpacing: '0.42px',
                 margin: 'auto',

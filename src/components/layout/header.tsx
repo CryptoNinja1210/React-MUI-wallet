@@ -153,7 +153,7 @@ function Header({
   }
 
   return (
-    <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
+    <AppBar position="fixed" sx={{ background: "none", zIndex: "999" }} className="backdrop-blur-xl">
       <ChattingBox showMessage={showMessage} setShowMessage={setShowMessage} />
       <Container maxWidth="xl" className="px-8 items-center">
         <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
@@ -187,23 +187,14 @@ function Header({
                   sx={{
                     display: "flex",
                     flexDirection: "row",
-                    justifyContent: "flex-start",
                     alignItems: "center",
+                    pl: '10px'
                   }}
                 >
-                  <Box
-                    sx={{
-                      pl: "10px",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      display:{xs:'none', md:'flex'}
-                    }}
-                  >
-                    {/* <Typography>{netInfoState.name.slice(0, 3)}</Typography> */}
-                    <Typography>
-                      {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
-                    </Typography>
-                  </Box>
+                  {/* <Typography>{netInfoState.name.slice(0, 3)}</Typography> */}
+                  <Typography>
+                    {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
+                  </Typography>
                   <DisconnectWallet handleDisconnect={disconnectWallet} />
                 </Box>
               ) : (

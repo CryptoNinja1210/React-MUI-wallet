@@ -13,6 +13,18 @@ import { createGlobalStyle } from 'styled-components';
     font-weight: bold;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'Syne-ExtraBold';
+    src: url('./fonts/Syne-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Syne-SemiBold';
+    src: url('./fonts/Syne-SemiBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
 `;
  function SyneFont() {
   return (

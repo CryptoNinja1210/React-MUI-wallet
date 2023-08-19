@@ -5,7 +5,7 @@ import { Button as Button_Antd, ConfigProvider } from 'antd';
 // eslint-disable-next-line @typescript-eslint/ban-types
 export default function DisconnectWallet({ handleDisconnect } : { handleDisconnect: () => void }){
   return(
-    <Stack spacing={2} direction='row' mr={'5.6rem'} ml={'0.5rem'}>
+    <Stack spacing={2} direction='row' ml={'0.5rem'}>
       <ConfigProvider
         theme={{
           token: {
@@ -18,7 +18,7 @@ export default function DisconnectWallet({ handleDisconnect } : { handleDisconne
             type="primary"
             shape="round"
             style={{fontSize:'14px', lineHeight:'20px', letterSpacing:'0.5px'}}
-            className="font-[Syne] font-bold leading-5 bg-[#00FC65] text-black h-[41px] w-48"
+            className="font-[Syne-Bold] bg-[#00FC65] text-black h-[41px] w-48"
             onClick={() => handleDisconnect()}
           >
             Disconnect

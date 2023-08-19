@@ -121,11 +121,11 @@ function UpComing(){
         >
         </Box>
         <Box
-          className="px-8 max-w-[1536px] w-full mt-[-470px] mx-auto text-center"
+          className="pl-8 2xl:pr-8 max-w-[1536px] w-full mt-[-470px] mx-auto text-center"
         >
           <span className='inline upcoming leading-normal'>Upcoming Predictions</span>
           <Carousel 
-            className='carousel absolute z-50' 
+            className='carousel relative z-50' 
             show={slideNum}
             slide={4}
             swiping={true}
@@ -142,8 +142,9 @@ function UpComing(){
                   backgroundSize:'cover',
                   cursor:'pointer',
                   position: 'absolute',
+                  display: {md:'block', xs:'none'}
                 }}
-                className={`${pressedArrow?`translate-y-[150px] -translate-x-[100px]`:`rotate-180 translate-y-[140px] -translate-x-[100px] pointer-events-none `}`}
+                className={`${pressedArrow?`translate-y-[150px] -translate-x-[70px]`:`rotate-180 translate-y-[140px] -translate-x-[70px] pointer-events-none `}`}
                 onClick={handleArrow}
               >
               </Box>
@@ -158,7 +159,8 @@ function UpComing(){
                   backgroundSize:'cover',
                   cursor:'pointer',
                   position: 'absolute',
-                  zIndex: 999999,
+                  zIndex: 50,
+                  display: {md:'block', xs:'none'}
                 }}
                 className={`${
                   pressedArrow
@@ -201,7 +203,7 @@ function UpComing(){
             )}
           >
             {Array(5).fill('').map((_, id) => (
-              <Box key={ 'banner_' + id} sx={{width:'100vw', paddingTop:'30px', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000', paddingX: '100px'}}>
+              <Box key={ 'banner_' + id} sx={{width:'100%', paddingTop:'30px', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000', paddingX: '100px'}}>
                 <Box sx={{ maxWidth: '90vw', scale: {xs: '0.8', md: '1'}, display:'flex', flexDirection:'row', justifyContent:'center', gap:{xs:'3rem', md:'2rem'}, alignItems:'center'}}>
                   <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:'8px' }}>
                     <img src='icons/Ellipse 38.png' className='w-5 lg:w-7'></img>

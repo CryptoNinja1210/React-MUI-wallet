@@ -7,13 +7,13 @@ const GetButton: React.FC<GetButtonProps> = ({
 }) =>{
   return (
     <div
-      className="flex justify-satrt items-center"
+      className="flex justify-satrt items-center relative z-50"
     >
       <div
         className="flex justify-center items-center bg-[#00FC65] gap-2 rounded-full p-auto w-[169px] h-12 group hover:drop-shadow-glow"
       >
         <p
-          style={{fontFamily: 'syne', fontStyle: 'normal', fontWeight: '700'}}
+          style={{fontFamily: 'Syne-Bold'}}
           className="text-[#0A0A0B] text-center text-[14px] leading-normal"
         >
           {name}

@@ -45,10 +45,8 @@ function Footer(){
               <Typography
                 sx={{
                   color: '#FFF',
-                  fontFamily: 'Syne',
+                  fontFamily: 'Syne-Bold',
                   fontSize: '20px',
-                  fontStyle: 'normal',
-                  fontWeight: '700',
                   lineHeight: '32px',
                   letterSpacing: '-0.6px',
                   marginBottom:'30px'
@@ -119,14 +117,11 @@ function Footer(){
               <Typography
                 sx={{
                   color: '#FFF',
-                  fontFamily: 'Syne',
+                  fontFamily: 'Syne-Bold',
                   fontSize: '20px',
-                  fontStyle: 'normal',
-                  fontWeight: '700',
                   lineHeight: '32px',
                   letterSpacing: '-0.6px',
-                  marginBottom:'30px'
-                  
+                  marginBottom:'30px'                  
                 }}
               >
                   Legal
