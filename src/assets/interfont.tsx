@@ -13,6 +13,12 @@ import { createGlobalStyle } from 'styled-components';
     font-weight: bold;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'Inter-Medium';
+    src: url('./fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
 `;
  function InterFont() {
   return (

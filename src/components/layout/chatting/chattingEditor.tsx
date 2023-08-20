@@ -25,7 +25,6 @@ const ChattingEditor = ({
   const sendBtnRef = useRef<HTMLButtonElement | null>(null);
   const handleChange = (event:ChangeEvent<HTMLTextAreaElement>) => {
     setNewMessage(event.target.value.replace(/ {2,}/g, ' '))
-    console.log(event)
   }
   const onEmojiClick = (emojiObject: { emoji: string }) => {
     setNewMessage(prevInput => prevInput + emojiObject.emoji);
@@ -63,7 +62,6 @@ const ChattingEditor = ({
       }
     }
   }, [newMessage])
-  console.log(inputRef.current?.value)
   return (
     <div
       className="w-full bg-[#232329] px-3 py-4 flex items-center"

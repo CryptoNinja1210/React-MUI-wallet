@@ -43,7 +43,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
     }
   }, [props, selectedIndex]);
   const handleClick = () => {
-    console.info(`You clicked ${networkOptions[selectedIndex]}`);
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -66,16 +65,13 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
     setOpen(false);
   }
 
-  console.log(anchorRef.current?.clientWidth)
-
   return (
     <React.Fragment>
       <ButtonGroup variant="text" ref={anchorRef}>
         <Button
           sx={{
-            fontFamily: 'arial',
+            fontFamily: 'Syne-Bold',
             fontSize: '14px',
-            fontWeight: '700',
             lineHeight: '20px',
             letterSpacing: '0.035em',
             textAlign: 'center',
@@ -96,7 +92,6 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
           <img className='w-[30px] h-[30px] pr-[10px]' src={networkOptions[selectedIndex].icon}/>
           <Box className="hidden md:block whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
           <img src='/icons/Vector 60.svg' alt='' className='mx-3 w-4 h-4'/>
-          {/* <VectorIcon /> */}
         </Button>
       </ButtonGroup>
       <Popper
@@ -128,6 +123,8 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
                       key={option.chainId}
                       selected={index === selectedIndex}
                       onClick={() => handleMenuItemClick(index)}
+                      className={`hover:bg-gray-700 ${selectedIndex == index ? `bg-gray-700 hover:bg-gray-700` : ``}`}
+                      sx={{fontFamily:'Syne-Bold'}}
                     >
                       <img src={option.icon} className='w-[30px] h-[30px] pr-[10px]' alt="" />{option.name}
                     </MenuItem>

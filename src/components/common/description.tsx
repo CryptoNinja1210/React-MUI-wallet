@@ -21,11 +21,11 @@ const Description: React.FC<DescriptionProps> = ({
       <Typography
         sx={{
           color: '#FFF',
-          fontFamily: 'Syne',
+          fontFamily: 'Syne-SemiBold',
           fontSize: {xs:'18px', md:'2.25rem'},
           fontStyle: 'normal',
           fontWeight: '600',
-          lineHeight: '2.75rem', /* 122.222% */
+          lineHeight: '2.75rem',
           textTransform: 'capitalize',
         }}
         className={`${isFinance ? 'hidden' : 'block'}`}
@@ -34,17 +34,15 @@ const Description: React.FC<DescriptionProps> = ({
       </Typography>
       <Typography
         sx={{
-          fontFamily: 'Syne',
+          fontFamily: 'Syne-Bold',
           fontSize: {xs:'18px', md:'2.25rem'},
-          fontStyle: 'normal',
-          fontWeight: '600',
-          lineHeight: '2.75rem', /* 122.222% */
+          lineHeight: '2.75rem',
           textTransform: 'capitalize',
         }}
         className={`${isFinance ? 'block' : 'hidden'}`}
       >
         {`The Ultimate Decentralized `}
-        <span className="text-lime-400">Finance</span>
+        <span className="text-[#00FC65]">Finance</span>
         {` Platform`}
       </Typography>
       <Typography

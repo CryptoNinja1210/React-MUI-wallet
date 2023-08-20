@@ -17,8 +17,8 @@ export default function ConnectWallet({ handleConnect, showArr } : { handleConne
           <Button_Antd
             type="primary"
             shape="round"
-            style={{fontSize:'14px', lineHeight:'20px', letterSpacing:'0.5px'}}
-            className="font-[Syne] font-bold leading-5 bg-[#00FC65] text-black h-[41px] whitespace-nowrap w-48"
+            style={{fontFamily:'Syne-Bold', fontSize:'14px', lineHeight:'20px', letterSpacing:'0.5px'}}
+            className="bg-[#00FC65] text-black h-[41px] whitespace-nowrap w-48"
             onClick={() => handleConnect()}
           >
             {`Connect Waller ${showArr ? '↗' : ''}`}

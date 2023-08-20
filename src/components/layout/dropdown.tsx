@@ -51,10 +51,10 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
             display: "block",
             color: "#8699B0",
             whiteSpace: "nowrap",
-            fontFamily: "montserrat",
+            fontFamily: "Montserrat-SemiBold",
             fontSize: "14px",
             fontWeight: "600",
-            lineHeight: "24px" /* 171.429% */,
+            lineHeight: "24px",
             textTransform: "none",
             paddingY: '12px',
             '&:hover': {
@@ -101,10 +101,8 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
                     key={listItem}
                     // selected={index === selectedIndex}
                     onClick={() => handleMenuItemClick(index)}
-                    // className={`hover:bg-gray-700 ${index === selectedIndex ? `bg-gray-700` : ``}`}
                     className={`hover:bg-gray-700 ${hoverSubMenu == index ? `bg-gray-700` : ``}`}
                     onMouseEnter={()=>handleHoverSubItem(index)}
-                    // onMouseLeave={handleLeaveSubItem}
                   >
                     {listItem}
                   </MenuItem>

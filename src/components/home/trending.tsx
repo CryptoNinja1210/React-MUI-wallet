@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { Carousel } from '@trendyol-js/react-carousel';
 import TrendingSlide from '../common/trendingslide.tsx';
 import {Box} from '@mui/material';
@@ -37,7 +38,11 @@ const trendingslides = [
 ]
 
 function Trending(){  
+  const [pressedArrow, setPressedArrow] = useState(true);
   const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 420.6;
+  const handleArrow=()=>{
+    setPressedArrow(!pressedArrow);
+  }
   return(
     <Box
       className='flex flex-col justify-center items-center pb-24 bg-[#0A0A0B]'
@@ -55,12 +60,51 @@ function Trending(){
         className="px-8 max-w-[1536px] w-full mt-[40px] mx-auto"
       >
         <Carousel 
-          className='carousel' 
+          className='carousel relative z-50' 
           show={slideNum}
-          slide={2}
+          slide={3}
           swiping={true}
           transition={0.5}
           swipeOn={1}
+          useArrowKeys={true} 
+          rightArrow={(
+            <Box
+              sx={{
+                width:'70px',
+                height:'70px',
+                filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                backgroundImage: pressedArrow ? `url(icons/arrow-right.svg)` : `url(icons/arrow-left.svg)`,
+                backgroundSize:'cover',
+                cursor:'pointer',
+                position: 'absolute',
+                display: {md:'block', xs:'none'}
+              }}
+              className={`${pressedArrow?`translate-y-[110px] -translate-x-[70px]`:`rotate-180 translate-y-[100px] -translate-x-[70px] pointer-events-none `}`}
+              onClick={handleArrow}
+            >
+            </Box>
+          )}
+          leftArrow={(
+            <Box
+              sx={{
+                width:'70px',
+                height:'70px',
+                filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))',
+                backgroundImage: pressedArrow ? `url(icons/arrow-left.svg)` : `url(icons/arrow-right.svg)`,
+                backgroundSize:'cover',
+                cursor:'pointer',
+                position: 'absolute',
+                zIndex: 50,
+                display: {md:'block', xs:'none'}
+              }}
+              className={`${
+                pressedArrow
+                ? `translate-y-[110px] -translate-x-[35px] pointer-events-none`
+                : `rotate-180 translate-y-[103px] -translate-x-[35px]`}`}
+              onClick={handleArrow}
+            >
+            </Box>
+          )}
         >
           {trendingslides.map((item)=> (
             <TrendingSlide {...item} key={item.title} />
