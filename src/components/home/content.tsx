@@ -56,7 +56,40 @@ const picture =[{
 {
   square:"images/love.png",
   bac:"images/Lovebac.png"
-}]
+}];
+
+const accountants = [
+  [
+    {
+      type1:"Circulating Supply",
+      amount1:"205,682,922"
+    },
+    {
+      type2:"Total supply",
+      amount2:"387,756,414" 
+    }
+  ],
+  [
+    {
+      type1:"Max Supply",
+      amount1:"750,000,000"
+    },
+    {
+      type2:"Market cap",
+      amount2:"$290 million" 
+    }
+  ],
+  [
+    {
+      type1:"Burned to date",
+      amount1:"868,132,226"
+    },
+    {
+      type2:"Current emissions",
+      amount2:"4.55/block" 
+    }
+  ],
+]
 
 function Content(){  
   return(
@@ -171,18 +204,31 @@ function Content(){
           className="w-full max-w-[1536px] mx-auto px-8 lg:pb-4 pb-2 z-50"
         >
           <Box 
-            className='pt-[40px] text-center space-y-5'
+            className='pt-[40px] text-center'
+            sx={{
+              mt:{md:'20px', xs:'0'},
+            }}
           >
             <div className='inline feature '>Our Key Features</div><br/>
-            <div className='subtitle'>Unleashing Limitless Potential in the Dynamic DeFi Universe</div>
+            <Box 
+              sx={{
+                fontSize:{md:'16px', xs:'11px'},
+                color: '#ADA8C3',
+                textAlign: 'center',
+                fontFamily: 'Montserrat',
+              }}
+            >
+              Unleashing Limitless Potential in the Dynamic DeFi Universe
+            </Box>
           </Box>
           <Box
             sx={{
               display:'flex',
               flexDirection:{ md:'row', xs:'column-reverse'},
               justifyContent:{md:'space-around', xs:'center'},
+              mt:{md:'48px', xs:'15px'}
             }}
-            className="items-center mt-12 w-full"
+            className="items-center w-full"
           >
             <Box
               className='flex flex-col justify-around w-full md:max-w-xl'
@@ -199,8 +245,9 @@ function Content(){
               display:'flex',
               flexDirection:{ md:'row', xs:'column'},
               justifyContent:{md:'space-around', xs:'center'},
+              mt:{md:'48px', xs:'10px'}
             }}
-            className="items-center mt-12 w-full"
+            className="items-center w-full"
           >
             <Box>
               <Picture square={picture[1].square} bac={picture[1].bac}/>
@@ -215,10 +262,11 @@ function Content(){
           <Box 
             sx={{
               display:'flex',
-              flexDirection:{ md:'row', xs:'column'},
+              flexDirection:{ md:'row', xs:'column-reverse'},
               justifyContent:{md:'space-around', xs:'center'},
+              mt:{md:'48px', xs:'10px'}
             }}
-            className="items-center mt-12 w-full"
+            className="items-center w-full"
           >
             <Box
               className='flex flex-col justify-around w-full md:max-w-xl'
@@ -231,36 +279,63 @@ function Content(){
             </Box>            
           </Box>
           <Box 
-            className='mt-[150px] text-center space-y-5'
+            sx={{
+              mt:{md:'150px', xs:'50px'}
+            }}
+            className=' text-center '
           >
             <div className='inline feature'>How it works</div><br/>
-            <div className='subtitle'>Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</div>
+            <Box 
+              sx={{
+                fontSize:{md:'16px', xs:'11px'}
+              }}
+            >Empowering Users to Predict, Engage, and Earn in a Few Simple Steps</Box>
           </Box>
-          <Box sx={{px:{xs:'30px', md:'160px'}}}>
-            <img className='mt-24 flex w-auto mx-auto scale-110' src='images/movie.png'></img>
+          <Box 
+            sx={{
+              px:{xs:'10px', md:'160px'},
+              mt:{xs:'30px', md:'96px'}
+          }}>
+            <img className='flex w-auto mx-auto scale-110' src='images/movie.png'></img>
           </Box>
           <Box 
             sx={{
               display:'flex',
-              flexDirection:{ md:'row', xs:'column'},
+              flexDirection:{ md:'row', xs:'column-reverse'},
               justifyContent:{md:'space-around', xs:'center'},
+              mt:{md:'112px', xs:'0'}
             }}
-            className="items-center mt-28 w-full"
+            className="items-center w-full"
           >
             <Box
-              className='flex flex-col justify-around w-full md:max-w-xl ml-24'
+              sx={{
+                ml:{md:'96px', xs:'0'}
+              }}
+              className='flex flex-col justify-around w-full md:max-w-xl'
             >
               <Description isFinance={true} title={description[3].title} subTitle1={description[3].subTitle1} subTitle2={description[3].subTitle2}/>
               <Box 
                 sx={{
+                  my:{md:'', xs:'30px'},
                   display:'flex',
                   flexDirection:'row',
                   justifyContent:'flex-start',
                   alignItems:'center'
                 }}>
                   <GetButton name={getbutton[3].name}/>
-                  <Typography sx={{color:'#00FC65', marginLeft:'20px', mr:'5px'}}>Learn</Typography>
-                  <Box sx={{backgroundImage:'url("icons/arrow3.png")', width:'18px', height:'14px'}}></Box>
+                  <Typography 
+                    sx={{
+                      color:'#00FC65', 
+                      fontFamily:'Syne-SemiBold',
+                      marginLeft:'20px', 
+                      mr:'5px',
+                      fontSize:{md:'14px', xs:'12px'}
+                    }}>Learn</Typography>
+                  <Box 
+                    sx={{
+                      backgroundImage:'url("icons/arrow3.png")', width:{md:'18px', xs:'14px'}, 
+                      height:{md:'14px', xs:'11px'}
+                    }}></Box>
               </Box>
             </Box>
             <Box>
@@ -268,7 +343,7 @@ function Content(){
             </Box>            
           </Box>
           <Box sx={{
-            display:'flex',
+            display:{md:'flex', xs:'none'},
             flexDirection:'row',
             justifyContent:'space-around',
           }}>
@@ -366,7 +441,7 @@ function Content(){
             </Box>
           </Box>
           <Box sx={{
-            display:'flex',
+            display:{md:'flex', xs:'none'},
             flexDirection:'row',
             justifyContent:'space-around',
             marginTop:'60px',
@@ -464,14 +539,87 @@ function Content(){
               </Box>
             </Box>
           </Box>
+          {accountants.map((item) => (
+            <Box 
+              key = {item[0].type1}
+              sx={{
+                display:{xs:'flex', md:'none'},
+                flexDirection:'row',
+                justifyContent:'space-between',
+                mb:'50px'
+            }}>
+              <Box 
+                sx={{
+                  display:'flex',
+                  flexDirection:'column',
+                  justifyContent:'center',
+                  alignItems: 'center'       
+                }}
+                className="w-1/3 text-left"
+              >
+                <Box>
+                  <Typography
+                    sx={{
+                      color: '#ADA8C3',
+                      fontFamily: 'Montserrat-Medium',
+                      fontSize: {xs:'11px', md:'16px'},
+                      lineHeight: '25px',
+                      textTransform: 'capitalize',
+                    }}
+                  >{item[0].type1}</Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFF',
+                      fontFamily: 'Syne-SemiBold',
+                      fontSize: {xs:'18px', md:'28px'},
+                      letterSpacing: '0.98px',
+                      textTransform: 'capitalize',
+                    }}
+                  >{item[0].amount1}</Typography>
+                </Box>
+              </Box>
+              <Box sx={{borderRight:'1px solid #42355B'}}></Box>
+              <Box 
+                sx={{
+                  display:'flex',
+                  flexDirection:'column',
+                  justifyContent:'center',
+                  alignItems: 'center'       
+                }}
+                className="w-1/3 text-left"
+              >
+                <Box>
+                  <Typography
+                  sx={{
+                    color: '#ADA8C3',
+                    fontFamily: 'Montserrat-Medium',
+                    fontSize: {xs:'11px', md:'16px'},
+                    lineHeight: '25px',
+                    textTransform: 'capitalize',
+                  }}
+                  >{item[1].type2}</Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFF',
+                      fontSize: {xs:'18px', md:'28px'},
+                      fontFamily: 'Syne-SemiBold',
+                      letterSpacing: '0.98px',
+                      textTransform: 'capitalize',
+                    }}
+                  >{item[1].amount2}</Typography>
+                </Box>
+              </Box>
+            </Box>
+          ))}
           <Box
             sx={{
               display: 'flex',
               textAlign:'center',
               width:'auto',
-              mt:'150px',
-              mb: {md:'100px',xs: '30px'},
-              padding:'3rem',
+              mt:{md:'150px', xs:'30px'},
+              mx:{ xs:'-10px'},
+              mb: {md:'100px',xs: '10px'},
+              padding:{md:'3rem', xs:'1.5rem'},
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
@@ -484,10 +632,10 @@ function Content(){
               sx={{
                 color: '#0A0A0B',
                 fontFamily: 'Syne-Bold',
-                lineHeight:'52px',
+                lineHeight:{md:'52px', xs:'normal'},
                 fontSize: {xs:'18px', md:'48px'},
                 letterSpacing: '-0.4px',
-                width:'80%'
+                width:{md:'80%', xs:'95%'}
               }}
             >
               Stay Updated, Engage, and Get Support in our Official Telegram Group
@@ -497,21 +645,22 @@ function Content(){
                 color: '#0A0A0B',
                 fontFamily: 'Inter-Medium',
                 fontSize: {xs:'12px', md:'20px'},
-                lineHeight: '32px',
-                width:'70%',
-                marginTop: '10px'
+                lineHeight: {md:'32px', xs:'normal'},
+                width:{md:'70%', xs:'95%'},
+                marginTop: {md:'10px', xs:'0'}
               }}
             >Join the Bonus DeFi Telegram Community and Connect with Fellow Enthusiasts</Typography>
             <Typography
               sx={{
                 color: '#0A0A0B',
                 fontFamily: 'Syne-Bold',
-                fontSize: '14px',
+                fontSize: {md:'14px', xs:'11px'},
                 padding: '16px 32px',
                 alignItems: 'center',
                 borderRadius: '144px',
                 background: '#FFF',
-                marginTop:'20px'
+                marginTop:{md:'20px', xs:'10px'},
+                marginBottom:{xs:'10px'}
               }}
             >Join Telegram</Typography>
           </Box>

@@ -39,15 +39,26 @@ const trendingslides = [
 
 function Trending(){  
   const [pressedArrow, setPressedArrow] = useState(true);
-  const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 420.6;
+  // const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 420.6;
+
+  const slideNum = window.innerWidth < 900 ? (window.innerWidth - 32) / 165 : window.innerWidth > 1536 ? 3.7 : (window.innerWidth - 32) / 422;
   const handleArrow=()=>{
     setPressedArrow(!pressedArrow);
   }
   return(
     <Box
-      className='flex flex-col justify-center items-center pb-24 bg-[#0A0A0B]'
+      className='pl-8 2xl:pr-8 flex flex-col justify-center bg-[#0A0A0B]'
+      sx={{
+        pb:{md:'96px', xs:'0'},
+        alignItems:{md:'center', xs:'flex-start'},
+      }}
     >
-      <Box sx={{pt:'120px'}}>
+      <Box 
+        sx={{
+          pt:{md:'120px', xs:'40px'},
+          marginBottom:{md:'0', xs:'-20px'}
+        }}
+      >
         <span className='trending'>Trending Predictions</span>
       </Box>
       <Box 
@@ -55,9 +66,10 @@ function Trending(){
           flexShrink: '0',
           justifyContent: 'start',
           marginTop: '10px !important',
-          marginLeft: { xs:'2rem', md:'100px'}
+          marginLeft: { xs:'2rem', md:'100px'},
+
         }}
-        className="px-8 max-w-[1536px] w-full mt-[40px] mx-auto"
+        className="max-w-[1536px] w-full mt-[40px] mx-auto"
       >
         <Carousel 
           className='carousel relative z-50' 

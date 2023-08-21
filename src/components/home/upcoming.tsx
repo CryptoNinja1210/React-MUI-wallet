@@ -81,7 +81,8 @@ function UpComing(){
   const handleArrow = () => {
     setPressedArrow(prev=>!prev)
   }
-  const slideNum = window.innerWidth > 1536 ? 4.6 : (window.innerWidth - 64) / 320;
+  // const slideNum = window.innerWidth > 1536 ? 4.6 : (window.innerWidth - 64) / 320;
+  const slideNum = window.innerWidth < 900 ? (window.innerWidth - 32) / 220 : window.innerWidth > 1536 ? 4.6 : (window.innerWidth - 32) / 320;
   return(
     <div>
       <Box 
@@ -121,9 +122,14 @@ function UpComing(){
         >
         </Box>
         <Box
-          className="pl-8 2xl:pr-8 max-w-[1536px] w-full mt-[-470px] mx-auto text-center"
+          className="pl-8 2xl:pr-8 max-w-[1536px] w-full mx-auto"
+          sx={{
+            mt:{md:'-470px', xs:'-500px'},
+            ml:{md:'0', xs:'-50px'},
+            textAlign:{md:'center', xs:'left'}
+          }}
         >
-          <span className='inline upcoming leading-normal'>Upcoming Predictions</span>
+          <span className='inline upcoming'>Upcoming Predictions</span>
           <Carousel 
             className='carousel relative z-50' 
             show={slideNum}
@@ -203,7 +209,17 @@ function UpComing(){
             )}
           >
             {Array(5).fill('').map((_, id) => (
-              <Box key={ 'banner_' + id} sx={{width:'100%', paddingTop:'30px', marginTop:'6rem', backgroundColor:'#BFF960', py:'22px', color:'#000000', paddingX: '100px'}}>
+              <Box 
+                key={ 'banner_' + id} 
+                sx={{
+                  width:'100%', 
+                  paddingTop:'30px', 
+                  marginTop:{md:'6rem', xs:'3rem'}, 
+                  backgroundColor:'#BFF960', 
+                  py:'22px', 
+                  color:'#000000', 
+                  paddingX: '100px'
+                }}>
                 <Box sx={{ maxWidth: '90vw', scale: {xs: '0.8', md: '1'}, display:'flex', flexDirection:'row', justifyContent:'center', gap:{xs:'3rem', md:'2rem'}, alignItems:'center'}}>
                   <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:'8px' }}>
                     <img src='icons/Ellipse 38.png' className='w-5 lg:w-7'></img>

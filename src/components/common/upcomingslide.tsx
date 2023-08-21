@@ -22,11 +22,15 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
     <Box
       sx={{
         display: 'flex',
+        marginLeft: {md:'0', xs:'-40px'},
+        marginTop: {md:'0', xs:'-50px'},
+        marginBottom: {md:'0', xs:'-50px'},
         flexDirection: 'column',
         textAlign:'left',
         backgroundImage: `${card}`,
+        scale:{md:'1', xs:'0.7'},
         backgroundRepeat: 'no-repeat',
-        width: '288px',
+        width:'288px',
         height: '351px',
         px: '24px',
         py: '33px',

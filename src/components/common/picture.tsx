@@ -23,7 +23,7 @@ const Square: React.FC<PictureProps> = ({
         sx={{ 
           backgroundImage: `url(${bac})`
         }}
-        className={`${className} w-[273px] md:w-[28.75rem] h-[273px] md:h-[28.75rem]`}
+        className={`${className} w-[253px] md:w-[28.75rem] h-[253px] md:h-[28.75rem]`}
       >
         <img className="square" src={square}></img>
       </Box>

@@ -3,8 +3,11 @@ import {Box, Typography} from '@mui/material';
 function Footer(){  
   return(
     <Box 
-      className='py-8 bg-[#15151E] flex flex-col z-50'
-      sx={{paddingX:{ xs:'30px', lg:'50px', xl:'15rem'}}}
+      className='py-8 flex flex-col z-50'
+      sx={{
+        paddingX:{ xs:'30px', lg:'50px', xl:'15rem'},
+        background:{md:'#15151E', xs:'#0A0A0B'}
+      }}
     >
       <Box 
         sx={{
@@ -20,8 +23,16 @@ function Footer(){
         <Box
           className='flex flex-col lg:flex-row w-full max-w-[1920px] justify-between mx-auto'
         >
-          <Box className='flex flex-col lg:justify-start items-start mb-5' sx={{width:'70%'}}>
-            <Box sx={{width:'60%'}}>
+          <Box 
+            className='flex flex-col lg:justify-start items-start mb-5' 
+            sx={{
+              width:{md:'70%', xs:'100%'},
+            }}>
+            <Box 
+              sx={{
+                width:{md:'60%', sm:'60%', xs:'100%'}
+              }}
+            >
               <Box className='mb-5'>
                 <img src='images/bonus.png' alt='' className='h-[61px] min-w-[111px] object-cover'/>
               </Box>
@@ -29,10 +40,10 @@ function Footer(){
                 sx={{
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
-                  fontSize: '14px',
+                  fontSize: {md:'14px', xs:'11px'},
                   fontStyle: 'normal',
                   fontWeight: '400',
-                  lineHeight: '21px',
+                  lineHeight: {md:'21px', xs:'16px'},
                   textTransform: 'capitalize',
                 }}
               >
@@ -46,10 +57,10 @@ function Footer(){
                 sx={{
                   color: '#FFF',
                   fontFamily: 'Syne-Bold',
-                  fontSize: '20px',
+                  fontSize: {md:'20px', xs:'16px'},
                   lineHeight: '32px',
                   letterSpacing: '-0.6px',
-                  marginBottom:'30px'
+                  marginBottom:{md:'30px', xs:'10px'}  
 
                 }}
               >
@@ -60,7 +71,8 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}
+                }}
                 >
                   Home
               </Typography>
@@ -69,7 +81,8 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}
+                }}
                 >
                   Prediction
               </Typography>
@@ -78,7 +91,8 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}
+                }}
                 >
                   Contract Information
               </Typography>
@@ -87,7 +101,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   Features
               </Typography>
@@ -96,7 +110,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   How It Works
               </Typography>
@@ -105,7 +119,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   FAQS
               </Typography>
@@ -118,10 +132,10 @@ function Footer(){
                 sx={{
                   color: '#FFF',
                   fontFamily: 'Syne-Bold',
-                  fontSize: '20px',
+                  fontSize: {md:'20px', xs:'16px'},
                   lineHeight: '32px',
                   letterSpacing: '-0.6px',
-                  marginBottom:'30px'                  
+                  marginBottom:{md:'30px', xs:'10px'}                  
                 }}
               >
                   Legal
@@ -131,7 +145,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   Privacy Policy
               </Typography>
@@ -140,7 +154,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   Terms of Services
               </Typography>
@@ -149,7 +163,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   About Us
               </Typography>
@@ -158,7 +172,7 @@ function Footer(){
                   color: '#ADA8C3',
                   fontFamily: 'Montserrat',
                   marginBottom:'10px',
-                  fontSize: '16px'}}
+                  fontSize: {md:'16px', xs:'13px'}}}
                 >
                   Contact Information
               </Typography>
@@ -176,13 +190,15 @@ function Footer(){
           alignItems:'center',
           gap:'1rem'
         }}
-        className='flex flex-row w-full max-w-[1536px] justify-between'
+        className=' w-full max-w-[1536px] justify-between'
       >
         <Typography
           sx={{
             color: '#ADA8C3',
             fontFamily: 'Montserrat',
-              fontSize: {xs:'12px', md:'18px'}}}>
+            fontSize: {xs:'12px', md:'18px'}
+          }}
+          >
               Copyright © Bonus Defi 2023
         </Typography>
         <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center', gap: { xs:'35px', md:'15px'}}}>
