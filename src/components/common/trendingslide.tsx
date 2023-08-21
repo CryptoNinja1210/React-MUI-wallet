@@ -16,6 +16,10 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
       <Box
         sx={{
           display: 'flex',
+          marginLeft: {md:'0', xs:'-115px'},
+          marginTop: {md:'0', xs:'-80px'},
+          marginBottom: {md:'0', xs:'-70px'},
+          scale:{md:'1', xs:'0.4'},
           position: 'relative',
           flexDirection: 'column',
           alignItems: 'start', 

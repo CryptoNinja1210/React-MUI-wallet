@@ -30,7 +30,7 @@ const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
 
   return (
     <div 
-      className="w-full mt-0 mb-auto flex flex-col justify-between items-center p-auto"
+      className="w-full mt-0 mb-0 flex flex-col justify-between items-center p-auto"
       style={{
         paddingTop: 'auto',
         paddingBottom: 'auto'
@@ -41,7 +41,7 @@ const PopOverTSX = ({ handleClose, navDropProps }: NavMenuContentProps) => {
           <div key={item.label} className="flex flex-col w-full ">
             <div
               style={{fontFamily: 'montserrat'}}
-              className={`${expandedItem == item.label ? "text-lime-500" : "text-white"} text-[14px] font-mono font-bold w-full py-5 pl-3 border-b-2 border-[#333348] text-start cursor-pointer`}
+              className={`${expandedItem == item.label ? "text-[#00FC65]" : "text-white"} text-[14px] font-mono font-bold w-full py-4 pl-3 border-b-2 border-[#333348] text-start cursor-pointer`}
               onClick={() => handleToggle(item.label)}
             >
               <p>{item.label}</p>

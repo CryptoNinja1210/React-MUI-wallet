@@ -35,20 +35,81 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@media (max-width: 765px) { 
+.setting {
+  display:block;
+}
+.connect {
+  font-size: 14px;
+  width: 192px;
+  height: 41px;
+  letter-spacing: 0.5px;
+}
+.chainImg {
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+.network {
+  display: block;
+}
+.chainArrow {
+  margin-left: 12px;
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 900px) { 
+  .network {
+    display: none;
+  }
+  .connect {
+    height:28px;
+    font-size: 11px;
+    width: 140px;
+    padding-left: -10px;
+  }
+  .carousel {
+    margin-top: 10px;
+  }
+  .brand {
+    width: 40px;
+    height: 40px;
+  }
+  .chainArrow {
+    margin-left: 0;
+    margin-right: 5px;
+    width: 15px;
+    height: 7px;
+  }
+  .chainImg {
+    width: 30px;
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .notification {
+    width: 18px;
+  }
+  .setting {
+    display: none;
+  }
+  .logo {
+    width: 44px;
+    height: 40px;
+    margin-right: 10px;
+  }
   .upcoming {
     display: inline-block;
-    font-size: 24px;
-    margin-left: 2rem;
+    font-size: 20px;
     margin-top: 100px;
   }
   .trending {
     display: inline-block;
-    font-size: 24px;
-    margin-left: 2rem;
+    font-size: 20px;
   }
   .feature {
-    font-size: 24px;
+    font-size: 20px;
   }
   .prediction {
     display: inline;
@@ -60,15 +121,6 @@
  }
 .card {
   padding:33px 24px;
-}
-.subtitle {
-  color: #ADA8C3;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
 }
 .square {
   width:'26.25rem';

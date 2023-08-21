@@ -1,6 +1,7 @@
 import { 
   useState 
 } from "react";
+import {Box} from '@mui/material';
 import ChattingEditor from "./chattingEditor";
 import ChattingHeader from "./chattingheader";
 import ChattingPane from "./chattingpane";
@@ -100,14 +101,20 @@ interface chattingBox {
 const ChattingBox = ({showMessage, setShowMessage}: chattingBox) => {
   const [chattingLog, setChattingLog] = useState(chattingHistory);
   return (
-    <div className={`z-100 bottom-6 right-6 ${showMessage ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed h-[662px] w-[359px] bg-gray-800 rounded-xl transition-all duration-700 ease-in-out flex flex-col justify-between`}>
-      <ChattingHeader setShowMessage={setShowMessage}/>
-      <ChattingPane className="h-auto" chattingLog={chattingLog} />
-      <ChattingEditor
-        chattingLog={chattingLog}
-        setChattingLog={setChattingLog}
-      />
-    </div>
+    <Box 
+      sx={{
+        scale:{md:'1', xs:'0.7'},
+        bottom:{md:'36px', xs:'-95px'},
+        right:{md:'36px', xs:'-45px'},
+      }}
+      className={`z-100 ${showMessage ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed h-[662px] w-[359px] bg-gray-800 rounded-xl transition-all duration-700 ease-in-out flex flex-col justify-between`}>
+        <ChattingHeader setShowMessage={setShowMessage}/>
+        <ChattingPane className="h-auto" chattingLog={chattingLog} />
+        <ChattingEditor
+          chattingLog={chattingLog}
+          setChattingLog={setChattingLog}
+    />
+    </Box>
   )
 }
 

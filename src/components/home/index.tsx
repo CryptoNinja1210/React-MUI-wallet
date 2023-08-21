@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Carousel } from '@trendyol-js/react-carousel';
 import LiveSlide from '../common/liveslide.tsx';
 import {Box, Typography} from '@mui/material';
-import '../../App.css'                                                                  
+import '../../App.css'                          
 import AfterConnect from '../wallet/afterconnect.tsx';
 
 const liveslides = [
@@ -92,15 +92,14 @@ function Index({
       }
     }
   },[]);
-  const slideNum = window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 64) / 306.7;
-
+  const slideNum = window.innerWidth < 900 ? (window.innerWidth - 32) / 198 : window.innerWidth > 1536 ? 4.8 : (window.innerWidth - 32) / 306.9;
   return(
     <Box 
       sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        pt:'200px',
+        pt:{md:'200px', xs:'100px'},
         transform: 'translateY(0)'
       }}
       // className='h-[100vh] 2xl:h-full'
@@ -124,7 +123,6 @@ function Index({
           backgroundImage: 'url("backgrounds/blockchain-gradient.png")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          // backgroundPositionY: '300px',
           filter: 'grayscale(100%)',
           }}
         />
@@ -133,7 +131,7 @@ function Index({
         className={`${addrInfo?`pt-28`:`pt-0`} 2xl:pr-8 sm:pr-0 sm:pl-8`}
           sx={{
             pr:{xs:'0'},
-            pl: {xs:'32px'}
+            pl: {xs:'32px'},
           }}
         >
           <span className='prediction'>Live Predictions</span>
@@ -157,25 +155,31 @@ function Index({
             ))}
           </Carousel>
         </Box>
-        <Box sx={{display:'flex', flexDirection:'column', marginBottom: '130px'}}>
-          <Box sx={{ mt:{xs:'50px',md:'120px'},display: addrInfo? 'none' : 'block' }}>
+        <Box 
+        sx={{
+          display:'flex', 
+          flexDirection:'column',
+           marginBottom:{md:'130px', xs:'50px'}, 
+           mx:'15px'
+           }}>
+          <Box sx={{ mt:{xs:'50px',md:'120px'},display: addrInfo? 'none' : 'block', overflowWrap:'break-word'}}>
             <Typography
               sx={{
                 fontFamily: 'Syne-ExtraBold',
-                lineHeight: {md:'60px', sm:'36px'},
-                fontSize: {md: '50px', sm:'36px'},
+                lineHeight: {md:'60px',xs:'36px'},
+                fontSize: {md: '50px', xs:'31px'},
                 textAlign: 'center',
                 textTransform: 'capitalize',
                 letterSpacing: '1.75px',
               }}
               className='word-break'
             >
-              The Ultimate Decentrailized <br /> <span style={{color:"#00FC65"}}>Finance</span> Platform
+              The Ultimate Decentrailized <span style={{color:"#00FC65"}}>Finance</span> Platform
             </Typography>
           </Box>
           <Typography
             sx={{
-              paddingTop: '32px',              
+              paddingTop: {md:'32px', xs:'10px'},              
               lineHeight: '25px',
               textAlign: 'center',
               zIndex: '100',
@@ -185,7 +189,7 @@ function Index({
               fontFamily: 'Montserrat',
               display: addrInfo? 'none' : '  block'
             }}
-            className='md:text-[16px] text-[12px]'
+            className='md:text-[16px] text-[11px]'
           >
             "Predict, Stake, and Win: Bonus DeFi Unleashes Instant Utility and Organic Marketing for Any Token!
           </Typography>

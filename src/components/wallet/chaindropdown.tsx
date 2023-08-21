@@ -79,25 +79,25 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
             background: '#212125 !important',
             color: '#00FC65',
             borderRadius: '30px',
-            px: '1.5rem',
+            px:{md:'1.5rem', xs:'0'},
             '&:hover': {
               backgroundColor: '#212125',
             },
-            width: {md:'253px'},
-            height: '41px'
+            width: {md:'253px', xs:'50px'},
+            height: {md:'41px', xs:'26px'}
           }}
           onClick={handleClick}
           onMouseLeave={handleMouseLeave}
         >
-          <img className='w-[30px] h-[30px] pr-[10px]' src={networkOptions[selectedIndex].icon}/>
-          <Box className="hidden md:block whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
-          <img src='/icons/Vector 60.svg' alt='' className='mx-3 w-4 h-4'/>
+          <img className='chainImg' src={networkOptions[selectedIndex].icon}/>
+          <Box className="network whitespace-nowrap">{networkOptions[selectedIndex].name}</Box>
+          <img src='/icons/Vector 60.svg' alt='' className='chainArrow'/>
         </Button>
       </ButtonGroup>
       <Popper
         sx={{
           zIndex: 1,
-          width: '250px',
+          width:{md: '250px', xs:'180px'}
         }}
         open={open}
         anchorEl={anchorRef.current}
@@ -124,9 +124,9 @@ export default function ChainDropdown(props: ChainDropwdonwProps) {
                       selected={index === selectedIndex}
                       onClick={() => handleMenuItemClick(index)}
                       className={`hover:bg-gray-700 ${selectedIndex == index ? `bg-gray-700 hover:bg-gray-700` : ``}`}
-                      sx={{fontFamily:'Syne-Bold'}}
+                      sx={{fontFamily:'Syne-Bold', fontSize:{xs:'11px', md:'14px'}}}
                     >
-                      <img src={option.icon} className='w-[30px] h-[30px] pr-[10px]' alt="" />{option.name}
+                      <img src={option.icon} className='chainImg lg:w-[30px] lg:h-[30px] lg:pr-[10px]' alt="" />{option.name}
                     </MenuItem>
                   ))}
                 </MenuList>

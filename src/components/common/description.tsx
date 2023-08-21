@@ -25,7 +25,7 @@ const Description: React.FC<DescriptionProps> = ({
           fontSize: {xs:'18px', md:'2.25rem'},
           fontStyle: 'normal',
           fontWeight: '600',
-          lineHeight: '2.75rem',
+          lineHeight: {md:'2.75rem', xs:'1.5rem'},
           textTransform: 'capitalize',
         }}
         className={`${isFinance ? 'hidden' : 'block'}`}
@@ -36,7 +36,7 @@ const Description: React.FC<DescriptionProps> = ({
         sx={{
           fontFamily: 'Syne-Bold',
           fontSize: {xs:'18px', md:'2.25rem'},
-          lineHeight: '2.75rem',
+          lineHeight: {md:'2.75rem', xs:'1.5rem'},
           textTransform: 'capitalize',
         }}
         className={`${isFinance ? 'block' : 'hidden'}`}
@@ -48,12 +48,12 @@ const Description: React.FC<DescriptionProps> = ({
       <Typography
         sx={{
           fontFamily: 'Inter',
-          marginTop:'30px',
+          marginTop: {md:'30px', xs:'15px'},
           color: '#ADA8C3',
           fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '1.5rem',
+          lineHeight: {md:'1.5rem', xs:'15px'},
         }}
       >
         {subTitle1}
@@ -61,14 +61,15 @@ const Description: React.FC<DescriptionProps> = ({
       <Typography
         sx={{
           fonFamily: 'Inter',
-          marginTop:'30px',
+          marginTop: {md:'30px', xs:'15px'},
           marginBottom:'30px',
           color: '#ADA8C3',
           fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '1.5rem',
+          lineHeight: {md:'1.5rem', xs:'15px'},
         }}
+        className={`${isFinance ? 'hidden' : 'block'}`}
       >
         {subTitle2}
       </Typography>
