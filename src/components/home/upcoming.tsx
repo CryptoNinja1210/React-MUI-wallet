@@ -268,7 +268,7 @@ console.log('slideNum', slideNum);
                 <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>ETH</Typography>
                 <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$1719.27</Typography>
               </Box>
-            <Box sx={{ pl:{md:'0px', xs:'5px'}, display:'flex', flexDirection:'row', alignItems:'center', gap:{md:'8px', xs:'2px'} }}>
+            <Box sx={{ pl:{md:'20px', xs:'5px'}, display:'flex', flexDirection:'row', alignItems:'center', gap:{md:'8px', xs:'2px'} }}>
                 <img src='icons/Ellipse 38.png' className='w-4 md:w-5  lg:w-7'></img>
                 <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>RBT</Typography>
                 <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$2.38</Typography>
