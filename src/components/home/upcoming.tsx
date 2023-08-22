@@ -68,7 +68,6 @@ function UpComing(){
   const [pressedArrow, setPressedArrow] = useState(true);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const [slideNum, setSlideNum] = useState(4);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -80,11 +79,7 @@ function UpComing(){
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  });
-
-  // useEffect(() => {
-  //     setSlideNum(window.innerWidth < 900 ? (window.innerWidth - 32) / 220 : window.innerWidth > 1536 ? 4.6 : (window.innerWidth - 32) / 320);
-  // });
+  }, []);
 
   useEffect(() => {
     const myTimeInterval = setInterval(() => {
@@ -102,10 +97,8 @@ function UpComing(){
   }
   const slideNum = windowWidth < 900 ? (windowWidth - 32) / 220 : windowWidth > 1536 ? 4.6 : (windowWidth - 32) / 320;
   const slide = windowWidth < 900 ? 1 : 4; 
-  const chainSlideNum = windowWidth < 900 ? 3.5 : 5;
-  const chainSlide = windowWidth < 900 ? 2 : 5;
-console.log('width', windowWidth);
-console.log('slideNum', slideNum);
+  // const chainSlideNum = windowWidth < 900 ? 3.5 : 5;
+  // const chainSlide = windowWidth < 900 ? 2 : 5;
 
   return(
     <div>
@@ -153,7 +146,7 @@ console.log('slideNum', slideNum);
             textAlign:{md:'center', xs:'left'}
           }}
         >
-          <span className='inline upcoming'>{slideNum}Upcoming Predictions</span>
+          <span className='inline upcoming'>Upcoming Predictions</span>
           <Carousel 
             className='carousel relative z-50' 
             show={slideNum}
@@ -206,25 +199,14 @@ console.log('slideNum', slideNum);
             ))}
           </Carousel>
         </Box>
-        <Box 
-          className='w-full relative z-10'
-          sx={{
-            paddingTop:{md:'10px', xs:'3px'}, 
-            marginTop:{md:'6rem', xs:'3rem'}, 
-            backgroundColor:'#BFF960', 
-            pb:{md:'30px', xs:'10px'}, 
-            color:'#000000', 
-            pr: {md:'110px', xs:'0'},     
-            pl: {md:'110px', xs:'20px'},         
-          }}
-        >
+        <div className='w-[150vw] md:w-full mt-8 md:mt-20 flex justify-center relative z-10'>
           <Carousel
-            className='carousel flex flex-direction justify-center items-center' 
-            show={chainSlideNum} 
-            slide={chainSlide} 
+            className='carousel bg-[#BFF960]' 
+            show={1} 
+            slide={1} 
             swiping={true} 
-            transition={2}
-            swipeOn={1} 
+            transition={2.5}
+            swipeOn={0.1} 
             useArrowKeys={true} 
             rightArrow={(
               <Box
@@ -243,58 +225,46 @@ console.log('slideNum', slideNum);
               </Box>
             )}
           >
-            <Box sx={{ pl:{md:'10px', xs:'5px'}, display:'flex', justifyContent:'center', flexDirection:'row', alignItems:'center', gap:{md:'8px', xs:'2px'},  }}>
-                <img src='icons/Ellipse 38.png' className='w-4 md:w-5 lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>RBT</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$2.38</Typography>
+            {Array(2).fill('').map((_, id) => (
+              <Box 
+                key={ 'banner_' + id} 
+                sx={{
+                  width:'100%', 
+                  py:{md:'22px', xs:'10px'}, 
+                  color:'#000000', 
+                  paddingX:{md:'100px', xs:'0'}
+                }}>
+                <Box sx={{ml:'10px', display:'flex', flexDirection:'row', justifyContent:'center', gap:{xs:'1.5rem', md:'2rem'}, alignItems:'center'}}>
+                  <Box sx={{ display:'flex', flexDirection:'row', alignItems:'center', gap:{md:'8px', xs:'2px'} }}>
+                    <img src='icons/Ellipse 38.png' className='md:w-5 w-4 lg:w-7'></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>RBT</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>$2.38</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
+                    <img src='icons/Ellipse 39.png' className='md:w-5 w-4 lg:w-7'></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>RBS</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>$0.03</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
+                    <img src='icons/Ellipse 40.png' className='md:w-5 w-4 lg:w-7'></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>BNB</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>$241.73</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
+                    <img src='icons/Ellipse 41.png' className='md:w-5 w-4 lg:w-7'></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>BTC</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>$26414</Typography>
+                  </Box>
+                  <Box sx={{display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
+                    <img src='icons/Ellipse 42.png' className='md:w-5 w-4 lg:w-7'></img>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>ETH</Typography>
+                    <Typography sx={{ fontFamily:'Inter', fontSize:{md:'20px', xs:'12px', lg:'23px'}}}>$1719.27</Typography>
+                  </Box>
+                </Box>
               </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 39.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>RBS</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$0.03</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 40.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>BNB</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$241.73</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 41.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>BTC</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$26414</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 42.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>ETH</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$1719.27</Typography>
-              </Box>
-            <Box sx={{ pl:{md:'20px', xs:'5px'}, display:'flex', flexDirection:'row', alignItems:'center', gap:{md:'8px', xs:'2px'} }}>
-                <img src='icons/Ellipse 38.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>RBT</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$2.38</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 39.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>RBS</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$0.03</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 40.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>BNB</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$241.73</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 41.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>BTC</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$26414</Typography>
-              </Box>
-            <Box sx={{pl:{md:'10px', xs:'5px'}, display:'flex', flexDirection:'row',alignItems:'center', gap:{md:'8px', xs:'2px'}}}>
-                <img src='icons/Ellipse 42.png' className='w-4 md:w-5  lg:w-7'></img>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>ETH</Typography>
-                <Typography sx={{ fontFamily:'Inter', fontSize:{xs:'12px', md:'20px', lg:'23px'}}}>$1719.27</Typography>
-              </Box>
+            ))}
           </Carousel>
-        </Box>
+        </div>
       </Box>   
     </div>
   )
