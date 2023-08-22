@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Carousel } from '@trendyol-js/react-carousel';
 import TrendingSlide from '../common/trendingslide.tsx';
 import {Box} from '@mui/material';
@@ -7,41 +7,55 @@ import '../../App.css'
 const trendingslides = [
   {
     title:"Project NO 01",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#0091FA"
   },
   {
     title:"Project NO 02",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#426CFF"
   },
   {
     title:"Project NO 03",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#7E36FF"
   },
   {
     title:"Project NO 04",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#56B80E"
   },
   {
     title:"Project NO 05",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#ECA907"
   },
   {
     title:"Project NO 06",
-    description:"Lorem ipsum dolor sit amet consectetur. Dignissim est enim donec egestas vitae ultrices. Ultrices sed nunc at vitae mi.",
+    description:"Dorem ipsum dolor sit amet consectetur. Turpis tristique nulla posuere et amet arcu dictum ultricies convallis.",
     trendbac: "#ED332D"
   }
 ]
 
 function Trending(){  
   const [pressedArrow, setPressedArrow] = useState(true);
-  // const slideNum = window.innerWidth > 1536 ? 3.5 : (window.innerWidth - 64) / 420.6;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const slideNum = window.innerWidth < 900 ? (window.innerWidth - 32) / 165 : window.innerWidth > 1536 ? 3.7 : (window.innerWidth - 32) / 422;
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
+
+  const show = windowWidth < 900 ? (windowWidth - 32) / 161 : windowWidth > 1536 ? 3.7 : (windowWidth - 32) / 422;
+
+  const slide =  windowWidth < 900 ? 1 : 3;
   const handleArrow=()=>{
     setPressedArrow(!pressedArrow);
   }
@@ -73,11 +87,11 @@ function Trending(){
       >
         <Carousel 
           className='carousel relative z-50' 
-          show={slideNum}
-          slide={3}
+          show={show}
+          slide={slide}
           swiping={true}
           transition={0.5}
-          swipeOn={1}
+          swipeOn={0.1}
           useArrowKeys={true} 
           rightArrow={(
             <Box

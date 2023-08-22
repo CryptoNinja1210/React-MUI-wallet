@@ -141,7 +141,7 @@ function Index({
             slide={1} 
             swiping={true} 
             transition={0.5} 
-            swipeOn={1} 
+            swipeOn={0.1} 
             leftArrow={(
               <button ref={leftArrowRef} className='hidden'>left</button>
             )}

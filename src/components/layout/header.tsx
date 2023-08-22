@@ -156,7 +156,7 @@ function Header({
 
   return (
     <AppBar position="fixed" sx={{ background: "none", zIndex: "999" }} className="backdrop-blur-xl">
-      <Container maxWidth="xl" className="px-8 items-center">
+      <Container maxWidth="xl" className="md:px-8 px-5items-center">
         <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
           <Box className='flex flex-row place-items-center'>
             <img 
@@ -199,8 +199,12 @@ function Header({
                   }}
                 >
                   {/* <Typography>{netInfoState.name.slice(0, 3)}</Typography> */}
-                  <Typography sx={{fontSize:'11px', md:'14px'}}>
-                    {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
+                  <Typography 
+                    sx={{
+                      fontSize:{md:'14px', xs:'11px'},
+                      fontFamily:'Syne-Bold'
+                      }}>
+                    {addrInfo.slice(0, 4) + "..." + addrInfo.slice(-4)}
                   </Typography>
                   <DisconnectWallet handleDisconnect={disconnectWallet} />
                 </Box>
@@ -255,7 +259,7 @@ interface NavMenuContentProps {
 const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuContentProps) => {
   return (
     <Box>
-      <div className={`relative opacity-1 w-[372px] h-auto py-20 px-8 flex flex-col justify-start bg-[#0A0A0B] gap-1 rounded-xl transition-all duration-2000 ease-in-out`}>
+      <div className={`relative opacity-1 w-[372px] mt-[-8px] mr-0 h-auto py-20 px-8 flex flex-col justify-start bg-[#0A0A0B] gap-1 rounded-xl transition-all duration-2000 ease-in-out`}>
         <ConfigProvider
           theme={{
             token: {
@@ -267,7 +271,7 @@ const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuConte
             <Button_Antd
               shape="circle"
               size="middle"
-              className="absolute top-7 right-7 w-7 h-7 font-bold flex justify-center items-center border-none "
+              className="absolute top-5 right-5 w-7 h-7 font-bold flex justify-center items-center border-none "
               onClick={handleClose}
             >
               <CloseIcon sx={{color: 'white', fontSize:'24px'}} />

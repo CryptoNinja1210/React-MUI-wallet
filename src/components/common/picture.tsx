@@ -15,7 +15,7 @@ const Square: React.FC<PictureProps> = ({
   return (
     <Box sx={{
       display: 'flex',
-      padding: '43px 20px',
+      padding: '23px 20px',
       justifyContent: 'center',
       alignItems: 'center',
     }}>

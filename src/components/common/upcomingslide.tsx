@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import Input from '@mui/material/Input';
 
 interface UpcomingSlideProps {
   plugincolor: string;
@@ -32,8 +33,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
         backgroundRepeat: 'no-repeat',
         width:'288px',
         height: '351px',
-        px: '24px',
-        py: '33px',
+        px: '22px',
+        py: '35px',
         fill: 'var(--neutral-08, #0E0C15)',
         strokeWidth: '1.5px',
         stroke: 'var(--stroke-style-style-3, rgba(255, 255, 255, 0.15))',
@@ -155,21 +156,21 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           Amount
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Typography
+          <Input
             sx={{
-              color: '#999',
+              color: '#fff',
               fontFamily: 'Montserrat',
               fontSize: '10px',
               border: '0.845px solid #938AB4',
               background: '#16131E',
               paddingLeft: '10px',
-              paddingRight: '31px',
-              py: '10px',
+              py: '4px',
               borderRadius: '20px',
+              width:'96px'
             }}
-          >
-            Put amount
-          </Typography>
+            placeholder='Put amount'
+            disableUnderline
+          />
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography
               sx={{
