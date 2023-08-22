@@ -18,7 +18,7 @@ export default function DisconnectWallet({ handleDisconnect } : { handleDisconne
             type="primary"
             shape="round"
             style={{ lineHeight:'20px', letterSpacing:'0.5px'}}
-            className="font-[Syne-Bold] bg-[#00FC65] text-black h-7 lg:h-[41px] text-[11px] lg:text-[14px] whitespace-nowrap w-[130px] lg:w-48 lg:tracking-[0.5px]"
+            className="font-[Syne-Bold] bg-[#00FC65] text-black h-7 md:h-[41px] text-[11px] md:text-[14px] whitespace-nowrap w-[100px] md:w-48 md:tracking-[0.5px]"
             onClick={() => handleDisconnect()}
           >
             Disconnect

@@ -226,7 +226,7 @@ function Content(){
               display:'flex',
               flexDirection:{ md:'row', xs:'column-reverse'},
               justifyContent:{md:'space-around', xs:'center'},
-              mt:{md:'48px', xs:'15px'}
+              mt:{md:'48px', xs:'0'}
             }}
             className="items-center w-full"
           >

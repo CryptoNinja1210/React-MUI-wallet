@@ -16,32 +16,27 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
       <Box
         sx={{
           display: 'flex',
-          marginLeft: {md:'0', xs:'-115px'},
-          marginTop: {md:'0', xs:'-80px'},
-          marginBottom: {md:'0', xs:'-70px'},
-          scale:{md:'1', xs:'0.4'},
           position: 'relative',
           flexDirection: 'column',
           alignItems: 'start', 
           backgroundColor: `${trendbac}`,
-          width: '398px',
-          height: '270px',
-          px: '40px',
-          py: '40px',
+          width: {md:'398px', xs:'153px'},
+          height: {md:'270px', xs:'124px'},
+          px: {md:'40px', xs:'15px'},
+          py: {md:'40px', xs:'15px'},
           overflow: 'hidden',
           borderRadius: '4px',
         }}
         className="hover:drop-shadow-md shadow-inner hover:shadow-white"
       >
         <Box>
-          <div
-            style={{
-              background: 'url(images/Glossy.png)',
+          <Box
+            sx={{
               position: 'absolute',
-              width: '152px',
-              height: '150px',
-              right: '10px',
-              top:'60px',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
             }}
             className='
               mix-blend-screen
@@ -52,21 +47,22 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
               ease-in-out
               brightness-150
             '
-          ></div>
+          >
+            <img src='images/Glossy.png' alt=''/> 
+          </Box>
         </Box>
         <Box>
-          <div
-            style={{
-              background: 'url(images/Glossy.png)',
+          <Box
+            sx={{
               position: 'absolute',
-              width: '152px',
-              height: '150px',
-              right: '10px',
-              top:'60px',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
               backgroundRepeat: 'no-repeat',
             }}
             className='
-            flex justify-center items-center
+              flex justify-center items-center
               mix-blend-soft-light
               opacity-30
               group-hover:scale-[170%] 
@@ -77,20 +73,21 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
               brightness-150
             '
           >
-          </div>
+            <img src='images/Glossy.png' alt=''/> 
+          </Box>
         </Box>
-        <Box>
-          <div
-            style={{
+        <Box sx={{display:{md:'block', xs:'none'}}}>
+          <Box
+            sx={{
               position: 'absolute',
-              width: '152px',
-              height: '150px',
-              right: '10px',
-              top:'60px',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
               backgroundRepeat: 'no-repeat',
             }}
             className='
-            flex justify-center items-center
+              flex justify-center items-center
               mix-blend-soft-light
               group-hover:scale-[170%] 
               group-hover:rotate-[30deg] 
@@ -101,28 +98,22 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
             '
           >
             <img src='images/Glossy_bridge.png' alt=''/> 
-          </div>
+          </Box>
         </Box>
         <Box sx={{hover:"filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))'"}} >
-          <img
-            src="icons/electrical-plug2.svg"
-            style={{
-              width: '36px',
-              height: '36px',
-              padding: '9px',
-              borderRadius: '9px',
-              backgroundColor: 'white',
-            }}
-          />
+          <Box>
+            <img
+              className='md:w-9 w-[14px] md:h-9 h-[14px] md:p-[9px] p-[3px] md:rounded-[9px] rounded-[3px] bg-white'
+              src="icons/electrical-plug2.svg" />
+          </Box>
         </Box>
         <Typography
           sx={{
-            fontFamily: 'Montserrat',
-            fontWeight: '800',
-            lineHeight: '27px',
-            paddingTop: '20px',
+            fontFamily: 'Montserrat-SemiBold',
+            lineHeight: {md:'27px', xs:'normal'},
+            paddingTop: {md:'20px', xs:'5px'},
+            fontSize:{md:'24px', xs:'12px'}
           }}
-          className='text-[24px]'
         >
           {title}
         </Typography>
@@ -132,11 +123,10 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
             color: '#fff',
             textOverflow: 'ellipsis',
             fontFamily: 'Montserrat',
-            fontSize: '14px',
-            fontWeight: '100',
-            lineHeight: '24px',
-            paddingTop: '15px',
-            paddingRight:'40px'
+            fontSize: {md:'14px', xs:'9px'},
+            lineHeight: {md:'24px', xs:'normal'},
+            paddingTop: {md:'15px', xs:'5px'},
+            paddingRight:{md:'40px', xs:'5px'}
           }}
           className='z-50'
         >
