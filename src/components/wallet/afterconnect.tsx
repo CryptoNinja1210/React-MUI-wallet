@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-
 interface AddType {
   addrInfo: string;
 }
