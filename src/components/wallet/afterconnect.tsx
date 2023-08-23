@@ -17,7 +17,7 @@ const AfterConnect = ({ addrInfo }: AddType) => {
         <Box>
           <img src="images/Ellipse 43.svg" className="md:w-[105px] md:h-[105px] w-[49px] h-[49px]"/>
         </Box>
-        <Typography 
+        <Typography
           sx={{
             color: '#000',
             fontFamily: 'Montserrat-SemiBold',
