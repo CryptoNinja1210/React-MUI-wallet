@@ -34,7 +34,7 @@ function Footer(){
               }}
             >
               <Box className='mb-5'>
-                <img src='images/bonus.png' alt='' className='h-[61px] min-w-[111px] object-cover'/>
+                <img src='images/image 1356.png' alt='' className='h-[45px] w-[52px] md:h-[61px] md:w-[70px] object-cover'/>
               </Box>
               <Typography
                 sx={{
