@@ -14,15 +14,10 @@ const AfterConnect = ({ addrInfo }: AddType) => {
       className={`md:mb-0 mb-[-60px] md:mx-12 mx-6 ${addrInfo? 'flex' : 'hidden'} flex-col md:flex-row justify-around items-center rounded-xl md:py-12 py-6 space-y-5 md:space-y-0`}
     >
       <Box className="flex flex-row items-center justify-between">
-        <Box 
-          sx={{
-            width:{md:'105px', xs:'48px'},
-            height:{md:'105px', xs:'48px'},
-          }}
-        >
-          <img src="images/ellipse.svg"/>
+        <Box>
+          <img src="images/Ellipse 43.svg" className="md:w-[105px] md:h-[105px] w-[49px] h-[49px]"/>
         </Box>
-        <Typography 
+        <Typography
           sx={{
             color: '#000',
             fontFamily: 'Montserrat-SemiBold',
