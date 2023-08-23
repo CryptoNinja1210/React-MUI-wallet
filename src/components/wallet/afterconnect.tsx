@@ -5,7 +5,6 @@ interface AddType {
 }
 
 const AfterConnect = ({ addrInfo }: AddType) => {
-  // console.log(netInfo)
   return (
     <Box 
       className={`mt-[100px] mx-auto ${addrInfo? 'flex' : 'hidden'} flex-col md:flex-row justify-around items-center rounded-xl backdrop-blur-sm bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 py-12 mx-8 space-y-5 md:space-y-0 space-x-5 p-5`}
