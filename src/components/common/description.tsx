@@ -15,50 +15,45 @@ const Description: React.FC<DescriptionProps> = ({
 }) =>{
   return (
     <Box sx={{
-      display:'flex',
-      flexDirection:'column',
-      // width:'33rem',
+      display: 'flex',
+      flexDirection: 'column'
     }}>
       <Typography
         sx={{
           color: '#FFF',
-          fontFamily: 'Syne',
+          fontFamily: 'Syne-SemiBold',
           fontSize: {xs:'18px', md:'2.25rem'},
           fontStyle: 'normal',
           fontWeight: '600',
-          lineHeight: '2.75rem', /* 122.222% */
+          lineHeight: {md:'2.75rem', xs:'1.5rem'},
           textTransform: 'capitalize',
         }}
         className={`${isFinance ? 'hidden' : 'block'}`}
       >
         {title}
       </Typography>
-      <Typography>
-        <Typography
-          sx={{
-            fontFamily: 'Syne',
-            fontSize: {xs:'18px', md:'2.25rem'},
-            fontStyle: 'normal',
-            fontWeight: '600',
-            lineHeight: '2.75rem', /* 122.222% */
-            textTransform: 'capitalize',
-          }}
-          className={`${isFinance ? 'block' : 'hidden'}`}
-        >
-          {`The Ultimate Decentralized `}
-          <span className="text-lime-400">Finance</span>
-          {` Platform`}
-        </Typography>
+      <Typography
+        sx={{
+          fontFamily: 'Syne-Bold',
+          fontSize: {xs:'18px', md:'2.25rem'},
+          lineHeight: {md:'2.75rem', xs:'1.5rem'},
+          textTransform: 'capitalize',
+        }}
+        className={`${isFinance ? 'block' : 'hidden'}`}
+      >
+        {`The Ultimate Decentralized `}
+        <span className="text-[#00FC65]">Finance</span>
+        {` Platform`}
       </Typography>
       <Typography
         sx={{
           fontFamily: 'Inter',
-          marginTop:'30px',
+          marginTop: {md:'30px', xs:'15px'},
           color: '#ADA8C3',
           fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '1.5rem',
+          lineHeight: {md:'1.5rem', xs:'15px'},
         }}
       >
         {subTitle1}
@@ -66,14 +61,15 @@ const Description: React.FC<DescriptionProps> = ({
       <Typography
         sx={{
           fonFamily: 'Inter',
-          marginTop:'30px',
+          marginTop: {md:'30px', xs:'15px'},
           marginBottom:'30px',
           color: '#ADA8C3',
           fontSize: {xs:'11px', md:'1rem'},
           fontStyle: 'normal',
           fontWeight: '400',
-          lineHeight: '1.5rem',
+          lineHeight: {md:'1.5rem', xs:'15px'},
         }}
+        className={`${isFinance ? 'hidden' : 'block'}`}
       >
         {subTitle2}
       </Typography>

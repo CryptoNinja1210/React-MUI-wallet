@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import Input from '@mui/material/Input';
 
 interface UpcomingSlideProps {
   plugincolor: string;
@@ -22,13 +23,18 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
     <Box
       sx={{
         display: 'flex',
+        marginLeft: {md:'0', xs:'-40px'},
+        marginTop: {md:'0', xs:'-50px'},
+        marginBottom: {md:'0', xs:'-50px'},
         flexDirection: 'column',
+        textAlign:'left',
         backgroundImage: `${card}`,
+        scale:{md:'1', xs:'0.7'},
         backgroundRepeat: 'no-repeat',
-        width: '288px',
+        width:'288px',
         height: '351px',
-        px: '24px',
-        py: '33px',
+        px: '22px',
+        py: '35px',
         fill: 'var(--neutral-08, #0E0C15)',
         strokeWidth: '1.5px',
         stroke: 'var(--stroke-style-style-3, rgba(255, 255, 255, 0.15))',
@@ -51,10 +57,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
       <Typography
         sx={{
           color: 'var(--neutral-01100, #FFF)',
-          fontFamily: 'Montserrat',
+          fontFamily: 'Montserrat-SemiBold',
           fontSize: '18px',
-          fontStyle: 'normal',
-          fontWeight: '400',
           lineHeight: '27px',
           paddingTop: '20px',
         }}
@@ -66,7 +70,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           overflow: 'hidden',
           color: 'var(--neutral-03, #ADA8C3)',
           textOverflow: 'ellipsis',
-          // whiteSpace: 'nowrap',
           fontFamily: 'Montserrat',
           fontSize: '14px',
           fontStyle: 'normal',
@@ -80,7 +83,7 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
       </Typography>
       <Box
         sx={{
-          mt: '12px',
+          mt: '20px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
@@ -94,7 +97,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
               fontFamily: 'Montserrat',
               fontSize: '12.049px',
               fontStyle: 'normal',
-              fontWeight: '400',
               lineHeight: '15.062px',
               letterSpacing: '-0.12px',
             }}
@@ -104,10 +106,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           <Typography
             sx={{
               color: '#FFF',
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat-Medium',
               fontSize: '13.556px',
-              fontStyle: 'normal',
-              fontWeight: 500,
               lineHeight: '16.568px',
               pt: '5px',
             }}
@@ -122,8 +122,6 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
               textAlign: 'right',
               fontFamily: 'Montserrat',
               fontSize: '12.049px',
-              fontStyle: 'normal',
-              fontWeight: '400',
               lineHeight: '15.062px',
               letterSpacing: '-0.12px',
               pt: '5px',
@@ -134,10 +132,8 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           <Typography
             sx={{
               color: '#FFF',
-              fontFamily: 'Montserrat',
+              fontFamily: 'Montserrat-Medium',
               fontSize: '13.556px',
-              fontStyle: 'normal',
-              fontWeight: 500,
               lineHeight: '16.568px',
               pt: '5px',
             }}
@@ -146,14 +142,12 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '25px' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
         <Typography
           sx={{
             color: '#999',
             fontFamily: 'Montserrat',
             fontSize: '12.049px',
-            fontStyle: 'normal',
-            fontWeight: '400',
             lineHeight: '15.062px',
             letterSpacing: '-0.12px',
             paddingBottom: '5px',
@@ -162,29 +156,27 @@ const UpcomingSlide: React.FC<UpcomingSlideProps> = ({
           Amount
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Typography
+          <Input
             sx={{
-              color: '#999',
+              color: '#fff',
               fontFamily: 'Montserrat',
               fontSize: '10px',
               border: '0.845px solid #938AB4',
               background: '#16131E',
               paddingLeft: '10px',
-              paddingRight: '31px',
-              py: '10px',
+              py: '4px',
               borderRadius: '20px',
+              width:'96px'
             }}
-          >
-            Put amount
-          </Typography>
+            placeholder='Put amount'
+            disableUnderline
+          />
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography
               sx={{
                 color: '#00FC65',
-                fontFamily: 'Syne',
+                fontFamily: 'Syne-Bold',
                 fontSize: '12px',
-                fontStyle: 'normal',
-                fontWeight: '700',
                 lineHeight: '15px',
                 letterSpacing: '0.42px',
                 margin: 'auto',

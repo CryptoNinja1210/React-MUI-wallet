@@ -20,33 +20,99 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
           flexDirection: 'column',
           alignItems: 'start', 
           backgroundColor: `${trendbac}`,
-          width: '398px',
-          height: '250px',
-          px: '40px',
-          py: '40px',
+          width: {md:'398px', xs:'153px'},
+          height: {md:'270px', xs:'124px'},
+          px: {md:'40px', xs:'15px'},
+          py: {md:'40px', xs:'15px'},
           overflow: 'hidden',
-          borderRadius: '10px',
+          borderRadius: '4px',
         }}
+        className="hover:drop-shadow-md shadow-inner hover:shadow-white"
       >
         <Box>
-          <img
-            src="icons/electrical-plug2.svg"
-            style={{
-              width: '36px',
-              height: '36px',
-              padding: '9px',
-              borderRadius: '9px',
-              backgroundColor: 'white',
+          <Box
+            sx={{
+              position: 'absolute',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
             }}
-          />
+            className='
+              mix-blend-screen
+              group-hover:scale-[170%] 
+              group-hover:rotate-[30deg] 
+              transition-transform 
+              duration-100 
+              ease-in-out
+              brightness-150
+            '
+          >
+            <img src='images/Glossy.png' alt=''/> 
+          </Box>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              position: 'absolute',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
+              backgroundRepeat: 'no-repeat',
+            }}
+            className='
+              flex justify-center items-center
+              mix-blend-soft-light
+              opacity-30
+              group-hover:scale-[170%] 
+              group-hover:rotate-[30deg] 
+              transition-transform 
+              duration-100 
+              ease-in-out
+              brightness-150
+            '
+          >
+            <img src='images/Glossy.png' alt=''/> 
+          </Box>
+        </Box>
+        <Box sx={{display:{md:'block', xs:'none'}}}>
+          <Box
+            sx={{
+              position: 'absolute',
+              width: {md:'152px', xs:'58px'},
+              height: {md:'150px', xs:'58px'},
+              right: '5px',
+              top:{md:'60px', xs:'30px'},
+              backgroundRepeat: 'no-repeat',
+            }}
+            className='
+              flex justify-center items-center
+              mix-blend-soft-light
+              group-hover:scale-[170%] 
+              group-hover:rotate-[30deg] 
+              transition-transform 
+              duration-100 
+              ease-in-out
+              brightness-150
+            '
+          >
+            <img src='images/Glossy_bridge.png' alt=''/> 
+          </Box>
+        </Box>
+        <Box sx={{hover:"filter: 'drop-shadow(0px 4px 16px rgba(176, 255, 47, 0.30))'"}} >
+          <Box>
+            <img
+              className='md:w-9 w-[14px] md:h-9 h-[14px] md:p-[9px] p-[3px] md:rounded-[9px] rounded-[3px] bg-white'
+              src="icons/electrical-plug2.svg" />
+          </Box>
         </Box>
         <Typography
           sx={{
-            fontFamily: 'Montserrat',
-            fontSize: '24px',
-            fontWeight: '800',
-            lineHeight: '27px',
-            paddingTop: '20px',
+            fontFamily: 'Montserrat-SemiBold',
+            lineHeight: {md:'27px', xs:'normal'},
+            paddingTop: {md:'20px', xs:'5px'},
+            fontSize:{md:'24px', xs:'12px'}
           }}
         >
           {title}
@@ -57,28 +123,15 @@ const TrendingSlide: React.FC<TrendingSlideProps> = ({
             color: '#fff',
             textOverflow: 'ellipsis',
             fontFamily: 'Montserrat',
-            fontSize: '14px',
-            fontWeight: '100',
-            lineHeight: '18px',
-            paddingTop: '15px',
+            fontSize: {md:'14px', xs:'9px'},
+            lineHeight: {md:'24px', xs:'normal'},
+            paddingTop: {md:'15px', xs:'5px'},
+            paddingRight:{md:'40px', xs:'5px'}
           }}
           className='z-50'
         >
           {description}
         </Typography>
-        <Box>
-          <img
-            src="images/Glossy.png"
-            style={{
-              position: 'absolute',
-              width: '152px',
-              height: '150px',
-              right: '10px',
-              top:'50px',
-            }}
-            className='opacity-40 group-hover:scale-[170%] group-hover:rotate-[30deg] transition-transform duration-75 ease-in-out'
-          />
-        </Box>
       </Box>
     </div>
   )

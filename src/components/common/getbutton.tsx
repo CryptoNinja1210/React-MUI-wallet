@@ -1,5 +1,4 @@
-import { Box, Typography } from "@mui/material";
-
+import {Box} from '@mui/material'
 interface GetButtonProps {
   name: string;
 }
@@ -8,37 +7,26 @@ const GetButton: React.FC<GetButtonProps> = ({
   name
 }) =>{
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      padding: '16px 32px',
-      justifyContent: 'space-around',
-      width:'180px',
-      alignItems: 'center',
-      gap: '8px',
-      borderRadius: '144px',
-      background: '#00FC65',
-    }}>
-      <Typography
-        sx={{
-          color: '#0A0A0B',
-          fontFamily: 'Syne',
-          textAlign:'center',
-          fontSize: '14px',
-          fontStyle: 'normal',
-          fontWeight: '700',
-          lineHeight: 'normal',
-        }}
-      >
-        {name}
-      </Typography>
+    <Box
+      className="flex justify-satrt items-center relative z-50"
+    >
       <Box
         sx={{
-          width: '18px',
-          height: '14px',
-          backgroundImage: 'url("icons/arrow2.png")'
+          scale:{md:'1', xs:'0.8'},
+          marginLeft:{md:'0', xs:'-15px'}
         }}
-      />
+        className="flex justify-center items-center bg-[#00FC65] gap-2 rounded-full p-auto w-[169px] h-12 group hover:drop-shadow-glow"
+      >
+        <p
+          style={{fontFamily: 'Syne-Bold'}}
+          className="text-[#0A0A0B] text-center text-[14px] leading-normal"
+        >
+          {name}
+        </p>
+        <div>
+          <img src="icons/arrow2.png" className="w-[18px] h-[14px] group-hover:rotate-45" alt="" />
+        </div>
+      </Box>
     </Box>
   )
 }

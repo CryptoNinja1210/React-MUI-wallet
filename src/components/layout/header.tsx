@@ -1,13 +1,11 @@
 import * as React from "react";
+import CloseIcon from '@mui/icons-material/Close';
 import {
   AppBar,
   Box,
   Toolbar,
-  IconButton,
   Typography,
-  Menu,
   Container,
-  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ethers, providers } from "ethers";
@@ -16,7 +14,13 @@ import ChainDropdown from "../wallet/chaindropdown.tsx";
 import DropDown from './dropdown.tsx';
 import ConnectWallet from "../wallet/connectwallet.tsx";
 import DisconnectWallet from "../wallet/disconnectwallet.tsx";
+import PopOverTSX from './popover.tsx';
 import "../../App.css";
+
+//ant design components
+import { HappyProvider } from '@ant-design/happy-work-theme';
+import { Button as Button_Antd, ConfigProvider } from 'antd';
+
 interface NetworkInfo {
   icon: string;
   name: string;
@@ -30,6 +34,8 @@ interface NetworkInfo {
 }
 
 interface SetInfoType {
+  showMessage: boolean;
+  setShowMessage: (showMessage: boolean) => void;
   netInfoState: NetworkInfo;
   setNetInfoState: (netInfoState: NetworkInfo) => void;
   addrInfo: string;
@@ -46,44 +52,47 @@ const navDropProps = [
     menulist: ['See all trending projects', 'Create Project'],
   },
   {
+    label: 'How It Works',
+    menulist: ['See Video', 'Create demo video'],
+  },
+  {
     label: 'Features',
     menulist: ['See all features', 'Create Feature'],
   },
-  {
-    label: 'How It Works',
-    menulist: ['See Video', 'Create demo video'],
-  }
 ]
-// let selectedAccount: string;
-// let web3Modal: Web3Modal;
+
+interface NavDropPropsTypes {
+  label: string;
+  menulist: string[];
+}
 function Header({
+  showMessage,
+  setShowMessage,
   addrInfo,
   setAddrInfo,
-  netInfoState,
   setNetInfoState,
 }: SetInfoType) {
   //
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
   const [provider, setProvider] = React.useState<providers.Web3Provider | null>(
     null
   );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  // const [showMessage, setShowMessage] = React.useState(false);
+  const [showPopOver, setShowPopOver] = React.useState(false);
+
   const onNetworkChange = (netInfo: NetworkInfo) => {
-    console.log(netInfo.chainId);
     switchNetwork(netInfo);
     setNetInfoState(netInfo);
   };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+
+  const handleClose = () => {
+    setShowPopOver(false);
   };
 
   const handleSetting = () => {};
 
-  const handleMessage = () => {};
+  const handleMessage = () => {
+    setShowMessage(!showMessage);
+  };
 
   async function switchNetwork(netinfo: NetworkInfo) {
     if (window.ethereum.networkVersion !== netinfo.chainId) {
@@ -103,7 +112,7 @@ function Header({
                 chainName: netinfo.name,
                 chainId: netinfo.chainId,
                 nativeCurrency: netinfo.nativeCurrency,
-                rpcUrls: netinfo.rpcUrls,
+                rpcUrls: [netinfo.rpcUrls],
               },
             ],
           });
@@ -111,17 +120,13 @@ function Header({
       }
     }
   }
-  React.useEffect(() => {
-    connetWallet();
-  });
 
-  const web3Modal = new Web3Modal({
-    network: "mainnet",
-    cacheProvider: false,
-    // providerOptions,
-    // disableInjectedProvider: false,
-  });
-  async function connetWallet() {
+  const connetWallet = React.useCallback(async () => {
+    const web3Modal = new Web3Modal({
+      network: "mainnet",
+      cacheProvider: false,
+    });
+
     await window.ethereum.request({
       method: "wallet_requestPermissions",
       params: [
@@ -131,14 +136,18 @@ function Header({
       ],
     });
     const connection = await web3Modal.connect();
-    // console.log(connection);
-
+  
     const pv = new ethers.providers.Web3Provider(connection);
     setProvider(pv);
     const signer = pv.getSigner();
     const addr = await signer.getAddress();
     setAddrInfo(addr);
-  }
+  }, [setProvider, setAddrInfo]);
+  
+  React.useEffect(() => {
+    connetWallet();
+  }, [connetWallet]);
+  
   async function disconnectWallet() {
     console.log("Killing the wallet connection", provider);
     setAddrInfo("");
@@ -146,92 +155,142 @@ function Header({
   }
 
   return (
-    <AppBar position="static" sx={{ background: "none", zIndex: "999" }}>
-      <Container maxWidth="xl" sx={{ bgcolor: "" }}>
-        <Toolbar disableGutters sx={{flexDirection:{ xs:'row'}}}>
-          <img src="/images/image 1356.png" alt="logo" className="logo" />
-          <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
-            {navDropProps.map((item) => (
-              <DropDown label={item.label} key={item.label} menulist={item.menulist}/>
-            ))}
+    <AppBar position="fixed" sx={{ background: "none", zIndex: "999" }} className="backdrop-blur-xl">
+      <Container maxWidth="xl" className="md:px-8 px-5items-center">
+        <Toolbar disableGutters className="flex flex-row justify-between items-center my-4">
+          <Box className='flex flex-row place-items-center'>
+            <img 
+              src="/images/image 1356.png" 
+              alt="logo" 
+              className="logo"
+            />
+            <Box sx={{ display: { xs: "none", lg: "flex" } }}>
+              {navDropProps.map((item) => (
+                <DropDown label={item.label} key={item.label} menulist={item.menulist}/>
+              ))}
+            </Box>
           </Box>
-          <Box sx={{ flexGrow: 1, display: "flex" }}>
-            <img
-              onClick={handleSetting}
-              style={{ cursor: "pointer" }}
-              src="/icons/setting.svg"
-            />
-            <img
-              onClick={handleMessage}
-              style={{ marginLeft: "0.8rem", cursor: "pointer" }}
-              src="/icons/message-notif.svg"
-            />
-            <ChainDropdown onNetworkChange={onNetworkChange} />
-            {addrInfo ? (
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                }}
-              >
+          <Box
+            className="flex flex-row items-center"
+          >
+            <Box
+              className='flex flex-row my-auto items-center'
+            >
+              <img
+                onClick={handleSetting}
+                style={{ cursor: "pointer" }}
+                src="/icons/settings.svg"
+                className="setting"
+              />
+              <img
+                onClick={handleMessage}
+                style={{ marginLeft: "0.8rem", cursor: "pointer", marginRight: '0.8rem' }}
+                src="/icons/message-notif.svg"
+                className="notification"
+              />
+              <ChainDropdown onNetworkChange={onNetworkChange} />
+              {addrInfo ? (
                 <Box
                   sx={{
-                    pl: "10px",
-                    flexDirection: "column",
+                    display: "flex",
+                    flexDirection: "row",
                     alignItems: "center",
-                    display:{xs:'none', md:'flex'}
+                    pl: '10px'
                   }}
                 >
-                  <Typography>{netInfoState.name.slice(0, 3)}</Typography>
-                  <Typography>
-                    {addrInfo.slice(0, 6) + "..." + addrInfo.slice(-5)}
+                  {/* <Typography>{netInfoState.name.slice(0, 3)}</Typography> */}
+                  <Typography 
+                    sx={{
+                      fontSize:{md:'14px', xs:'11px'},
+                      fontFamily:'Syne-Bold'
+                      }}>
+                    {addrInfo.slice(0, 4) + "..." + addrInfo.slice(-4)}
                   </Typography>
+                  <DisconnectWallet handleDisconnect={disconnectWallet} />
                 </Box>
-                <DisconnectWallet handleDisconnect={disconnectWallet} />
-              </Box>
-            ) : (
-              <ConnectWallet handleConnect={connetWallet} />
-            )}
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              className="md:hidden"
-            >
-              {navDropProps.map((item) => (
-                <MenuItem key={item.label} onClick={handleCloseNavMenu}>
-                  <Typography>{item.label}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              ) : (
+                <ConnectWallet handleConnect={connetWallet} />
+              )}
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" }, justifyContent: { xs:'end', md:'none'}}}>
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: '#ffffff',
+                  },
+                }}
+              >
+                <HappyProvider>
+                  <Button_Antd
+                    shape="circle"
+                    size="middle"
+                    className="text-black font-bold flex justify-center items-center border-none"
+                    onClick={()=>setShowPopOver(prevState => !prevState)}
+                  >
+                    <MenuIcon className="text-white mr-[-20px] md:mr-0"/>
+                  </Button_Antd>
+                </HappyProvider>
+              </ConfigProvider>
+            </Box>
           </Box>
         </Toolbar>
       </Container>
+      <Box
+        id="popOver"
+        className={`absolute top-24 max-md:left-0 right-0 mx-auto ${!showPopOver ? 'pointer-events-none' : ''} transition-all duration-500 ease-in-out`}
+        sx={{
+          opacity: {
+            xs: showPopOver ? 1 : 0,
+            lg: 0
+          }
+        }}
+      >
+        <NavMenuContent handleClose={handleClose} navDropProps={navDropProps} connetWallet={connetWallet}/>
+      </Box>
     </AppBar>
   );
 }
+interface NavMenuContentProps {
+  handleClose: () => void;
+  navDropProps: NavDropPropsTypes[];
+  connetWallet: () => void
+}
+
+const NavMenuContent = ({ handleClose, navDropProps, connetWallet}: NavMenuContentProps) => {
+  return (
+    <Box>
+      <div className={`relative opacity-1 w-[372px] mt-[-8px] mr-0 h-auto py-20 px-8 flex flex-col justify-start bg-[#0A0A0B] gap-1 rounded-xl transition-all duration-2000 ease-in-out`}>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#00b96b',
+            },
+          }}
+        >
+          <HappyProvider>
+            <Button_Antd
+              shape="circle"
+              size="middle"
+              className="absolute top-5 right-5 w-7 h-7 font-bold flex justify-center items-center border-none "
+              onClick={handleClose}
+            >
+              <CloseIcon sx={{color: 'white', fontSize:'24px'}} />
+            </Button_Antd>
+          </HappyProvider>
+        </ConfigProvider>
+        <PopOverTSX handleClose={handleClose} navDropProps={navDropProps}/>
+        <div className="flex justify-center items-center my-5 py-3">
+          <ConnectWallet handleConnect={connetWallet} showArr={true}/>
+        </div>
+        <Box className='flex flex-row justify-between items-center mt-2 mx-16'>
+          <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/facebook.svg" className="w-5 h-5" alt=""/></Box>
+          <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/twitter.svg" className="w-5 h-5" alt=""/></Box>
+          <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/linkedin.svg" className="w-5 h-5" alt=""/></Box>
+          <Box className='rounded-md p-1 border border-[#FFFFFF] '><img src="icons/instagram.svg" className="w-5 h-5" alt=""/></Box>
+        </Box>
+      </div>
+    </Box>
+  )
+}
+
 export default Header;

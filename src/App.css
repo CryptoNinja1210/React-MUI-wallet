@@ -1,26 +1,21 @@
 
 .logo {
-  width: 70.81372833251953px;
+  width: 70px;
   height: 62px;
-  margin-top: 18px;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 .prediction {
   position: relative;
-  font-family: syne;
+  font-family: Syne-Bold;
   font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0.1em;
   text-align: center;
-  background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #5F5BFF 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #5F5BFF 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} 
 .carousel {
-  margin-top: 70px;
-  /* padding-right: 50px; */
+  margin-top: 32px;
 }
 .brand {
   width: 64px;
@@ -28,62 +23,102 @@
 }
 .upcoming, .feature, .trending {
   display: block;
-  left: 40%;
+  /* left: 40%; */
   z-index: 999;
   text-align: center;
-  font-family: syne;
+  font-family: Syne-Bold;
   font-size: 3rem;
   font-style: normal;
-  /* margin-top: -470px; */
-  font-weight: 700;
-  line-height: 45px; /* 93.75% */
-  background: linear-gradient(90deg, #03fcc6 20%, #EACCF8 50%, #0703fc 80%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  line-height: 45px;
+  background: linear-gradient(90deg, #69EACB 0%, #EACCF8 50%, #5F5BFF 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@media (max-width: 765px) { 
+.setting {
+  display:block;
+}
+.connect {
+  font-size: 14px;
+  width: 192px;
+  height: 41px;
+  letter-spacing: 0.5px;
+}
+.chainImg {
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+.network {
+  display: block;
+}
+.chainArrow {
+  margin-left: 12px;
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 900px) { 
+  .network {
+    display: none;
+  }
+  .connect {
+    height:28px;
+    font-size: 11px;
+    width: 140px;
+    padding-left: -10px;
+  }
+  .carousel {
+    margin-top: 10px;
+  }
+  .brand {
+    width: 40px;
+    height: 40px;
+  }
+  .chainArrow {
+    margin-left: 0;
+    margin-right: 5px;
+    width: 15px;
+    height: 7px;
+  }
+  .chainImg {
+    width: 30px;
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .notification {
+    width: 18px;
+  }
+  .setting {
+    display: none;
+  }
+  .logo {
+    width: 44px;
+    height: 40px;
+    margin-right: 10px;
+  }
   .upcoming {
     display: inline-block;
-    font-size: 24px;
-    margin-left: 2rem;
+    font-size: 20px;
     margin-top: 100px;
   }
   .trending {
     display: inline-block;
-    font-size: 24px;
-    margin-left: 2rem;
+    font-size: 20px;
   }
   .feature {
-    font-size: 24px;
+    font-size: 20px;
   }
   .prediction {
     display: inline;
     font-size: 20px;
   }
-  /* .square {
-    width:'251px';
-    height:'231px';
-    display: flex;
-    align-items: center;
-  } */
   .hr {
     margin:'30px 2rem 30px 2rem';
   }
  }
 .card {
   padding:33px 24px;
-}
-.subtitle {
-  color: #ADA8C3;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
-}
-.square {
-  width:'26.25rem';
-  height:'23.37rem';
 }

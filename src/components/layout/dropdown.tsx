@@ -9,20 +9,21 @@ interface dropPropTypes {
 export default function ChainDropdown({label, menulist}: dropPropTypes) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  // const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [hoverSubMenu, setHoverSubMenu] = React.useState(0);
   const handleClick = () => {
-    // console.info(`You clicked`);
-    setOpen((prevOpen) => !prevOpen);
+    // setOpen((prevOpen) => !prevOpen);
   };
 
   const handleMenuItemClick = (
     index: number,
   ) => {
-    setSelectedIndex(index);
+    // setSelectedIndex(index);
     setOpen(false);
     console.log(`you clicked ${menulist[index]}`)
   };
   const handleMouseEnter = () => {
+    setHoverSubMenu(0);
     setOpen(true);
   }
   const handleMouseLeave = () => {
@@ -30,6 +31,7 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
   }
 
   const handleSubMouseEnter = () => {
+    setHoverSubMenu(0);
     setOpen(true);
   }
 
@@ -37,35 +39,22 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
     setOpen(false);
   }
 
-  // const handleToggle = () => {
-  //   setOpen((prevOpen) => !prevOpen);
-  // };
-
-  // const handleClose = (event: Event) => {
-  //   if (
-  //     anchorRef.current &&
-  //     anchorRef.current.contains(event.target as HTMLElement)
-  //   ) {
-  //     return;
-  //   }
-  //   setOpen(false);
-  // };
-
-  // console.log(anchorRef.current?.clientWidth)
-
+  const handleHoverSubItem = (index: number) => {
+    setHoverSubMenu(index)
+  }
   return (
     <React.Fragment>
       <ButtonGroup variant="text" ref={anchorRef}>
         <Button
           sx={{
-            mt: 2,
+            mx:'1',
             display: "block",
             color: "#8699B0",
             whiteSpace: "nowrap",
-            fontFamily: "montserrat",
+            fontFamily: "Montserrat-SemiBold",
             fontSize: "14px",
             fontWeight: "600",
-            lineHeight: "24px" /* 171.429% */,
+            lineHeight: "24px",
             textTransform: "none",
             paddingY: '12px',
             '&:hover': {
@@ -110,8 +99,10 @@ export default function ChainDropdown({label, menulist}: dropPropTypes) {
                 {menulist.map((listItem, index) => (
                   <MenuItem
                     key={listItem}
-                    selected={index === selectedIndex}
+                    // selected={index === selectedIndex}
                     onClick={() => handleMenuItemClick(index)}
+                    className={`hover:bg-gray-700 ${hoverSubMenu == index ? `bg-gray-700` : ``}`}
+                    onMouseEnter={()=>handleHoverSubItem(index)}
                   >
                     {listItem}
                   </MenuItem>
